@@ -1,0 +1,28 @@
+<?php if(!get_post_meta($order->ID, 'defects', true)) :?>
+	<div class="defects text-center mb-5">
+		<h2>Montage mit Mängel?</h2>
+		<input type="radio" value="true" name="defects" <?php echo checkRoles('dc_technician') ? 'required': '';?> class="mr-1" id="yes"><label for="yes" class="mr-3">Ja</label>
+		<input type="radio" value="false" name="defects" class="mr-1" id="no"><label for="no">Nein</label>
+		<div class="form-group text">
+			<label for="notes">Weitere Informationen zu den Mängeln</label>
+			<textarea id="notes2" class="form-control"></textarea>
+		</div>
+	</div>
+	<script>
+      $(document).ready(function () {
+
+        var notesNameAttr = $('#notes').attr('name');
+
+        $('input[name="defects"]').on('change', function () {
+          if($(this).is(':checked') && $(this).attr('value') === 'true') {
+            $('#notes2').attr({
+              'required': 'required',
+              'name': notesNameAttr
+            });
+          } else {
+            $('#notes2').removeAttr('required name');
+          }
+        });
+      })
+	</script>
+<?php endif;?>

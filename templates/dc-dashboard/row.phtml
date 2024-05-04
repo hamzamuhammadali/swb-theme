@@ -1,0 +1,51 @@
+<?php
+$technician  = '';
+$appointment = '';
+$dateFormat  = get_option( 'date_format' );
+
+if ( ! empty( get_post_meta( $order->ID, 'ac_technician', true ) ) ) {
+	$technician = get_post_meta( $order->ID, 'ac_technician', true );
+} else {
+	$technician = get_post_meta( $order->ID, 'dc_technician', true );
+}
+
+if ( ! empty( get_post_meta( $order->ID, 'ac_appointment', true ) ) ) {
+	$appointment = get_post_meta( $order->ID, 'ac_appointment', true );
+} else {
+	$appointment = get_post_meta( $order->ID, 'dc_appointment', true );
+}
+
+?>
+
+<tr>
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo date_i18n( $dateFormat, strtotime($appointment));?>
+
+	</td>
+	<td>
+		<?php echo get_user_by( 'ID',
+			$technician )->display_name; ?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+	</td>
+	<td class="text-right">
+		<?php
+		$moduleID = get_post_meta($order->ID,'module', true);
+		$moduleQty = (int) get_post_meta($order->ID, 'moduleqty', true );
+		$modulePower = (int) get_post_meta($moduleID, 'typ', true);
+		$pvPower = $moduleQty * $modulePower / 1000;
+		echo number_format($pvPower, 2, ',','.');
+		?>
+		kwp
+	</td>
+</tr>

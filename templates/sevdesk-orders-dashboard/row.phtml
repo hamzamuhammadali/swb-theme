@@ -1,0 +1,48 @@
+<?php
+
+$totalAmount = get_post_meta( $order->ID, 'totalIncl', true );
+$paidAmount = get_post_meta($order->ID, 'sevdesk_paid_amount', true);
+$dueAmount = getDuePercentage($order->ID) * $totalAmount / 100;
+
+$alreadyPaidPercentage = 100 / $dueAmount * $paidAmount;
+$alreadyPaidPercentageFromTotal = 100 / $totalAmount * $paidAmount;
+$dueAmountPercentage = 100 / $totalAmount * $dueAmount;
+$duePaymentPercentage = getDuePercentage($order->ID);
+
+?>
+<div class="invoice d-flex align-items-center justify-content-between">
+	<div class="invoice__info my-3 mr-3">
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>&controlling-view">
+			#<?php echo $order->ID;?>
+		</a>
+		<br>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>,
+		<?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+	</div>
+	<div>
+		<div class="progress-bar" data-total="Gesamt: <?php echo number_format($totalAmount, 2, ',', '.');?> €">
+			<div class="progress progress--due" style="width: <?php echo $dueAmountPercentage;?>%">
+				<?php if($paidAmount > 0) :?>
+					<div class="progress progress--done" style="width: <?php echo $alreadyPaidPercentage;?>%" data-received="Erhalten <?php echo number_format($alreadyPaidPercentageFromTotal, 0);?>%">
+						<?php echo number_format($paidAmount, 2, ',', '.');?> €
+					</div>
+				<?php else :?>
+					<div class="progress progress--zero">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+						     xmlns="http://www.w3.org/2000/svg">
+							<circle cx="9" cy="9" r="9" fill="#FF5959"/>
+							<path
+								d="M9.94815 5.27273L9.78196 11.3835H8.2223L8.05185 5.27273H9.94815ZM9.00213 14.1108C8.72088 14.1108 8.4794 14.0114 8.2777 13.8125C8.07599 13.6108 7.97656 13.3693 7.9794 13.0881C7.97656 12.8097 8.07599 12.571 8.2777 12.3722C8.4794 12.1733 8.72088 12.0739 9.00213 12.0739C9.27202 12.0739 9.50923 12.1733 9.71378 12.3722C9.91832 12.571 10.022 12.8097 10.0249 13.0881C10.022 13.2756 9.9723 13.4474 9.87571 13.6037C9.78196 13.7571 9.65838 13.8807 9.50497 13.9744C9.35156 14.0653 9.18395 14.1108 9.00213 14.1108Z"
+								fill="white"/>
+						</svg>
+						Noch keine Zahlung erhalten.
+					</div>
+				<?php endif; ?>
+				<div class="progress__info" data-due="Fällig <?php echo number_format($duePaymentPercentage, 0);?>%">
+					<?php echo number_format($dueAmount, 2, ',', '.');?> €
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

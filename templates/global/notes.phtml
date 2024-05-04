@@ -1,0 +1,52 @@
+<?php $notes = getNotes( $order->ID );
+if (!empty($notes) || getOrderStep($order->ID) < 8):
+
+	$step1 = getOrderStep($order->ID) < 2;
+?>
+
+<div class="order-card card">
+    <div class="card-body">
+        <div class="card-title">
+	        <?php if ($step1):?>
+	        Traufhöhe, welcher Dachziegel (Marke und Typ), wichtige Infos für die Verbauung?
+	        <br>
+	        <br>
+	        <?php else :?>
+            Interne Anmerkungen
+	        <?php endif; ?>
+        </div>
+        <div>
+			<?php foreach ( $notes as $note ): ?>
+				<?php
+				if ( isset( $note['internal'] ) && $note['internal'] === true && $internalUser === false ) {
+					continue;
+				}
+
+				$noteClass = '';
+				$message = '';
+
+				?>
+
+                <div class="note <?php echo (isset($note['noteType']) ? $note['noteType'] :''); ?>">
+                    <span class="note__author"><?php echo $note['author'] ?>:</span>
+                    <span class="note__text"><?php echo $note['message']; ?></span>
+	                <span class="note__date"><small><?php echo $note['date'] ?></small></span>
+                </div>
+			<?php endforeach; ?>
+        </div>
+		<?php if ( $allowedToEdit === true  ): ?>
+            <div class="form-group text">
+                <label for="notes">Anmerkungen</label>
+                <textarea id="notes" name="notes" class="form-control" <?php echo $step1 && empty($notes) ? 'required' : '';?>></textarea>
+            </div>
+			<?php /* if ( $internalUser === true ): ?>
+                <div class="form-group">
+                    <input type="checkbox" name="internal_note" id="internal_note" value="on"
+                           aria-label="Interne Anmerkung">
+                    <label for="internal_note">Interne Anmerkung</label>
+                </div>
+			<?php endif; */?>
+		<?php endif; ?>
+    </div>
+</div>
+<?php endif;?>

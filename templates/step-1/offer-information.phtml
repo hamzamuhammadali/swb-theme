@@ -1,0 +1,53 @@
+<div class="text-center">
+    <h2>Preise und weitere Optionen</h2>
+</div>
+
+<?php foreach ( priceFields() as $fieldName => $fieldDefinitions ): ?>
+	<?php
+	$required      = '';
+	$labelRequired = '';
+	if ( $fieldDefinitions['required'] === true ) {
+		$required      = ' required';
+		$labelRequired = ' *';
+	}
+	$input           = $fieldDefinitions['input'] ?? 'text';
+	$fieldValue      = get_post_meta( $order->ID, $fieldName, true );
+	$attributes      = '';
+	$attributesArray = $fieldDefinitions['attributes'] ?? [];
+	foreach ( $attributesArray as $attributeKey => $attributeValue ) {
+		if ( is_array( $attributeValue ) ) {
+			foreach ( $attributeValue as $key => $value ) {
+				$attributes .= " $attributeKey-$key";
+				if ( ! empty( $value ) ) {
+					$attributes .= "=\"$value\"";
+				}
+			}
+
+			continue;
+		}
+
+		$attributes .= " $attributeKey";
+		if ( ! empty( $attributeValue ) ) {
+			$attributes .= "=\"$attributeValue\"";
+		}
+	}
+	?>
+    <div class="form-group text">
+        <label for="<?php echo $fieldName; ?>"><?php echo $fieldDefinitions['label'] . $labelRequired; ?></label>
+		<?php if ( $input === 'text' ): ?>
+            <input id="<?php echo $fieldName; ?>" class="form-control" type="text"
+                   name="<?php echo $fieldName; ?>"
+                   value="<?php echo $fieldValue; ?>"<?php echo $required; ?><?php echo $attributes; ?>>
+
+		<?php elseif ( $input === 'select' ): ?>
+            <select id="status" name="status" class="form-control">
+				<?php foreach ( $fieldDefinitions['options'] as $key => $value ): ?>
+                    <option<?php echo( $fieldValue === $key ? ' selected' : '' ); ?>
+                            value="<?php echo $key; ?>">
+						<?php echo $value; ?>
+                    </option>
+				<?php endforeach; ?>
+            </select>
+		<?php endif; ?>
+    </div>
+<?php endforeach; ?>

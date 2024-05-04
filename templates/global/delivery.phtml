@@ -1,0 +1,108 @@
+<?php
+	$storageDeliveryDate = get_post_meta( get_the_ID(), 'storage_delivery', true ) ;
+	$currentStorageDeliveryDate = date( "d.m.Y", strtotime($storageDeliveryDate)); ?>
+
+<!-- Popperjs -->
+<script src="/wp-content/themes/swb/angebote/popper.min.js"
+        crossorigin="anonymous"></script>
+<!-- Tempus Dominus JavaScript -->
+<script src="/wp-content/themes/swb/angebote/tempus-dominus.js"
+        crossorigin="anonymous"></script>
+<!-- Tempus Dominus Styles -->
+<link href="/wp-content/themes/swb/angebote/tempus-dominus.css"
+      rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<script>
+  let datePickers = {};
+</script>
+
+<div class="row">
+	<div class="col-8 offset-2">
+		<?php if ( $storageDeliveryDate ) : ?>
+			<div class="order-card card card-finished-appointment mb-3">
+				<div class="card-title">
+					Ausgewählter Speicher Versandtermin<br>
+				</div>
+				<div class="card-body">
+					Speicher Versandtermin: <?php echo $currentStorageDeliveryDate;?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<label>Speicher Versandtermin auswählen <span style="color:red;">Bei jeder Speicherung/Änderung wird der Kunde per E-Mail benachrichtigt.</span></label>
+<?php /* TODO Remove inline styling */?>
+		<div class="form-group date text mb-3">
+			<label for="storage_delivery">Speicher Versandtermin</label>
+			<input style="background: #fff!important; opacity: 1!important" class="form-control" type="text" value="" name="storage_delivery" id="storage_delivery" autocomplete="off">
+		</div>
+	</div>
+</div>
+
+	<script>
+      jQuery(document).ready(function () {
+        let today = new Date();
+        let tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1)
+
+        datePickers.storage_delivery = new tempusDominus.TempusDominus(document.getElementById('storage_delivery'), {
+          localization: {
+            today: 'Heute',
+            clear: 'Auswahl löschen',
+            close: 'Auswahlbox schließen',
+            selectMonth: 'Monat wählen',
+            previousMonth: 'Letzter Montat',
+            nextMonth: 'Nächster Monat',
+            selectYear: 'Jahr wählen',
+            previousYear: 'Letztes Jahr',
+            nextYear: 'Nächstes Jahr',
+            selectDecade: 'Jahrzehnt wählen',
+            previousDecade: 'Letztes Jahrzent',
+            nextDecade: 'Nächstes Jahrzent',
+            previousCentury: 'Letztes Jahrhundert',
+            nextCentury: 'Nächstes Jahrhundert',
+            pickHour: 'Stunde wählen',
+            incrementHour: 'Stunde erhöhen',
+            decrementHour: 'Stunde verringern',
+            pickMinute: 'Minute wählen',
+            incrementMinute: 'Minute erhöhen',
+            decrementMinute: 'Minute verringern',
+            pickSecond: 'Sekunde wählen',
+            incrementSecond: 'Sekunde erhöhen',
+            decrementSecond: 'Sekunde verringern',
+            toggleMeridiem: 'Tageszeit umschalten',
+            selectTime: 'Zeit wählen',
+            selectDate: 'Datum wählen',
+            dayViewHeaderFormat: {month: 'long', year: '2-digit'},
+            locale: 'de',
+            startOfTheWeek: 1
+          },
+          restrictions: {
+            //minDate: tomorrow,
+          },
+          display: {
+            viewMode: 'calendar',
+            keepOpen: false,
+            components: {
+              decades: true,
+              year: true,
+              month: true,
+              date: true,
+              hours: false,
+              minutes: false,
+              seconds: false,
+            },
+            icons: {
+              time: 'bi bi-clock',
+              date: 'bi bi-calendar',
+              up: 'bi bi-arrow-up',
+              down: 'bi bi-arrow-down',
+              previous: 'bi bi-chevron-left',
+              next: 'bi bi-chevron-right',
+              today: 'bi bi-calendar-check',
+              clear: 'bi bi-trash',
+              close: 'bi bi-x',
+            }
+          }
+        });
+      });
+	</script>

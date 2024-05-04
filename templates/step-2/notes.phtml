@@ -1,0 +1,6 @@
+<div class="my-1 mt-2"><label>Anmerkungen</label></div>
+<?php echo get_post_meta( $order->ID, 'notes', true ); ?>
+<div class="form-group text">
+    <label for="notes">Anmerkungen</label>
+    <textarea id="notes" name="notes" class="form-control"></textarea>
+</div>

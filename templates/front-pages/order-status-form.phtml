@@ -1,0 +1,10 @@
+<h2>☀️ <br>Wie ist der aktuelle Status meiner PV Anlage?</h2>
+<form method="post" action="/auftragsstatus">
+	<div class="form-group text col-6 m-auto p-0">
+		<label for="zip">PLZ</label>
+		<input class="form-control" id="zip" name="zip" type="text"
+		       placeholder="Bitte geben Sie ihre PLZ an">
+	</div>
+	<input type="hidden" name="order-id" value="<?php echo $order->ID; ?>">
+	<button class="button button--primary" style="background: <?php echo $companyColor;?>;"><span>Status ansehen</span></button>
+</form>

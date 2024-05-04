@@ -1,0 +1,39 @@
+<?php
+$filter = 'defects';
+$title = 'Montage mit Mängel?';
+
+$orderID = $order->ID;
+?>
+
+<div class="container">
+	<?php if ( checkRoles( [ 'administrator', 'director', 'ac_project_manager', 'dc_project_manager' ] ) ): ?>
+		<?php include template( 'global/delivery' ); ?>
+	<?php endif;?>
+    <div class="row">
+	    <div class="col-8 offset-2">
+		    <?php include template( 'step-5/ac-appointment' ); ?>
+	    </div>
+        <div class="col-8 offset-2">
+			<?php include template( 'step-4/dc-appointment' ); ?>
+        </div>
+	    <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+					<?php include template( 'step-2/personal-and-contact-info' ); ?>
+                </div>
+                <div class="col-12 col-lg-6">
+					<?php include template( 'step-2/pv-and-offer-info' ); ?>
+                </div>
+            </div>
+
+            <div class="col-12">
+				<?php include template( 'global/notes' ); ?>
+            </div>
+            <div class="col-12">
+	            <?php include template( 'global/customer-notes' ); ?>
+            </div>
+        </div>
+    </div>
+	<?php include template( 'global/uploader' ); ?>
+	<?php view( 'global/defects', compact(['filter', 'orderID', 'title']) ); ?>
+</div>

@@ -1,0 +1,43 @@
+<?php
+$dateFormat  = get_option( 'date_format' );
+$registrationDate = get_post_meta( $order->ID, 'registration', true );
+$registrationDoneDate = get_post_meta( $order->ID, 'registrationDone', true );
+?>
+
+<tr>
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+	</td>
+	<td class="text-right">
+		<?php
+		$moduleID = get_post_meta($order->ID,'module', true);
+		$moduleQty = (int) get_post_meta($order->ID, 'moduleqty', true );
+		$modulePower = (int) get_post_meta($moduleID, 'typ', true);
+		$pvPower = $moduleQty * $modulePower / 1000;
+		echo number_format($pvPower, 2, ',','.');
+		?>
+		kwp
+	</td>
+
+	<td>
+		<?php if( $registrationDate && $registrationDate != 'registered' ) {
+			echo date("d.m.Y", strtotime($registrationDate));
+		} ?>
+	</td>
+		<?php if($step > 7) :?>
+	<td>
+		<?php if( $registrationDoneDate && $registrationDoneDate != 'registrationDone') {
+			echo date("d.m.Y", strtotime($registrationDoneDate));
+		} ?>
+	</td>
+		<?php endif;?>
+</tr>

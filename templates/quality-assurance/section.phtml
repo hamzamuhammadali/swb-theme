@@ -1,0 +1,27 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+
+?>
+
+<div class="row">
+    <div class="col-12">
+        <div class="dashboard__header">
+			<h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($orders);?>)</small></h1>
+        </div>
+	    <table>
+		    <thead>
+		    <tr>
+			    <th>Auftrag</th>
+			    <th>Vorname, Name</th>
+			    <th></th>
+		    </tr>
+		    </thead>
+		<?php
+			foreach ( $orders as $order ) {
+				include template( 'quality-assurance/row' );
+			}
+			?>
+	    </table>
+    </div>
+</div>

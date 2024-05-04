@@ -1,0 +1,77 @@
+<?php
+$technician  = '';
+$appointment = '';
+$dateFormat  = get_option( 'date_format' );
+
+if ( ! empty( get_post_meta( $order->ID, 'ac_technician', true ) ) ) {
+	$technician = get_post_meta( $order->ID, 'ac_technician', true );
+} else {
+	$technician = get_post_meta( $order->ID, 'dc_technician', true );
+}
+
+if ( ! empty( get_post_meta( $order->ID, 'ac_appointment', true ) ) ) {
+	$appointment = get_post_meta( $order->ID, 'ac_appointment', true );
+} else {
+	$appointment = get_post_meta( $order->ID, 'dc_appointment', true );
+}
+
+$moduleOrdered = false;
+$storageOrdered = false;
+
+if(get_post_meta($order->ID, 'module-ordered', true) > 0) {
+	$moduleOrdered = true;
+}
+
+if(get_post_meta($order->ID, 'storage-ordered', true) > 0) {
+	$storageOrdered = true;
+}
+
+
+?>
+
+<tr>
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'lastName', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'firstName', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'street', true ) . ' ' . get_post_meta( $order->ID, 'houseNumber', true ) . ', ' . get_post_meta( $order->ID, 'zip', true ) . ' ' . get_post_meta( $order->ID, 'city', true ) ?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'phoneNumber', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'mobileNumber', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'emailAddress', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( get_post_meta( $order->ID, 'storage', true ), 'name', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( get_post_meta( $order->ID, 'module', true ), 'pvmoduleid', true );?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'moduleqty', true  );?>
+	</td>
+	<td>
+		<?php echo date_i18n( $dateFormat, strtotime($appointment));?>
+	</td>
+	<td class="price">
+		<?php echo number_format(get_post_meta( $order->ID, 'totalExcl', true  ), '2', ',', '.');?> €
+	</td>
+	<td class="sticky">
+		<input class="ordered-checkbox" type="checkbox" data-meta="module-ordered" data-id="<?php echo $order->ID;?>" <?php echo $moduleOrdered ? 'checked' : ''; ?>>
+	</td>
+	<td class="sticky">
+		<input class="ordered-checkbox" type="checkbox" data-meta="storage-ordered" data-id="<?php echo $order->ID;?>" <?php echo $storageOrdered ? 'checked' : ''; ?>>
+	</td>
+</tr>

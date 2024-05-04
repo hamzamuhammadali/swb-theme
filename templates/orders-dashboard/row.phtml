@@ -1,0 +1,46 @@
+<?php
+$dateFormat  = get_option( 'date_format' );
+$dcDate = get_post_meta( $order->ID, 'dc_appointment', true );
+$seller      = getSellerName( $order );
+$billed = false;
+if(get_post_meta($order->ID, 'billed', true) > 0) {
+	$billed = true;
+}
+
+$marginString = get_post_meta($order->ID, 'module', true). ';'.get_post_meta($order->ID, 'moduleqty', true).';'.get_post_meta($order->ID, 'storage', true);
+?>
+
+<tr class="d-flex-light <?php echo $billed ? ' order-last' : '' ;?>" style="width: 100%">
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo $seller;?>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>,
+		<?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+	</td>
+	<td>
+		<?php echo date("d.m.Y", strtotime($dcDate)); ?>
+	</td>
+	<?php if(checkRoles('administrator')):
+		$margin = '';
+		if(($getMargin = getMargin($marginString)) && get_post_meta($order->ID, 'storage', true)) {
+			$originalPrice = floatval(str_replace(',', '.', $getMargin));
+			$soldPrice = floatval(get_post_meta($order->ID, 'totalIncl', true));
+
+			$margin = number_format($soldPrice - $originalPrice, 2, ',', '.');
+		}
+		?>
+	<td>
+		<?php echo $margin; ?>
+	</td>
+	<?php endif; ?>
+	<td>
+		<input type="checkbox" class="billed-checkbox" data-id="<?php echo $order->ID;?>" <?php echo $billed ? 'checked' : ''; ?>>
+	</td>
+</tr>

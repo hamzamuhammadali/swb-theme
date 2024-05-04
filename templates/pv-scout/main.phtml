@@ -1,0 +1,58 @@
+<?php
+
+$firstBilling  = get_post_meta( $order->ID, 'first-billing', true );
+$secondBilling = get_post_meta( $order->ID, 'second-billing', true );
+
+$allowFirstBilling  = $step > 4;
+$allowSecondBilling = $step > 6;
+
+$allowActions = ( (int) $step > 4 && empty( $firstBilling ) ) || ( (int) $step > 6 && empty( $secondBilling ) );
+
+?>
+<?php include template( 'global/header' ); ?>
+<div class="project__controlling">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                <div class="row relative">
+                    <div class="col-12">
+						<?php include template( 'step-4/dc-appointment' ); ?>
+                    </div>
+					<?php if ( $allowFirstBilling && ! empty( $firstBilling ) ): ?>
+                        <div class="order-card card controlling-card">
+                            <div class="card-body">
+                                In Rechnung gestellt am <?php echo $firstBilling; ?>
+                            </div>
+                        </div>
+					<?php endif; ?>
+                </div>
+                <div class="row relative">
+                    <div class="col-12">
+						<?php include template( 'step-6/ac-appointment' ); ?>
+                    </div>
+					<?php if ( $allowSecondBilling && ! empty( $secondBilling ) ): ?>
+                        <div class="order-card card controlling-card">
+                            <div class="card-body">
+                                In Rechnung gestellt am <?php echo $secondBilling; ?>
+                            </div>
+                        </div>
+					<?php endif; ?>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+						<?php include template( 'step-2/personal-and-contact-info' ); ?>
+                    </div>
+                    <div class="col-6">
+						<?php include template( 'step-2/pv-and-offer-info' ); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+						<?php include template( 'global/notes' ); ?>
+                    </div>
+                </div>
+	            <?php include template( 'global/uploader' ); ?>
+            </div>
+        </div>
+    </div>
+</div>

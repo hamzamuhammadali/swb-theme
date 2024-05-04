@@ -1,0 +1,708 @@
+name;speicher;leistung;lat;long
+Öhringen;SENEC Home V2.1 - 5.0 kWh;5.25;49.20671549999999;9.520057200000002
+Wolferstadt;SENEC Home V2.1 - 7.5 kWh;7.125;48.90664719999999;10.7765397
+Altenmünster;SENEC Home V2.1 - 5.0 kWh;7.5;48.4638933;10.5886399
+Steinheim an der Murr;SENEC Home V2.1 - 5.0 kWh;3.75;48.9691889;9.276239700000001
+Calw;SENEC Home V3 hybrid -5.0 kWh;4.5;48.7215745;8.7177385
+Hartenstein;SENEC Home V2.1 - 5.0 kWh;4.5;49.5967;11.5249764
+Weitingen;SENEC Home V2.1 - 5.0 kWh;6;48.45974529999999;8.7932588
+Eningen;SENEC Home V2.1 - 5.0 kWh;6.75;48.4757988;9.2759206
+Penzing;SENEC Home V2.1 - 2.5 kWh;5.625;48.0894467;10.9144103
+Lauchheim;SENEC Home V2.1 - 5.0 kWh;6;48.8713499;10.2432861
+Grafenau;SENEC Home V3 hybrid -5.0 kWh;6.75;48.8468995;13.4080212
+Trebgast;SENEC Home V3 hybrid -5.0 kWh;6.75;50.06585150000001;11.5520426
+Öhringen;SENEC Home V3 hybrid -7.5 kWh;6.375;49.20671549999999;9.520057200000002
+Windsbach;SENEC Home V3 hybrid dou - 10 kWh;11.625;48.9516022;10.8937048
+Mühlacker;SENEC Home V3 hybrid -5.0 kWh;5.25;48.9335965;8.8605125
+Kohlberg;SENEC Home V2.1 - 2.5 kWh;6.75;49.6090498;12.0196638
+Wüstenrot;SENEC Home V3 hybrid dou - 7.5 kWh;19.5;49.0805879;9.460584500000001
+Wiesentthal;SENEC Home V2.1 - 7.5 kWh;7.5;49.811649;11.2477637
+Wiernsheim;SENEC Home V3 hybrid -5.0 kWh;4.5;48.8865846;8.8777568
+Geiselhöring;SENEC Home V3 hybrid -5.0 kWh;5.25;48.8290596;12.3939088
+Trochtelfingen;SENEC Home V2.1 - 2.5 kWh;3;48.3149305;9.273895
+Brackenheim;SENEC Home V3 hybrid -5.0 kWh;5.25;49.0785978;9.0871344
+Sonnenbühl;SENEC Home V3 hybrid -2.5 kWh;3.75;48.3816954;9.1941993
+Bernried;SENEC Home V2.1 - 10 kWh;19.5;48.918223;12.8832724
+Ilshofen;SENEC Home V3 hybrid -5.0 kWh;5.25;49.1522704;9.9214447
+Straubing;SENEC Home V3 hybrid -5.0 kWh;4.5;48.8777333;12.5801538
+Neustetten;SENEC Home V3 hybrid -5.0 kWh;5.25;48.48212849999999;8.8828582
+Satteldorf;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;49.1785053;10.0891545
+Kornwestheim;RCT POWER BATTERY DC 5.7;6.75;48.8629127;9.178473
+Leonberg;RCT POWER BATTERY DC 5.7;6;48.8011637;8.997988
+Bobingen;SENEC Home V3 hybrid -2.5 kWh;6.75;48.2831997;10.7807733
+Straubing;SENEC Home V2.1 - 5.0 kWh;7.5;48.8777333;12.5801538
+Kirchheim;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;48.21008639999999;13.3586777
+Gräfelfing;SENEC Home V3 hybrid -5.0 kWh;6;48.1227429;11.4340549
+Muhr am See;SENEC Home V2.1 - 10 kWh;12.75;49.1554104;10.7112472
+Nagold;RCT POWER BATTERY DC 5.7;8.25;48.5294345;8.7217053
+Halbergmoos;SENEC Home V3 hybrid -5.0 kWh;5.25;48.3094709;11.7391141
+Bayerbach;SENEC Home V2.1 - 5.0 kWh;5.25;48.4105903;13.1436602
+Rosenheim;SENEC Home V3 hybrid dou - 10 kWh;12;47.8298923;12.0915279
+Lohberg;SENEC Home V2.1 - 5.0 kWh;6;49.17576589999999;13.1049924
+Gilching;SENEC Home V2.1 - 5.0 kWh;7.5;48.1092285;11.2899694
+Bretzfeld;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.1732759;9.430312299999999
+Starnberg;SENEC Home V2.1 - 7.5 kWh;7.5;47.9999615;11.3390089
+Wemding;SENEC Home V2.1 - 7.5 kWh;9.75;48.8764566;10.7185281
+Geislingen;SENEC Home V2.1 - 7.5 kWh;4.875;48.62151619999999;9.8294482
+Zell;SENEC Home V2.1 - 5.0 kWh;6.75;35.4213103;-97.57347829999999
+Waiblingen;SENEC Home V3 hybrid -5.0 kWh;4.5;48.8221273;9.3068191
+Amerang;SENEC Home V3 hybrid -10 kWh;20.25;48.0025909;12.3056922
+Blaibach;SENEC Home V2.1 - 5.0 kWh;7.5;49.1673675;12.8078414
+Schmidgaden;SENEC Home V2.1 - 5.0 kWh;5.625;49.4237731;12.0915647
+Heroldstatt;SENEC Home V3 hybrid -5.0 kWh;7.875;48.4464496;9.668558899999999
+Schwäbisch Hall;SENEC Home V2.1 - 5.0 kWh;6;49.1124645;9.7372649
+Reutlingen;SENEC Home V3 hybrid -7.5 kWh;7.125;48.4857924;9.15179
+Möckmühl;SENEC Home V2.1 - 5.0 kWh;6.75;49.32297070000001;9.349579
+Garmisch-Partenkirchen;SENEC Home V3 hybrid -5.0 kWh;6;47.4820569;11.102979
+Laufen;SENEC Home V2.1 - 5.0 kWh;6;47.92388829999999;12.8783479
+Simbach am Inn;SENEC Home V3 hybrid -5.0 kWh;6;48.2910584;13.0211909
+Stuttgart;SENEC Home V3 hybrid dou - 10 kWh;13.125;48.7571316;9.251176100000002
+Heroldstatt;SENEC Home V3 hybrid -5.0 kWh;6.375;48.4464496;9.668558899999999
+Bad Feilnbach;SENEC Home V2.1 - 5.0 kWh;7.5;47.79960519999999;11.9995045
+Vilseck;SENEC Home V3 hybrid dou - 10 kWh;16.5;49.611322;11.7991667
+Pullach;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;48.05745040000001;11.519143
+Penzberg;SENEC Home V2.1 - 2.5 kWh;3;47.75612;11.3698021
+Hauzenberg;SENEC Home V2.1 - 7.5 kWh;6;48.6546072;13.6483247
+Bodelshausen;SENEC Home V2.1 - 7.5 kWh;7.875;48.39935209999999;8.9717548
+Amstetten;RCT POWER BATTERY DC 11.5;9.75;48.5761394;9.8741922
+Bad Abbach;SENEC Home V2.1 - 5.0 kWh;6;48.92672770000001;12.0550586
+Leonberg;SENEC Home V3 hybrid dou - 10 kWh;30;48.8011637;8.997988
+Gammertingen;SENEC Home V3 hybrid dou - 5.0 kWh;12.75;48.2562276;9.2546176
+Dornham;RCT POWER BATTERY DC 9.6;10.125;48.35275439999999;8.5292998
+Rohrdorf;SENEC Home V2.1 - 5.0 kWh;5.25;47.7999471;12.1841456
+Pentling;SENEC Home V2.1 - 5.0 kWh;6;48.961639;12.0633115
+Großbottwar;SENEC Home V2.1 - 5.0 kWh;5.625;49.0009091;9.2966725
+Dorfen;SENEC Home V2.1 - 5.0 kWh;5.25;48.2941802;12.1726993
+Griesstätt;SENEC Home V3 hybrid dou - 7.5 kWh;11.25;47.9934054;12.179205
+Urbach;SENEC Home V2.1 - 5.0 kWh;4.5;48.8141887;9.5802909
+Theisseil;SENEC Home V2.1 - 7.5 kWh;9;49.6901649;12.2269623
+Großkarolinenfeld;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;47.8927777;12.0657836
+Herolstatt;SENEC Home V3 hybrid -5.0 kWh;6.375;48.4464496;9.668558899999999
+Neckartenzlingen;SENEC Home V2.1 - 10 kWh;14.25;48.5845245;9.2414082
+Tuntenhausen;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;47.9392057;12.0064334
+Grafenberg;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.566933;9.3027667
+Offenburg;SENEC Home V3 hybrid dou - 5.0 kWh;10.125;48.4717525;7.9214075
+Lorch;RCT POWER BATTERY DC 9.6;10.5;48.79648599999999;10.0311214
+Höchstadt;SENEC Home V2.1 - 5.0 kWh;5.25;49.7095692;10.8128359
+Lauf/Simonshofen;SENEC Home V2.1 - 2.5 kWh;6;49.5504562;11.2661915
+Rudersberg;SENEC Home V2.1 - 10 kWh;40.5;48.88474979999999;9.5303744
+Böblingen;RCT POWER BATTERY DC 5.7;6;48.6802429;9.055195
+Großhabersdorf;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.4040529;10.7882216
+Raubling;SENEC Home V3 hybrid dou - 7.5 kWh;11.625;47.7915891;12.075049
+Erding;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;48.31025289999999;11.925775
+Gunzenhausen;SENEC Home V2.1 - 5.0 kWh;6;49.1200802;10.7318864
+Wüstenrot;SENEC Home V2.1 - 5.0 kWh;5.25;49.0805879;9.460584500000001
+Wegscheid;SENEC Home V2.1 - 7.5 kWh;7.5;48.6005902;13.7859017
+Germering;SENEC Home V3 hybrid dou - 10 kWh;28.125;48.13169389999999;11.3556855
+Sonnenbühl;SENEC Home V2.1 - 7.5 kWh;8.25;48.3816954;9.1941993
+Tacherting;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.08740830000001;12.4966963
+Weyarn;SENEC Home V2.1 - 5.0 kWh;5.625;47.8536282;11.818675
+Wildberg;SENEC Home V2.1 - 5.0 kWh;6.75;48.63690940000001;8.7676952
+Steinheim;SENEC Home V3 hybrid -5.0 kWh;6;48.9691889;9.276239700000001
+Rimbach;SENEC Home V2.1 - 10 kWh;11.25;49.21891549999999;12.7624236
+Inning;SENEC Home V2.1 - 5.0 kWh;5.25;48.3473562;12.0749164
+Adelsheim;SENEC Home V2.1 - 5.0 kWh;9;49.3806923;9.3950868
+Wolfratshausen;SENEC Home V3 hybrid dou - 10 kWh;12;47.9139845;11.4245772
+Freilassing;SENEC Home V3 hybrid dou - 10 kWh;23.625;47.8480123;12.9707896
+Neutraubling;SENEC Home V3 hybrid -5.0 kWh;6;48.9868682;12.2107043
+Großkarolinenfeld;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;47.8927777;12.0657836
+Schorndorf;10.2 kWh Fenecon Pro Hybrid 10;11.625;48.778341;9.531029499999999
+Dinkelsbühl;SENEC Home V3 hybrid -10 kWh;15.75;49.0765217;10.3166484
+Lenningen;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;48.5552959;9.468307300000001
+Kohlberg;RCT POWER BATTERY DC 7.6;12.75;48.56153;9.343196599999999
+Schwabach;SENEC Home V3 hybrid -7.5 kWh;8.25;49.3288905;11.0244827
+Burk;SENEC Home V3 hybrid -5.0 kWh;9.75;49.1333391;10.478917
+Mengkofen;SENEC Home V3 hybrid -5.0 kWh;6.75;48.7203181;12.4410484
+Prutting;SENEC Home V3 hybrid dou - 10 kWh;10.5;47.88473930000001;12.1879056
+Donzdorf;SENEC Home V3 hybrid -5.0 kWh;6;48.6845738;9.8067932
+Schwäbisch Gmund;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;48.8321222;9.8173747
+Bitz;RCT POWER BATTERY DC 11.5;17.25;48.2441316;9.0926542
+Schönaich;RCT POWER BATTERY DC 5.7;5.625;48.6595376;9.061313
+Calw;SENEC Home V3 hybrid dou - 10 kWh;18;48.7215745;8.7177385
+Pliezhausen;SENEC Home V3 hybrid -2.5 kWh;4.5;48.5618552;9.2020103
+Lichtenstein;SENEC Home V3 hybrid -5.0 kWh;6;48.41692339999999;9.2565695
+Wiesenfelden;SENEC Home V3 hybrid -2.5 kWh;3.75;49.03795299999999;12.5419996
+Wüstenrot;SENEC Home V3 hybrid -5.0 kWh;7.5;49.0805879;9.460584500000001
+Aschau;SENEC Home V3 hybrid dou - 7.5 kWh;10.5;47.7805396;12.3243816
+Forchheim;SENEC Home V3 hybrid dou - 7.5 kWh;12;49.7248791;11.0758372
+Inzell;SENEC Home V3 hybrid dou - 7.5 kWh;10.5;47.7740484;12.7829992
+Nördlingen;SENEC Home V3 hybrid -2.5 kWh;4.5;48.8561015;10.4992165
+Aalen;SENEC Home V3 hybrid -5.0 kWh;6;48.870622;10.0233878
+Feuchtwangen;SENEC Home V3 hybrid -5.0 kWh;4.5;49.1666761;10.3365884
+Stuttgart;SENEC Home V3 hybrid -5.0 kWh;5.25;48.7226206;9.1584836
+Waldkirchen;SENEC Home V3 hybrid -5.0 kWh;5.625;48.7291338;13.6009117
+Losburg;SENEC Home V3 hybrid -5.0 kWh;6;48.3975208;8.4676042
+Sindelsdorf;SENEC Home V3 hybrid dou - 10 kWh;9.75;47.7232835;11.3324576
+Wurmsham;SENEC Home V3 hybrid -2.5 kWh;3.75;48.3535019;12.3260944
+Aurach;SENEC Home V3 hybrid -7.5 kWh;12;49.2464705;10.4153966
+Traunreuth;SENEC Home V3 hybrid -5.0 kWh;6;47.9527301;12.5768605
+Hahnbach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.526685;11.8185218
+Wasserburg;SENEC Home V3 hybrid dou - 10 kWh;11.625;48.0547345;12.1954235
+Neuendettelsau;SENEC Home V2.1 - 5.0 kWh;7.875;49.298002;10.8002858
+Schnaittenbach;SENEC Home V2.1 - 7.5 kWh;7.5;49.543133;11.9989964
+Bruckmühl;SENEC Home V2.1 - 5.0 kWh;6.375;47.8760097;11.9399211
+Ireuchtlingen;SENEC Home V2.1 - 2.5 kWh;9.75;48.9516022;10.8937048
+Sulzbach-Rosenberg;SENEC Home V2.1 - 7.5 kWh;9.75;49.4969642;11.7554254
+Nittenau;SENEC Home V2.1 - 10 kWh;9.75;49.1951228;12.2680695
+Balingen;SENEC Home V2.1 - 7.5 kWh;9;48.26782679999999;8.8545505
+Hiltpoltstein;SENEC Home V3 hybrid dou - 10 kWh;9.75;49.66062429999999;11.3201534
+Groberstätt;SENEC Home V3 hybrid -5.0 kWh;5.25;42.7294963;-114.7503405
+Stuttgart;SENEC Home V2.1 - 7.5 kWh;7.5;48.84112649999999;9.197113
+Heuchling;SENEC Home V2.1 - 7.5 kWh;6.75;49.5195207;11.2891148
+Sindelfingen;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.70781059999999;8.9618345
+Halfing;SENEC Home V3 hybrid -5.0 kWh;7.5;47.9505034;12.2762256
+Nürnberg;SENEC Home V3 hybrid -5.0 kWh;7.5;49.3715268;11.0785899
+Rimsting;SENEC Home V3 hybrid -2.5 kWh;3;47.8795879;12.3377801
+Hahnbach;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.526685;11.8185218
+Aurach;SENEC Home V3 hybrid -5.0 kWh;4.5;49.2464705;10.4153966
+Leonberg;SENEC Home V3 hybrid -2.5 kWh;4.5;48.8011637;8.997988
+Wurmannsquick;SENEC Home V3 hybrid -2.5 kWh;3.75;48.3524189;12.7870174
+Eggenfelden;SENEC Home V3 hybrid dou - 7.5 kWh;6;48.403296;12.7469045
+Weilheim an der Teck;SENEC Home V3 hybrid dou - 7.5 kWh;8.625;48.61452509999999;9.5529025
+Breitbrunn am Chiemsee;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;47.8895151;12.3975442
+Sulzbach-Rosenberg;SENEC Home V3 hybrid -5.0 kWh;4.5;49.4969642;11.7554254
+Gräfenburg;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.6446609;11.2467331
+Teublitz;SENEC Home V3 hybrid -2.5 kWh;3.75;49.220674;12.0848844
+Essingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.79648599999999;10.0311214
+Oberasbach;SENEC Home V2.1 - 5.0 kWh;6;49.4325206;10.9711906
+Langdorf;SENEC Home V3 hybrid dou - 10 kWh;18;49.0119283;13.1478318
+Herrenberg;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.5879291;8.879328
+Treuchtlingen;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;48.9516022;10.8937048
+Burgoberbach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.2369601;10.5923182
+Gomaringen;SENEC Home V3 hybrid -5.0 kWh;6;48.4548729;9.097284799999999
+Reutlingen;SENEC Home V3 hybrid -5.0 kWh;4.5;48.5373555;9.2004305
+Litzendorf;SENEC Home V3 hybrid -7.5 kWh;7.5;49.9122463;11.0092999
+Frauenneuharting;SENEC Home V3 hybrid -5.0 kWh;6;48.0385059;12.0474706
+Böblingen;SENEC Home V3 hybrid dou - 10 kWh;16.5;48.82173909999999;9.916113099999999
+Schwäbisch Gmünd;SENEC Home V2.1 - 7.5 kWh;9;48.8321222;9.8173747
+Gerlingen;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.7908056;9.0651574
+Brennberg;SENEC Home V3 hybrid -5.0 kWh;7.5;49.07210480000001;12.3952311
+Wangen im Allgäu;SENEC Home V3 hybrid dou - 10 kWh;11.25;47.6894006;9.8206437
+Breitengüßbach;SENEC Home V3 hybrid -5.0 kWh;6.75;49.9741688;10.9067044
+Pfarrkirchen;SENEC Home V3 hybrid -2.5 kWh;3.75;48.4406719;12.9545287
+Gaibach;SENEC Home V3 hybrid dou - 10 kWh;10.5;49.8896689;10.2259596
+Deggendorf;SENEC Home V3 hybrid dou - 2.5 kWh;6;48.8456799;12.9779283
+Ornban;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;49.1768268;10.6568278
+Nittenau;SENEC Home V3 hybrid dou - 10 kWh;19.875;49.1951228;12.2680695
+Krailling;SENEC Home V3 hybrid dou - 5.0 kWh;6.375;48.1073175;11.3983182
+Burladingen;SENEC Home V3 hybrid -2.5 kWh;3.75;48.2984526;9.1038503
+Wendlingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.875;48.6683805;9.390932399999999
+Aaalen;SENEC Home V3 hybrid dou - 10 kWh;12;48.8708148;10.1100905
+Metten;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.8562416;12.9130877
+Gaißach;SENEC Home V3 hybrid dou - 7.5 kWh;5.25;47.7473113;11.5800801
+Kirchheim;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.6425125;9.459418399999999
+Neukirchen;SENEC Home V3 hybrid dou - 5.0 kWh;6;49.2536704;13.0014291
+Bischofswiesen;SENEC Home V3 hybrid -5.0 kWh;4.875;47.6506828;12.964987
+Gaißach;SENEC Home V3 hybrid -2.5 kWh;3;47.7473113;11.5800801
+Metten;SENEC Home V3 hybrid -5.0 kWh;5.625;48.8562416;12.9130877
+Rott;SENEC Home V3 hybrid -5.0 kWh;6;47.9057527;10.970934
+Puchersreuth;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.7703633;12.2082106
+Möckmühl;SENEC Home V3 hybrid -5.0 kWh;4.875;49.32297070000001;9.349579
+Übersee;SENEC Home V3 hybrid dou - 10 kWh;15.75;47.8218148;12.4830975
+Holzkirchen;SENEC Home V3 hybrid -5.0 kWh;4.5;47.8720967;11.6886436
+Rimbach;SENEC Home V3 hybrid dou - 10 kWh;9.75;49.2307235;12.8861304
+Tamm;Fenecon 5.1 kWh;5.25;48.9184019;9.1192232
+Reischach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.2919886;12.7259351
+Lantertal;SENEC Home V3 hybrid dou - 10 kWh;13.5;50.3431161;10.9687005
+Obertaufkirchen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.2609347;12.2799026
+Feldkirchen;SENEC Home V3 hybrid dou - 10 kWh;10.875;47.9098689;11.8440007
+Abtsgmünd;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.8910782;10.001692
+Puchheim;RCT POWER BATTERY DC 11.5;10.5;48.16322570000001;11.3421615
+Aidlingen;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.6884647;8.8855667
+Hattenhofen;SENEC Home V3 hybrid dou - 5.0 kWh;8.25;48.6691464;9.565006499999999
+Pfaffing;SENEC Home V3 hybrid -5.0 kWh;5.25;48.0543579;12.1090644
+Massing;SENEC Home V3 hybrid -5.0 kWh;4.125;48.3950459;12.6145132
+Unterensingen;SENEC Home V3 hybrid -2.5 kWh;3.75;48.6582827;9.3561166
+Furth im Wald;SENEC Home V3 hybrid -5.0 kWh;3.75;49.3101132;12.8387951
+Theisseil;SENEC Home V3 hybrid dou - 10 kWh;15;49.6901649;12.2269623
+Stephansposching;SENEC Home V3 hybrid dou - 10 kWh;15;48.8166422;12.80241
+Unterhaching;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;48.0650187;11.6175944
+Unterhaching;SENEC Home V3 hybrid -7.5 kWh;5.25;48.0650187;11.6175944
+Rott am Inn;SENEC Home V3 hybrid dou - 10 kWh;29.625;47.9849048;12.1307325
+München;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.10993209999999;11.52627
+Pliening;SENEC Home V3 hybrid dou - 10 kWh;30;48.1980575;11.7919377
+Hofkirchen;SENEC Home V3 hybrid dou - 7.5 kWh;15.75;48.67710779999999;13.1207808
+Ampfing;SENEC Home V3 hybrid -5.0 kWh;4.875;48.2582056;12.411694
+Wernau;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;48.6914602;9.417933999999999
+Filderstadt;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;48.6628873;9.209481799999999
+Stuttgart;SENEC Home V3 hybrid dou - 10 kWh;12;48.7758013;9.2529132
+Altdorf;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.5945556;9.2734854
+Kirchanschöring;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;47.9529523;12.834553
+Römerstein;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.4945876;9.5379487
+Griesingen;SENEC Home V3 hybrid dou - 10 kWh;11.25;48.26589509999999;9.7804436
+Remshalden;Fenecon 7.7kWh;9;48.8118534;9.432461
+Schirmitz;SENEC Home V3 hybrid dou - 10 kWh;13.5;49.6501168;12.169505
+Waldachtal;SENEC Home V3 hybrid -5.0 kWh;6.75;48.4904351;8.5709962
+Chieming;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;47.8948302;12.5369227
+Zirndorf;SENEC Home V3 hybrid -5.0 kWh;4.5;49.4428638;10.9613504
+Bad Tölz;SENEC Home V3 hybrid dou - 10 kWh;17.25;47.7614737;11.5651524
+Leutenbach;SENEC Home V3 hybrid -2.5 kWh;3.75;48.8876656;9.3925583
+Fürstenfeldbruck;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;48.17870689999999;11.23683
+Schopfloch;SENEC Home V3 hybrid -5.0 kWh;5.25;49.1204086;10.3054512
+Schopfloch;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;49.1204086;10.3054512
+Niederwinkling;SENEC Home V3 hybrid dou - 5.0 kWh;6.375;48.8720648;12.7902505
+Raubling;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;47.7915891;12.075049
+Haigerloch;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.3715775;8.8114911
+Kreßberg;SENEC Home V3 hybrid dou - 10 kWh;9.75;49.13075749999999;10.1843338
+Wolfsegg;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.1013557;12.0007019
+Au in der Hallertau;SENEC Home V3 hybrid -2.5 kWh;4.5;48.5555434;11.7086836
+Obertaufkirchen;SENEC Home V3 hybrid -5.0 kWh;5.25;48.2609347;12.2799026
+Obernzenn;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.4497965;10.4661952
+Thalmassing;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.8961307;12.1506961
+Wendelstein;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.3447047;11.1695549
+Ihrlerstein;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.9345588;11.8667835
+Immendingen;SENEC Home V3 hybrid dou - 7.5 kWh;7.125;47.9375825;8.726819899999999
+Wangen;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;47.6894006;9.8206437
+Altfrauenhofen;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;48.4487019;12.1677931
+Griesstätt;SENEC Home V3 hybrid dou - 10 kWh;10.5;47.9934054;12.179205
+Plüderhausen;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.79721019999999;9.6086365
+Weil im Schönbuch;SENEC Home V3 hybrid -2.5 kWh;3.75;48.613717;9.0657204
+Korental-Münchingen;SENEC Home V3 hybrid dou - 5.0 kWh;9.375;48.8491293;9.096806299999999
+Neuhausen;SENEC Home V3 hybrid dou - 10 kWh;11.25;48.8042035;8.7624661
+Stuttgart;SENEC Home V3 hybrid -2.5 kWh;4.5;48.8130331;9.1044082
+Bad Wurzach;SENEC Home V3 hybrid dou - 10 kWh;16.5;47.912941;9.8860321
+Prutting;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;47.88473930000001;12.1879056
+Kolbermoor;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;47.8393784;12.0494534
+Rot an der Rot;SENEC Home V3 hybrid -2.5 kWh;4.5;47.992684;10.0031542
+Bechhofen;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;49.1763868;10.5664345
+Hagnau;LG AKKU ESS 10kWh;10.125;47.6752771;9.3185259
+Hagnau;LG AKKU ESS 10kWh;10.125;47.6752771;9.3185259
+Winzer;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.7236133;13.0763535
+Kühnhardt;SENEC Home V3 hybrid dou - 10 kWh;20.625;49.1559821;10.254044
+München;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.1091485;11.6463656
+Schliersee;SENEC Home V3 hybrid dou - 7.5 kWh;10.875;47.7349645;11.8625291
+Langquaid;SENEC Home V3 hybrid -5.0 kWh;5.625;48.8226594;12.0514411
+Waltenhofen;SENEC Home V3 hybrid -5.0 kWh;3;47.6505288;10.2616184
+Vogt;SENEC Home V3 hybrid dou - 5.0 kWh;10.125;47.7760133;9.767499599999999
+Ko-Münchingen;SENEC Home V3 hybrid dou - 10 kWh;6;48.8491293;9.096806299999999
+Nordendorf;RCT POWER BATTERY DC 5.7;6;48.5950482;10.8326744
+gerlingen;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.7908056;9.0651574
+Grafenau;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;48.8468995;13.4080212
+Kolbermoor;SENEC Home V3 hybrid -2.5 kWh;4.875;47.8393784;12.0494534
+Wald;SENEC Home V3 hybrid dou - 10 kWh;10.125;49.1473063;12.348578
+Neusitz;SENEC Home V3 hybrid dou - 10 kWh;12;49.3756464;10.2336475
+Tübingen;SENEC Home V3 hybrid dou - 7.5 kWh;12.375;48.4936788;9.052605999999999
+Holzkirchen;SENEC Home V3 hybrid -5.0 kWh;5.625;47.8720967;11.6886436
+Winnenden;RCT POWER BATTERY DC 11.5;11.25;48.8750046;9.397142299999999
+Schliersee;SENEC Home V3 hybrid dou - 7.5 kWh;12;47.7349645;11.8625291
+Brannenburg;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;47.73150589999999;12.0755412
+Ergoldsbach;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.6845665;12.2215127
+Göppingen;SENEC Home V3 hybrid dou - 5.0 kWh;10.125;48.6934063;9.637832
+Kirchroth;SENEC Home V3 hybrid dou - 5.0 kWh;7.875;48.95444699999999;12.5394407
+Waldstetten;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.75277639999999;9.8333164
+Hohenau;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;48.8498008;13.4889685
+Winzer;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.7236133;13.0763535
+Nordendorf;RCT POWER BATTERY DC 5.7;6;48.5950482;10.8326744
+Teisendorf;SENEC Home V3 hybrid dou - 10 kWh;9;47.8584746;12.8349356
+Ettenstatt;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;49.0662646;11.0537266
+Gerlingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;48.7908056;9.0651574
+Stuttgart;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;48.8130331;9.1044082
+Deggingen;SENEC Home V3 hybrid dou - 10 kWh;12.75;48.5980781;9.7227005
+Uhingen;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.71942010000001;9.5691887
+Blaubeuren;RCT POWER BATTERY DC 5.7;6.75;48.4017399;9.8013294
+Feucht;SENEC Home V3 hybrid dou - 5.0 kWh;6;49.3748517;11.2291112
+Siegenburg;SENEC Home V3 hybrid dou - 10 kWh;12.75;48.7536976;11.8485704
+Oberostendorf;SENEC Home V3 hybrid -5.0 kWh;5.625;47.9436562;10.7432697
+Rutesheim;E3DC S10 E 10.00 kWh;7.5;48.8114796;8.9308473
+Leonberg;SENEC Home V3 hybrid dou - 5.0 kWh;5.625;48.8011637;8.997988
+Au in der Hallertau;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.5555434;11.7086836
+Böblingen;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.6762593;8.9773145
+Ofterdingen;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.4203321;9.0317372
+Garching;SENEC Home V3 hybrid -5.0 kWh;5.25;48.2398824;11.630583
+Nagold;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.5294345;8.7217053
+Eislingen;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.7023247;9.7120357
+Obersulm;SENEC Home V3 hybrid -5.0 kWh;5.25;49.1356314;9.391606
+Winnenden;SENEC Home V3 hybrid dou - 10 kWh;10.5;48.8750046;9.397142299999999
+Icking;SENEC Home V3 hybrid dou - 7.5 kWh;11.25;47.9441316;11.4237607
+Eggstätt;SENEC Home V3 hybrid dou - 10 kWh;11.625;47.9339892;12.3819356
+Germering;SENEC Home V3 hybrid dou - 10 kWh;11.625;48.13169389999999;11.3556855
+Backnang;E3DC S10 E 10.00 kWh;8.25;48.9489037;9.433109
+Grattersdorf;SENEC Home V3 hybrid dou - 10 kWh;10.5;48.8044368;13.1518797
+Mainburg;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.6502315;11.7751605
+Pfrungen;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;47.8724778;9.3981546
+Egmating;SENEC Home V3 hybrid dou - 10 kWh;10.125;48.004597;11.7970066
+Langenzenn;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;49.48626729999999;10.7650387
+Harburg;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.7782454;10.6810807
+Schwanstetten;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;49.3007529;11.1217674
+Marzling;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.410253;11.7937314
+Frontenhausen;SENEC Home V3 hybrid dou - 7.5 kWh;6;48.5446789;12.5259481
+Böbingen;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.82173909999999;9.916113099999999
+Hohenlinden;SENEC Home V3 hybrid -5.0 kWh;5.25;48.15738;11.9966063
+Kaufbeuren;SENEC Home V3 hybrid dou - 10 kWh;21;47.8830175;10.625966
+Roßhaupten;SENEC Home V3 hybrid -5.0 kWh;5.25;47.6548697;10.7187438
+Stuttgart;SENEC Home V3 hybrid -7.5 kWh;5.25;48.7298143;9.099952199999999
+Schwieberdingen;SENEC Home V3 hybrid -2.5 kWh;3.75;48.8807971;9.0813174
+Ölbrunn;SENEC Home V3 hybrid dou - 5.0 kWh;8.25;48.9561517;8.7531415
+Aalen;SENEC Home V3 hybrid -5.0 kWh;4.875;48.82466729999999;10.172062
+Dormitz;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.5968703;11.1185255
+Ravensburg;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;47.7723014;9.547377
+Gruibingen;SENEC Home V3 hybrid dou - 7.5 kWh;6;48.5957839;9.641191
+Leutershausen;SENEC Home V3 hybrid -2.5 kWh;3.75;49.28554010000001;10.380519
+Putzbrunn;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.0861692;11.7054427
+Filderstadt;SENEC Home V3 hybrid -5.0 kWh;5.25;48.6628873;9.209481799999999
+Unterschleissheim;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.28411999999999;11.5672
+Grassau;SENEC Home V3 hybrid dou - 10 kWh;9;47.77835340000001;12.4518923
+Gottfrieding;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.6444878;12.542159
+Prine;SENEC Home V3 hybrid dou - 10 kWh;9.75;47.8561815;12.3490983
+Adelsheim;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;49.3806923;9.3950868
+Waldkirchen;SENEC Home V3 hybrid dou - 7.5 kWh;6;48.7291338;13.6009117
+Herrenberg;SENEC Home V3 hybrid -5.0 kWh;4.5;48.5879291;8.879328
+Freising;SENEC Home V3 hybrid dou - 7.5 kWh;6;48.3827885;11.7631748
+Eislingen;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.7023247;9.7120357
+Schwäbisch-Gmünd;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.8321222;9.8173747
+Neckartailfingen;RCT POWER BATTERY DC 5.7;6;48.6130381;9.2635661
+Korntal-Münschingen;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.8491293;9.096806299999999
+Siegenburg;SENEC Home V3 hybrid dou - 10 kWh;10.5;48.7536976;11.8485704
+Schwabach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.3288905;11.0244827
+Wittlensweiler;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.4709385;8.4482454
+Haar;SENEC Home V3 hybrid dou - 10 kWh;11.25;48.1138009;11.7301734
+Kirchheim;E3DC S10 E 10.00 kWh;10.5;48.6425125;9.459418399999999
+Fronreute (staigl);SENEC Home V3 hybrid dou - 7.5 kWh;9.75;47.8536644;9.6016797
+Waldkirchen;SENEC Home V3 hybrid -5.0 kWh;9;48.7291338;13.6009117
+Höhenkirchen;SENEC Home V3 hybrid dou - 10 kWh;6.75;48.0194894;11.7190903
+Starnberg;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;47.9999615;11.3390089
+Neusitz;SENEC Home V3 hybrid -5.0 kWh;5.25;49.3756464;10.2336475
+Donauwörth;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;48.7294382;10.7681167
+Diedorf;SENEC Home V3 hybrid dou - 5.0 kWh;6;48.3657937;10.7601848
+Freiberg am Neckar;RCT POWER BATTERY DC 5.7;6.75;48.9331891;9.188515299999999
+Neubeuern;SENEC Home V3 hybrid dou - 7.5 kWh;9;47.7800564;12.1416329
+Stuttgart;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.8096645;9.241519199999999
+Burgoberbach;SENEC Home V3 hybrid dou - 5.0 kWh;6;49.2369601;10.5923182
+Kirchheim;RCT POWER BATTERY DC 9.6;7.875;48.6425125;9.459418399999999
+D-Tal;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;47.7825657;9.3910438
+Neusitz;SENEC Home V3 hybrid -2.5 kWh;3.75;49.3756464;10.2336475
+Gersthofen;SENEC Home V3 hybrid dou - 10 kWh;12.75;48.4261235;10.8160577
+Kauernhofen;SENEC Home V3 hybrid dou - 10 kWh;20.25;49.7676295;11.0816873
+Jettingen;Fenecon 5.1 kWh;9;48.56952099999999;8.778521099999999
+Wendelstein;SENEC Home V3 hybrid -5.0 kWh;3.75;49.3447047;11.1695549
+Untermarchtal;RCT POWER BATTERY DC 11.5;9;48.2418012;9.6118682
+Raisting;SENEC Home V3 hybrid -5.0 kWh;4.875;47.9112932;11.1132586
+Garching;SENEC Home V3 hybrid -2.5 kWh;3;48.1338878;12.5806409
+Bad Salgau;SENEC Home V3 hybrid dou - 10 kWh;8.25;48.0147205;9.5002
+Mering;Fenecon 7.7kWh;8.625;48.2669806;11.0031575
+Pauschendorf;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;49.5257746;10.8307871
+Hauzenberg;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.6546072;13.6483247
+Falkenberg;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.4625117;12.7301465
+München;SENEC Home V3 hybrid -5.0 kWh;4.5;48.1461738;11.4370982
+Sachsen bei Ansbach;SENEC Home V3 hybrid dou - 10 kWh;10.5;49.288588;10.6613236
+Oberasbach;SENEC Home V3 hybrid dou - 7.5 kWh;7.125;49.4325206;10.9711906
+Kolbermoor;SENEC Home V3 hybrid -5.0 kWh;5.25;47.8483311;12.0611921
+Burgoberbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.2369601;10.5923182
+Obersüßbach;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.6099036;11.9441166
+Ostfildern;SENEC Home V3 hybrid -5.0 kWh;4.5;48.7145823;9.258490799999999
+Ostfildern;SENEC Home V3 hybrid -5.0 kWh;4.5;48.7145823;9.258490799999999
+Tettnang;SENEC Home V3 hybrid dou - 10 kWh;9;47.6460495;9.629923999999999
+Tettnang;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;47.6460495;9.629923999999999
+Untergriesbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.5751183;13.6681864
+Heiterbach;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.52831118493654;8.655785955670131
+Heiterbach;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.52831118493654;8.655785955670131
+Peiting;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;47.7878785;10.9268827
+Henfenfeld;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.5002822;11.3922923
+Schönaich;RCT POWER BATTERY DC 7.6;#WERT!;48.6595376;9.061313
+Schönaich;RCT POWER BATTERY DC 7.6;10.5;48.6595376;9.061313
+Aalen;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;48.82466729999999;10.172062
+Unterschwaningen;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.0945444;10.6221291
+Schlaitdorf;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.6045723;9.2244362
+Hochdorf;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.6971758;9.4713598
+Wolfratshausen;SENEC Home V3 hybrid dou - 10 kWh;29.625;47.9102296;11.4274164
+Ingolstadt;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.7913836;11.4379428
+Weil im Schönbuch;SENEC Home V3 hybrid -2.5 kWh;3.375;48.613717;9.0657204
+Pfronstetten;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.2776872;9.3606014
+Stadtbergen;RCT POWER BATTERY DC 11.5;12.75;48.3640898;10.831458
+Lenningen;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.5552959;9.468307300000001
+Biberach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.0951473;9.7901525
+Germering;SENEC Home V3 hybrid dou - 10 kWh;9;48.13169389999999;11.3556855
+Hattenhofen;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.6691464;9.565006499999999
+Bühlerzell;SENEC Home V3 hybrid -5.0 kWh;4.5;49.00228629999999;9.918505699999999
+Ingolstadt;SENEC Home V3 hybrid -7.5 kWh;6;48.7667395;11.4226498
+Hauzenberg;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.6546072;13.6483247
+Kaisheim;SENEC Home V3 hybrid -5.0 kWh;5.25;48.7710618;10.7576408
+Grafenau;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.7144885;8.9121197
+Hechingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.3581716;8.98394
+Rückerdorf;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;49.4976636;11.2428896
+Leutershausen;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.28554010000001;10.380519
+Spalt;SENEC Home V3 hybrid -5.0 kWh;6.375;49.18439189999999;10.9174324
+Adelsdorf;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.7001619;10.9022429
+Frankfurt;Alpha ESS Smile-HI10 7.8 kw/h;12.75;50.0975161;8.5906678
+Wolfratshausen;SENEC Home V3 hybrid -7.5 kWh;5.25;47.9139845;11.4245772
+Balingen;SENEC Home V3 hybrid -2.5 kWh;3.75;48.26782679999999;8.8545505
+Schönaich;SENEC Home V3 hybrid -5.0 kWh;6.375;48.6595376;9.061313
+Hechingen;SENEC Home V2.1 - 10 kWh;29.625;48.3581716;8.98394
+Hechingen;SENEC Home V3 hybrid dou - 7.5 kWh;7.125;48.3581716;8.98394
+Hauzenberg;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;48.6546072;13.6483247
+Meitingen;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.53890029999999;10.85298
+Tübingen;SENEC Home V3 hybrid -5.0 kWh;6.75;48.4936788;9.052605999999999
+Bogen;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.9200636;12.6814185
+München;SENEC Home V3 hybrid -5.0 kWh;4.5;48.13077939999999;11.490008
+Aichtal;SENEC Home V3 hybrid -5.0 kWh;4.5;48.62489739999999;9.241857399999999
+Burgoberbach;SENEC Home V3 hybrid dou - 10 kWh;19.875;49.2369601;10.5923182
+Trunkelsberg;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.0019107;10.2159846
+Hausham;SENEC Home V3 hybrid dou - 7.5 kWh;8.625;47.7579667;11.8243385
+Schwäbisch Gmünd;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;48.79376850000001;9.798885199999999
+Schönaich;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.6595376;9.061313
+Künzelsau;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;49.2841494;9.690929599999999
+Erdmannhausen;SENEC Home V3 hybrid dou - 10 kWh;10.875;48.9424839;9.2961669
+Oberreichenbach;SENEC Home V3 hybrid dou - 7.5 kWh;12;48.7469873;8.6493127
+Bretzfeld;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;49.1732759;9.430312299999999
+Lenningen;SENEC Home V3 hybrid -5.0 kWh;6.75;48.5552959;9.468307300000001
+Deizisau;SENEC Home V3 hybrid dou - 10 kWh;10.875;48.7119155;9.387044999999999
+Altdorf;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.6033543;9.0050434
+Kaufbeuern;SENEC Home V3 hybrid -5.0 kWh;6.75;47.8830175;10.625966
+Weil der Stadt;SENEC Home V3 hybrid -5.0 kWh;5.625;48.7515726;8.8544372
+Lorch;SENEC Home V3 hybrid dou - 10 kWh;13.5;48.79648599999999;10.0311214
+Albsstadt;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.2759019;9.0082162
+Böblingen;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.6762593;8.9773145
+Riedstadt;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;49.8431788;8.4671693
+Albershausen;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.6914289;9.565043099999999
+Leutkirch;SENEC Home V2.1 - 5.0 kWh;7.125;47.8226062;10.0064024
+Gladenbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;50.7598385;8.573839
+Köln;SENEC Home V3 hybrid dou - 10 kWh;12;50.93875;7.082491399999999
+Heidesheim;SENEC Home V3 hybrid -5.0 kWh;6.375;49.9950324;8.1137217
+Eislingen Fils;SENEC Home V3 hybrid -5.0 kWh;6;48.7023247;9.7120357
+Stuttgart;SENEC Home V3 hybrid -5.0 kWh;7.125;48.8130331;9.1044082
+Aalen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.870622;10.0233878
+Vohenstrauß;SENEC Home V3 hybrid -2.5 kWh;3.75;49.617464;12.329339
+Aichtal;RCT POWER BATTERY DC 7.6;9;48.62489739999999;9.241857399999999
+Steinheim an der Murr;SENEC Home V3 hybrid -5.0 kWh;4.5;48.9691889;9.276239700000001
+Ostfildern;SENEC Home V3 hybrid -7.5 kWh;10.125;48.7287991;9.2585976
+Wegscheid;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;48.6005902;13.7859017
+Vaihingen an der Enz;RCT POWER BATTERY DC 5.7;6.75;48.9456327;8.9670738
+Vaihingen an der Enz;RCT POWER BATTERY DC 5.7;6.75;48.9456327;8.9670738
+Schwäbisch Gmünd;SENEC Home V3 hybrid dou - 7.5 kWh;12;48.8321222;9.8173747
+Ebersbach an der Fils;SENEC Home V3 hybrid -5.0 kWh;6;48.71920249999999;9.511021099999999
+Irlbach a.d. Donau;SENEC Home V3 hybrid -5.0 kWh;5.625;48.8411005;12.7514762
+Obersöchering;SENEC Home V3 hybrid dou - 10 kWh;15.75;47.74375819999999;11.2260331
+Waiblingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;48.8293399;9.3329481
+Kohlberg;SENEC Home V3 hybrid -2.5 kWh;3.75;49.6090498;12.0196638
+Schwabach;SENEC Home V3 hybrid -5.0 kWh;6;49.3288905;11.0244827
+Ebermannstadt;SENEC Home V3 hybrid dou - 7.5 kWh;13.125;49.78155650000001;11.1790693
+München;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.1640467;11.4345083
+Kirchroth;SENEC Home V3 hybrid -5.0 kWh;6;48.95444699999999;12.5394407
+Emmering;SENEC Home V3 hybrid -5.0 kWh;4.5;47.9969486;12.0556772
+Traunreut;SENEC Home V3 hybrid -5.0 kWh;6;47.9527301;12.5768605
+Plüderhausen;SENEC Home V3 hybrid -2.5 kWh;4.5;48.79721019999999;9.6086365
+Unterhaching;SENEC Home V3 hybrid dou - 10 kWh;18.375;48.0650187;11.6175944
+Taufkirchen;SENEC Home V3 hybrid dou - 7.5 kWh;11.625;48.0389787;11.6265608
+Lenggries;SENEC Home V3 hybrid -5.0 kWh;5.25;47.5572156;11.5455631
+Aalen;SENEC Home V3 hybrid -5.0 kWh;4.5;48.870622;10.0233878
+Freilassing;SENEC Home V3 hybrid -5.0 kWh;5.25;47.8480123;12.9707896
+Ruhstorf a. d. Rott;SENEC Home V3 hybrid -5.0 kWh;6.75;48.4847627;13.2762956
+Farchant;SENEC Home V3 hybrid dou - 10 kWh;9.75;47.5286738;11.1342039
+Feuchtwangen;SENEC Home V3 hybrid dou - 7.5 kWh;12;49.1666761;10.3365884
+Furth im Wald;SENEC Home V3 hybrid dou - 10 kWh;49.875;49.3101132;12.8387951
+Horb am Neckar;SENEC Home V3 hybrid dou - 10 kWh;19.875;48.4544359;8.6481543
+Süßen;SENEC Home V3 hybrid dou - 10 kWh;17.625;48.6739893;9.7475399
+Esslingen;SENEC Home V3 hybrid dou - 10 kWh;8.25;48.7271837;9.3526316
+Schwanstetten;SENEC Home V3 hybrid dou - 7.5 kWh;12.75;49.3007529;11.1217674
+Sindelfingen;SENEC Home V3 hybrid dou - 10 kWh;11.625;48.70781059999999;8.9618345
+Norheim;SENEC Home V3 hybrid -5.0 kWh;5.25;49.1118628;9.1173279
+Alling;Alpha ESS Smile-HI10 15.6 kw/h;6.75;48.14081239999999;11.2995637
+Oberreichenbach;SENEC Home V3 hybrid dou - 10 kWh;11.25;49.5937153;10.7726007
+Auenwald;SENEC Home V3 hybrid -2.5 kWh;6;48.9333621;9.5234424
+Pfreimd;SENEC Home V3 hybrid dou - 10 kWh;11.625;49.49400199999999;12.1818588
+Geiselhöring;SENEC Home V3 hybrid -5.0 kWh;4.5;48.8290596;12.3939088
+Anger;Alpha ESS Smile-HI10 15.6 kw/h;9.75;47.8013487;12.8651896
+Neubulach;SENEC Home V3 hybrid -5.0 kWh;4.5;48.658786;8.6793216
+Freilassing;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;47.8480123;12.9707896
+Zirndorf;SENEC Home V3 hybrid -5.0 kWh;4.875;49.4428638;10.9613504
+Puchheim;SENEC Home V3 hybrid dou - 10 kWh;10.875;48.16322570000001;11.3421615
+Puchheim;SENEC Home V3 hybrid -5.0 kWh;3;48.16322570000001;11.3421615
+Dietenheim;SENEC Home V3 hybrid dou - 7.5 kWh;7.125;48.2121085;10.0715815
+Heidenheim an der Brenz;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;48.70670399999999;10.1626906
+Neuhausen;SENEC Home V3 hybrid -5.0 kWh;6;48.68298710000001;9.273766199999999
+Ammerndorf;SENEC Home V3 hybrid -5.0 kWh;6.75;49.4210933;10.8529109
+Lindlar;SENEC Home V3 hybrid -5.0 kWh;6.375;51.02179899999999;7.349167299999999
+Freihung;SENEC Home V2.1 - 5.0 kWh;5.25;49.6201476;11.9135676
+Abtsgmünd;RCT POWER BATTERY DC 9.6;13.5;48.8910782;10.001692
+Kirchentellinsfurt;SENEC Home V3 hybrid -5.0 kWh;9;48.5423324;9.1382919
+Weilheim in Oberbayern;SENEC Home V3 hybrid -5.0 kWh;5.625;47.84223670000001;11.1427463
+Ostfildern;SENEC Home V3 hybrid dou - 7.5 kWh;8.625;48.7145823;9.258490799999999
+Schwäbisch Gmünd;SENEC Home V3 hybrid -5.0 kWh;4.5;48.7899913;9.8723672
+Plüderhausen;SENEC Home V3 hybrid -5.0 kWh;5.25;48.79721019999999;9.6086365
+Holzgerlingen;E3DC S 10 E 6.5 kwh;7.125;48.6427688;9.0176454
+Sauldorf;SENEC Home V3 hybrid -5.0 kWh;6;47.9439685;9.1082424
+Eppstein;SENEC Home V3 hybrid -2.5 kWh;4.5;50.1449687;8.3673263
+Hattersheim a. M;SENEC Home V3 hybrid -2.5 kWh;4.5;50.05358469999999;8.4848511
+Rodgau;Alpha ESS Smile-HI10 15.6;16.875;50.0179133;8.8902931
+Enzweihingen;SENEC Home V3 hybrid -5.0 kWh;6.375;48.9166651;8.9803342
+Hördt;SENEC Home V3 hybrid -7.5 kWh;6;49.1663637;8.326980599999999
+Gäufelden;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.5558483;8.837527500000002
+Dachsbach;SENEC Home V3 hybrid dou - 10 kWh;9;49.6380578;10.7078935
+Kuchen;SENEC Home V3 hybrid -5.0 kWh;5.25;48.6391303;9.8001421
+Donaustauf;SENEC Home V3 hybrid -2.5 kWh;3;49.0324436;12.2073717
+Kaufbeuren;SENEC Home V3 hybrid dou - 5.0 kWh;6;47.8830175;10.625966
+Waldkirchen;SENEC Home V3 hybrid dou - 10 kWh;10.5;48.7291338;13.6009117
+Horgau;E3DC S 10 E 12.0 kwh;10.5;48.3955184;10.6833543
+Schechen;SENEC Home V3 hybrid dou - 10 kWh;14.625;47.9270748;12.1242777
+Nittenau;SENEC Home V3 hybrid -5.0 kWh;5.625;49.1951228;12.2680695
+Karlsfeld;SENEC Home V3 hybrid -5.0 kWh;6.375;48.2290733;11.4744386
+Maisach;SENEC Home V3 hybrid dou - 10 kWh;10.5;48.2283854;11.2435757
+Aichtal;SENEC Home V3 hybrid dou - 7.5 kWh;5.25;48.62489739999999;9.241857399999999
+Nabburg;SENEC Home V3 hybrid -5.0 kWh;7.125;49.4483551;12.1716014
+Stephanskirchen;SENEC Home V3 hybrid -5.0 kWh;4.875;47.8601056;12.1838269
+Raubling;SENEC Home V3 hybrid dou - 10 kWh;8.25;47.7915891;12.075049
+Bad Endorf;SENEC Home V3 hybrid -5.0 kWh;6;47.90666150000001;12.3101231
+Überlingen;SENEC Home V3 hybrid dou - 10 kWh;10.5;47.7654618;9.1450009
+Wannweil;SENEC Home V3 hybrid -5.0 kWh;5.25;48.5108538;9.1535604
+Geretsried;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;47.8552232;11.4871747
+Metten;SENEC Home V3 hybrid -5.0 kWh;6;48.8562416;12.9130877
+Puchheim;SENEC Home V3 hybrid -5.0 kWh;4.5;48.16322570000001;11.3421615
+Fürstenfeldbruck;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.17870689999999;11.23683
+Breitbrunn;SENEC Home V3 hybrid -10 kWh;6.75;47.8895151;12.3975442
+Lorch;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;48.8072283;9.6704159
+Teublitz;SENEC Home V3 hybrid -5.0 kWh;6;49.220674;12.0848844
+Bruckmühl;SENEC Home V3 hybrid -7.5 kWh;6.75;47.8760097;11.9399211
+Baierbrunn;RCT POWER BATTERY DC 11.5;11.25;48.01869139999999;11.4803158
+Burgoberbach;SENEC Home V2.1 - 10 kWh;20.25;49.2369601;10.5923182
+Augsburg;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.3815038;10.9397471
+Winnenden;SENEC Home V3 hybrid -5.0 kWh;4.5;48.8750046;9.397142299999999
+Mittenwald;SENEC Home V3 hybrid dou - 5.0 kWh;8.625;47.441269;11.264054
+Stuttgart;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.7298143;9.099952199999999
+Tutzing;SENEC Home V3 hybrid dou - 7.5 kWh;6.375;47.895911;11.2543569
+Stephansposching;SENEC Home V3 hybrid -5.0 kWh;6.75;48.8166422;12.80241
+Bissingen;SENEC Home V3 hybrid dou - 7.5 kWh;10.5;48.6006493;9.491481499999999
+Flonheim;Alpha ESS Smile-HI10 7.8 kwh;9.375;49.78433769999999;8.0359962
+Neuffen;SENEC Home V3 hybrid -5.0 kWh;8.25;48.5537143;9.371984699999999
+Saaldorf-Surheim;SENEC Home V3 hybrid -5.0 kWh;4.5;47.87696769999999;12.9372303
+Schnaittenbach;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.543133;11.9989964
+Eppertshausen;SENEC Home V3 hybrid dou - 10 kWh;10.875;49.95279780000001;8.8630177
+Waltenhofen;SENEC Home V3 hybrid -5.0 kWh;5.625;47.6505288;10.2616184
+Tübingen;SENEC Home V3 hybrid -5.0 kWh;3.375;48.5226576;9.0047096
+Neuhausen a.d. Fildern;E3DC S 10 E 12.0 kwh;7.5;48.68298710000001;9.273766199999999
+Ingolstadt;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;48.7505672;11.4578898
+Egelsbach;SENEC Home V3 hybrid dou - 7.5 kWh;10.5;49.9674991;8.669451400000002
+Magstadt;SENEC Home V3 hybrid dou - 10 kWh;22.5;48.7473056;8.974406499999999
+Appenheim;SENEC Home V3 hybrid dou - 7.5 kWh;6.75;49.9303579;8.0328837
+Penzberg;RCT POWER BATTERY DC 11.5;9;47.75612;11.3698021
+Burghausen;SENEC Home V3 hybrid dou - 10 kWh;9;48.1671386;12.821733
+Zirndorf;SENEC Home V3 hybrid dou - 5.0 kWh;7.875;49.4428638;10.9613504
+Röthenbach;SENEC Home V3 hybrid -5.0 kWh;5.25;49.4325206;10.9711906
+Isen;SENEC Home V3 hybrid -5.0 kWh;4.5;48.2112615;12.0571467
+Aiterhofen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.8450742;12.619974
+Böbingen;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;48.82173909999999;9.916113099999999
+Stuttgart;RCT POWER BATTERY DC 5.7;5.625;48.7483277;9.089917999999999
+Deizisau;SENEC Home V3 hybrid -5.0 kWh;9;48.7119155;9.387044999999999
+Schelklingen;SENEC Home V3 hybrid -5.0 kWh;4.5;48.3735177;9.7362731
+München;SENEC Home V3 hybrid dou - 10 kWh;18;48.0843392;11.4945444
+Schorndorf;SENEC Home V3 hybrid dou - 10 kWh;8.25;48.778341;9.531029499999999
+Neufra;SENEC Home V3 hybrid -5.0 kWh;8.25;48.2487956;9.182877099999999
+Immenstaad;SENEC Home V3 hybrid -5.0 kWh;5.625;47.6655273;9.364130699999999
+Nürnberg;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;49.3715268;11.0785899
+Schorndorf;SENEC Home V3 hybrid dou - 10 kWh;14.25;48.778341;9.531029499999999
+Leinfelden-Echterdingen;E3DC S 10 E 9.75 kwh;8.25;48.6885983;9.141026499999999
+Buch am Erlbach;SENEC Home V3 hybrid -5.0 kWh;6.75;48.4445744;12.0433768
+Graibingen;E3DC S 10 E 12.0 kwh;18.75;48.5957839;9.641191
+Deizisau;SENEC Home V3 hybrid -5.0 kWh;6;48.7119155;9.387044999999999
+Deizisau;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.7119155;9.387044999999999
+Rohr;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;49.3412784;10.8888964
+Stockheim;SENEC Home V3 hybrid -5.0 kWh;4.5;50.3067714;11.281644
+Gräfelfing;SENEC Home V3 hybrid dou - 10 kWh;8.25;48.1227429;11.4340549
+Kohlplatte 7;SENEC Home V3 hybrid dou - 7.5 kWh;12.75;49.2189422;10.1998728
+Oberasbach;SENEC Home V3 hybrid -5.0 kWh;5.25;49.4325206;10.9711906
+Haunsheim;SENEC Home V3 hybrid dou - 7.5 kWh;9.375;48.599048;10.3760695
+München;SENEC Home V3 hybrid -5.0 kWh;4.125;48.1892389;11.4842864
+Wolfratshausen;SENEC Home V3 hybrid dou - 5.0 kWh;7.875;47.9139845;11.4245772
+Ismaning;SENEC Home V3 hybrid dou - 10 kWh;12;48.2320646;11.7067787
+Germaring;SENEC Home V3 hybrid dou - 10 kWh;8.625;48.13169389999999;11.3556855
+Waiblingen;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.8293399;9.3329481
+Eiselfing;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.03961959999999;12.2413317
+Leonberg;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;48.8011637;8.997988
+Herrenberg;SENEC Home V3 hybrid dou - 5.0 kWh;5.25;48.5879291;8.879328
+Tübingen;SENEC Home V3 hybrid -5.0 kWh;7.5;48.5723636;9.0779068
+Leonberg;SENEC Home V3 hybrid dou - 5.0 kWh;12.375;48.8011637;8.997988
+Dorfen;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.2941802;12.1726993
+Bad Endorf;E3DC S10 E 6.5 kWh;8.25;47.90666150000001;12.3101231
+Prutting;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;47.88473930000001;12.1879056
+Unterreit;SENEC Home V3 hybrid -5.0 kWh;6.75;48.1201129;12.3340025
+Ottobrunn;SENEC Home V3 hybrid dou - 10 kWh;11.25;48.0598428;11.6681224
+Seeon;SENEC Home V3 hybrid dou - 5.0 kWh;10.5;47.9758013;12.4611155
+Landshut;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.5536867;12.1051129
+Grassau;SENEC Home V3 hybrid dou - 10 kWh;16.875;47.77835340000001;12.4518923
+Neuhof a.d.Zenn;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.45672339999999;10.6432642
+Nordendorf;SENEC Home V3 hybrid dou - 7.5 kWh;10.125;48.5950482;10.8326744
+Donzdorf;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.6845738;9.8067932
+Tutzing;SENEC Home V3 hybrid dou - 7.5 kWh;10.875;47.895911;11.2543569
+Wackersdorf;E3DC S10 E 9.75 kWh;9.75;49.30206459999999;12.1905872
+Ottenbach;E3DC S10 E 12.00 kWh;9;48.7340978;9.7554191
+Fürstenfeldbruck;SENEC Home V3 hybrid -5.0 kWh;3;48.17870689999999;11.23683
+Leienburg;E3DC S10 E 6.5 kWh;9.375;49.45124149999999;11.3065415
+Breitenberg;SENEC Home V3 hybrid dou - 10 kWh;11.25;48.7036982;13.7940608
+Flotzheim;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.8375776;10.8138378
+Unterenzingen;SENEC Home V3 hybrid dou - 5.0 kWh;4.5;48.6582827;9.3561166
+Furth im Wald;SENEC Home V3 hybrid -5.0 kWh;6.75;49.3101132;12.8387951
+Altmannstein;SENEC Home V3 hybrid -5.0 kWh;7.5;48.8969537;11.6528283
+Berg;SENEC Home V3 hybrid dou - 10 kWh;16.875;47.8102585;9.6008876
+Gerlingen;SENEC Home V3 hybrid -2.5 kWh;4.125;48.7908056;9.0651574
+Anzing;SENEC Home V3 hybrid dou - 10 kWh;18;48.1515169;11.8518643
+Wilhermsdorf;SENEC Home V3 hybrid dou - 7.5 kWh;21;49.4819836;10.7175498
+Holzkirchen;SENEC Home V3 hybrid dou - 10 kWh;27.75;47.8720967;11.6886436
+Kirchberg an der Murr;Huawei Luna2000-10.0 kw/h;9;48.9425755;9.3417915
+Obersulm;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.1356314;9.391606
+Korntal-Münchingen;SENEC Home V3 hybrid -7.5 kWh;6.75;48.8491293;9.096806299999999
+Zirndorf;SENEC Home V3 hybrid dou - 7.5 kWh;8.625;49.4428638;10.9613504
+Schneizlreuth;SENEC Home V3 hybrid dou - 10 kWh;8.25;47.6901119;12.8017926
+Buchdorf;SENEC Home V3 hybrid dou - 10 kWh;9;48.7826369;10.828115
+München;E3DC S10 E 6.5 kWh;4.125;48.2000526;11.5534509
+Reutlingen;SENEC Home V3 hybrid dou - 5.0 kWh;10.125;48.47740109999999;9.1936152
+Schwanstetten;Huawei Luna2000-10.0 kw/h;9;49.3007529;11.1217674
+Stuttgart;Huawei Luna2000-5.0 kw/h;4.875;48.8297933;9.2320196
+Holzkirchen;SENEC Home V3 hybrid dou - 5.0 kWh;11.25;47.8720967;11.6886436
+Benningen;SENEC Home V3 hybrid dou - 5.0 kWh;8.25;48.9432559;9.239902599999999
+Gräfelfing;SENEC Home V3 hybrid dou - 10 kWh;9.75;48.1227429;11.4340549
+Massing im Rottal;SENEC Home V3 hybrid dou - 5.0 kWh;5.625;48.3950459;12.6145132
+Calw;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.7215745;8.7177385
+Schöllnach;SENEC Home V3 hybrid dou - 10 kWh;12;48.75388909999999;13.1772367
+Untergriesbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;48.5751183;13.6681864
+Rottenberg am Neckar;SENEC Home V3 hybrid -7.5 kWh;6.75;48.4640734;8.916337
+Nürnberg;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.5011246;11.0417566
+Neuendettelsau;SENEC Home V3 hybrid -5.0 kWh;6;49.298002;10.8002858
+Deggendorf;SENEC Home V3 hybrid dou - 7.5 kWh;8.25;49.1114049;11.93227
+Neuburg;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;49.3440168;12.37489
+Wasserburg am Inn;SENEC Home V3 hybrid -2.5 kWh;3.75;48.0547345;12.1954235
+Oberasbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.4325206;10.9711906
+Oberasbach;SENEC Home V3 hybrid dou - 7.5 kWh;9;49.4325206;10.9711906
+Zirndorf;Alpha ESS Smile-HI10 7.8 kwh;6.75;49.4428638;10.9613504
+Wiesensteig;SENEC Home V3 hybrid -5.0 kWh;4.5;48.5617826;9.623623600000002
+Empfingen;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.3987529;8.719165199999999
+Lindlar;SENEC Home V3 hybrid dou - 7.5 kWh;9.75;51.02179899999999;7.349167299999999
+Bingen;SENEC Home V3 hybrid dou - 10 kWh;29.625;49.9437022;7.922532899999999
+Holzbach;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;49.95420739999999;7.531731600000001
+Wasserburg am Inn;SENEC Home V3 hybrid dou - 5.0 kWh;5.25;48.0547345;12.1954235
+Grafenberg;SENEC Home V3 hybrid -7.5 kWh;6.75;48.566933;9.3027667
+Göppingen;SENEC Home V3 hybrid dou - 7.5 kWh;8.625;48.7285331;9.701654999999999
+Leutkirch;SENEC Home V3 hybrid -5.0 kWh;5.625;47.8226062;10.0064024
+Büttelborn;SENEC Home V3 hybrid dou - 10 kWh;9;49.9155479;8.5350214
+Burladingen;SENEC Home V3 hybrid -5.0 kWh;6.75;48.2984526;9.1038503
+Geislingen an der Steige;SENEC Home V3 hybrid -5.0 kWh;6.375;48.62151619999999;9.8294482
+Eschenbach;SENEC Home V3 hybrid dou - 10 kWh;11.25;49.754469;11.8304178
+Niedertaufkirchen;SENEC Home V3 hybrid dou - 7.5 kWh;7.875;48.3297873;12.5501314
+Schwandorf;SENEC Home V2.1 - 10 kWh;27.75;49.3244988;12.076344
+Burladingen;SENEC Home V3 hybrid -2.5 kWh;6.75;48.2984526;9.1038503
+Heroldstatt;SENEC Home V3 hybrid -5.0 kWh;6.75;48.4464496;9.668558899999999
+Backnang;SENEC Home V3 hybrid -5.0 kWh;6.75;48.9489037;9.433109
+Diebach;SENEC Home V3 hybrid dou - 5.0 kWh;7.125;49.3091434;10.1913331
+Oberasbach;SENEC Home V3 hybrid dou - 10 kWh;18.375;49.4325206;10.9711906
+Bernried;SENEC Home V3 hybrid -5.0 kWh;6.75;48.918223;12.8832724
+München;SENEC Home V3 hybrid -5.0 kWh;5.25;48.1091485;11.6463656
+Ramseck am Neckar;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.8800511;9.2807956
+Backnang;SENEC Home V3 hybrid dou - 5.0 kWh;7.5;48.9489037;9.433109
+Monheim;SENEC Home V3 hybrid dou - 5.0 kWh;7.875;48.8426674;10.8536544
+Schondorf;SENEC Home V3 hybrid dou - 5.0 kWh;9;48.778341;9.531029499999999
+Straßlach-Dingharting;SENEC Home V3 hybrid dou - 10 kWh;9.375;47.9815159;11.5199353
+Tamm;SENEC Home V3 hybrid dou - 7.5 kWh;10.5;48.9184019;9.1192232
+München;SENEC Home V3 hybrid -7.5 kWh;5.25;48.1863004;11.5211002
+Rott;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;47.9849048;12.1307325
+München;SENEC Home V3 hybrid dou - 5.0 kWh;9.75;48.13077939999999;11.490008
+Germering;SENEC Home V3 hybrid -7.5 kWh;5.25;48.13518089999999;11.3690889
+Horb am Neckar;SENEC Home V3 hybrid dou - 10 kWh;12;48.4544359;8.6481543
+Weißling;SENEC Home V3 hybrid -7.5 kWh;7.5;48.0745018;11.2483111
+Rümmingen;SENEC Home V3 hybrid -5.0 kWh;5.25;47.6428953;7.642124999999999
+Eislingen/ Fils;SENEC Home V3 hybrid dou - 10 kWh;11.625;48.7023247;9.7120357
+Niederalteich;SENEC Home V3 hybrid -5.0 kWh;6;48.7664877;13.0263663
+Allersberg;SENEC Home V3 hybrid dou - 7.5 kWh;7.5;49.23571339999999;11.2342036
+München;SENEC Home V3 hybrid -5.0 kWh;5.625;48.1678509;11.3965968
+Wassertrüdingen;SENEC Home V3 hybrid dou - 7.5 kWh;9.375;49.0483522;10.6245892
+Grafenau;SENEC Home V3 hybrid dou - 10 kWh;16.125;48.8468995;13.4080212
+Deggendorf;SENEC Home V3 hybrid dou - 5.0 kWh;6.75;48.8414126;12.9572212
+Eggolsheim;SENEC Home V3 hybrid -7.5 kWh;6.75;49.770304;11.0558092
+Weisweil;SENEC Home V3 hybrid -2.5 kWh;6;48.1971912;7.677556

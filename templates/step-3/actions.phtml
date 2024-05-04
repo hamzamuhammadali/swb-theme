@@ -1,0 +1,78 @@
+<?php
+$showEditAction = get_request_parameter( 'edit' ) === 'on';
+$showRegistrationAction = checkRoles( [
+		'registration',
+		'administrator',
+		'director',
+		'registration'
+	] ) && empty( get_post_meta( $order->ID, 'registration', true ) );
+
+$confirmationSent = get_post_meta($order->ID, 'confirmationSent', true);
+?>
+
+<div class="actions">
+    <div class="col-12">
+	    <button class="button-secondary" formaction="post.php?saveDCAppointments=on"><span>Speichern</span></button>
+	    <?php if ( $showEditAction ): ?>
+		    <?php if(!$confirmationSent):?>
+			    <input type="hidden" name="sendConfirmation" value="on">
+			    <input type="hidden" name="confirmation" value="confirmation">
+			    <button formaction="/wp-content/themes/swb/angebote/AngebotsPDF.php" class="send-confirmation button-primary right"><span>Auftragsbestätigung per E-Mail versenden</span></button>
+		    <?php endif;?>
+		<?php else : ?>
+            <a class="button-secondary" href="<?php echo addOrUpdateUrlParam( [ 'edit' => 'on' ] ); ?>">Angebot
+                bearbeiten</a>
+			<?php if ( $showRegistrationAction === true && !$showEditAction ): ?>
+				<a class="button-secondary" href="<?php echo addOrUpdateUrlParam( [ 'registration' => 'on' ] ); ?>"><span>Anmeldung</span></a>
+			<?php endif; ?>
+            <button class="button-primary right"><span>Termin an Monteur senden</span></button>
+		<?php endif; ?>
+	    <?php if ( ! $showEditAction ): ?>
+	        <div class="secondary-actions">
+			    <a href="<?php echo addOrUpdateUrlParam( [ 'reset_order' => 'on' ] ); ?>">Auftrag stornieren</a>
+			    <a href="<?php echo addOrUpdateUrlParam( [ 'softreset' => 'on' ] ); ?>">Auftrag zurücksetzen</a>
+	        </div>
+	    <?php endif;?>
+    </div>
+</div>
+
+<?php if ( $showEditAction ): ?>
+<div class="statusbar"></div>
+<script>
+  $(document).ready(function () {
+    $('.send-confirmation').click(function (e) {
+      e.preventDefault();
+      var form = $('form#post');
+      var formData = form.serialize();
+      var formAction = $('.send-confirmation').attr('formaction');
+      $('.button-primary').attr('disabled', 'disabled');
+      $.ajax({
+        method: "POST",
+        url: formAction,
+        data: formData,
+        success: function (data) {
+          if (data === 'SUCCESS') {
+            $('.statusbar').addClass('send');
+            setTimeout(function () {
+              $('.statusbar').removeClass('send');
+            }, 5000)
+          }
+        }
+        });
+      });
+    });
+</script>
+
+<style>
+	.statusbar {
+		right: 50%;
+		margin: 0 calc(-25% - 80px) 0 0;
+		width: 50%;
+		left: auto;
+		top: 50px;
+	}
+    .statusbar.send:before {
+	    content: 'Auftragsbestätigung erolgreich versendet!'
+    }
+</style>
+<?php endif;?>

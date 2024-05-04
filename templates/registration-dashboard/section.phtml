@@ -1,0 +1,37 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+
+?>
+
+<div class="row">
+    <div class="col-12 default_list">
+        <div class="dashboard__header">
+			<?php if ( ! empty( $step ) ) : ?>
+                <div class="step__counter step__counter--<?php echo $step;?>"><?php echo $step; ?></div>
+			<?php elseif (str_contains($options['cssClass'], 'bh')) :?>
+				<div class="step__counter step__counter--<?php echo $options['cssClass'];?>">BH</div>
+			<?php endif; ?>
+            <h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($orders);?>)</small></h1>
+        </div>
+	    <table>
+		    <thead>
+		    <tr>
+			    <th>Auftrag</th>
+			    <th>Vorname, Name</th>
+			    <th>PLZ, Ort</th>
+			    <th>kwp</th>
+			    <th>Datum Anmeldung</th>
+			    <?php if($step > 7):?>
+			    <th>Datum Fertigmeldung</th>
+			    <?php endif;?>
+		    </tr>
+		    </thead>
+		<?php
+			foreach ( $orders as $order ) {
+				include template( 'registration-dashboard/row' );
+			}
+			?>
+	    </table>
+    </div>
+</div>

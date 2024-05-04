@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="robots" content="noindex nofollow" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Application Title">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SWB App">
+  <title>App</title>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+  <script src="photos.js"></script>
+  <script src="signature.js"></script>
+</head>
+<body class="dc">
+<div class="statusbar"></div>
+<div class="container">
+  <div class="d-flex justify-content-center">
+      <div class="flag flag--online"></div>
+    <div class="logo pt-3">
+      <img width="260" src="logo.svg" alt="">
+    </div>
+  </div>
+</div>
+<form action="pdf.php" method="post" id="form">
+  <input type="hidden" id="switcher" name="switcher" value="dc">
+  <div class="highlight--white mx-2 mx-sm-4 pb-4">
+    <div class="switcher">
+      <div class="row no-gutters text-center justify-content-around">
+        <a class="dc col-6" data-type="dc"><strong>DC Abnahme</strong></a>
+        <a class="ac col-6" data-type="ac"><strong>AC Abnahme</strong></a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="pt-4">
+        <h1>Kunde</h1>
+        <div class="form-group text">
+          <label for="name">Vorname, Nachname</label>
+          <input class="form-control" type="text" name="name" maxlength="50" size="30" id="name" required value="Fidan">
+        </div>
+        <div class="form-group text">
+          <label for="street">Straße, Hausnummer</label>
+          <input class="form-control" type="text" name="street" maxlength="50" size="30" id="street" required value="Schützenstr. 8">
+        </div>
+        <div class="form-group text">
+          <label for="zip">PLZ</label>
+          <input class="form-control" type="text" pattern="[0-9]*" name="zip" maxlength="50" size="30" id="zip" required value="83278">
+        </div>
+        <div class="form-group text">
+          <label for="city">Ort</label>
+          <input class="form-control" type="text" name="city" maxlength="50" size="30" id="city" required value="Traunstein">
+        </div>
+        <div class="form-group text">
+          <label for="email">E-Mail</label>
+          <input class="form-control" type="email" name="email" maxlength="50" size="30" id="email" required value="info@fidanhaziri.com">
+        </div>
+      </div>
+      <fieldset class="dc">
+        <div class="pt-4">
+          <h1>Abnahmeprotokoll Photovoltaikanlage bis Wechselrichter</h1>
+          <div class="form-group text">
+            <label for="moduletype">Modultyp</label>
+            <input class="form-control" type="text" name="moduletype" maxlength="50" size="30" id="moduletype" value="asdf">
+          </div>
+          <div class="form-group text">
+            <label for="moduleqty">Modulanzahl</label>
+            <input class="form-control" type="text" pattern="[0-9]*" name="moduleqty" maxlength="50" size="30" id="moduleqty" value="12">
+          </div>
+          <div class="form-group text">
+            <label for="installation">Montagesystem</label>
+            <input class="form-control" type="text" name="installation" maxlength="50" size="30" id="installation"
+                   value="K2 Systems" readonly>
+          </div>
+          <h2 class="pt-4">Schadensprotokoll</h2>
+          <input type="checkbox" class="damages" id="damages" name="damages"> <label for="damages">Gibt es Schäden?</label>
+          <fieldset class="damages-collection" disabled>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden an der Photovoltaik-Anlage</div>
+              <input type="radio" name="damagepv" id="damagepvyes" required value="Ja">
+              <label for="damagepvyes">Ja</label>
+              <input type="radio" name="damagepv" id="damagepvno" value="Nein">
+              <label for="damagepvno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Dach</div>
+              <input type="radio" name="damageroof" id="damageroofyes" required value="Ja">
+              <label for="damageroofyes">Ja</label>
+              <input type="radio" name="damageroof" id="damageroofno" value="Nein">
+              <label for="damageroofno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Gebäude</div>
+              <input type="radio" name="damagebuilding" id="damagebuildingyes" required value="Ja">
+              <label for="damagebuildingyes">Ja</label>
+              <input type="radio" name="damagebuilding" id="damagebuildingno" value="Nein">
+              <label for="damagebuildingno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden an Stecker (Verkabelung)</div>
+              <input type="radio" name="damagecable" id="damagecableyes" required value="Ja">
+              <label for="damagecableyes">Ja</label>
+              <input type="radio" name="damagecable" id="damagecableno" value="Nein">
+              <label for="damagecableno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Leitungsführung</div>
+              <input type="radio" name="damageline" id="damagelineyes" required value="Ja">
+              <label for="damagelineyes">Ja</label>
+              <input type="radio" name="damageline" id="damagelineno" value="Nein">
+              <label for="damagelineno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden an Montagesystem</div>
+              <input type="radio" name="damageinstallation" id="damageinstallationyes" required value="Ja">
+              <label for="damageinstallationyes">Ja</label>
+              <input type="radio" name="damageinstallation" id="damageinstallationno" value="Nein">
+              <label for="damageinstallationno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäde am Wechselrichter</div>
+              <input type="radio" name="damagewr" id="damagewryes" required value="Ja">
+              <label for="damagewryes">Ja</label>
+              <input type="radio" name="damagewr" id="damagewrno" value="Nein">
+              <label for="damagewrno">Nein</label>
+            </div>
+          </fieldset>
+        </div>
+        <h2 class="mt-4">Sonstige Informationen</h2>
+        <div class="form-group form-group--radio">
+          <div>Baustelle sauber hinterlassen</div>
+          <input type="radio" name="cleanedup" id="cleanedupyes" value="Ja"  required>
+          <label for="cleanedupyes">Ja</label>
+          <input type="radio" name="cleanedup" id="cleanedupno" value="Nein" required>
+          <label for="cleanedupno">Nein</label>
+        </div>
+        <div class="form-group text">
+          <label for="comments">Sonstige Informationen</label>
+          <textarea name="comments" id="comments" cols="30" rows="5" class="form-control"></textarea>
+        </div>
+      </fieldset>
+      <fieldset class="ac" disabled>
+        <div class="pt-4">
+          <h1>Elektrotechnische Abnahme Photovoltaikanlage</h1>
+          <div class="form-group text">
+            <label for="counternumber">Zählernummer Bezugszähler</label>
+            <input class="form-control" type="text" name="counternumber" maxlength="50" size="30" id="counternumber" required>
+          </div>
+          <div class="form-group text">
+            <label for="counternumberex">Zählernummer bei Ausbau</label>
+            <input class="form-control" type="text" name="counternumberex" maxlength="50" size="30" id="counternumberex">
+          </div>
+          <div class="form-group text select">
+            <label for="measurement">Messkonzept</label>
+            <select name="measurement" id="measurement" class="form-control">
+              <option value="Überschusseinspeisung">Überschusseinspeisung</option>
+              <option value="Kaskardenschaltung / Wärmepumpe">Kaskardenschaltung / Wärmepumpe</option>
+            </select>
+          </div>
+          <h2 class="pt-4">Protokoll</h2>
+          <input type="checkbox" class="damages damages--gap" id="damages2" name="damages2"> <label for="damages2">Gibt es Schäden?</label>
+          <fieldset class="damages-collection" disabled>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden Speicher</div>
+              <input type="radio" name="damagesaver" id="damagesaveryes" required value="Ja">
+              <label for="damagesaveryes">Ja</label>
+              <input type="radio" name="damagesaver" id="damagesaverno" value="Nein">
+              <label for="damagesaverno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Zählerschrank</div>
+              <input type="radio" name="damageshelf" id="damageshelfyes" required value="Ja">
+              <label for="damageshelfyes">Ja</label>
+              <input type="radio" name="damageshelf" id="damageshelfno" value="Nein">
+              <label for="damageshelfno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Gebäude</div>
+              <input type="radio" name="acdamagebuilding" id="acdamagebuildingyes" required value="Ja">
+              <label for="acdamagebuildingyes">Ja</label>
+              <input type="radio" name="acdamagebuilding" id="acdamagebuildingno" value="Nein">
+              <label for="acdamagebuildingno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden an Stecker (Verkabelung)</div>
+              <input type="radio" name="acdamagecable" id="acdamagecableyes" required value="Ja">
+              <label for="acdamagecableyes">Ja</label>
+              <input type="radio" name="acdamagecable" id="acdamagecableno" value="Nein">
+              <label for="acdamagecableno">Nein</label>
+            </div>
+            <div class="form-group form-group--radio">
+              <div>Sichtbare Schäden am Leitungsführung</div>
+              <input type="radio" name="acdamageline" id="acdamagelineyes" required value="Ja">
+              <label for="acdamagelineyes">Ja</label>
+              <input type="radio" name="acdamageline" id="acdamagelineno" value="Nein">
+              <label for="acdamagelineno">Nein</label>
+            </div>
+          </fieldset>
+        </div>
+        <h2 class="mt-4">Sonstige Informationen</h2>
+        <div class="form-group form-group--radio">
+          <div>Erdung Angeschlossen</div>
+          <input type="radio" name="groundinginstalled" id="groundinginstalledyes" required value="Ja">
+          <label for="groundinginstalledyes">Ja</label>
+          <input type="radio" name="groundinginstalled" id="groundinginstalledno" value="Nein">
+          <label for="groundinginstalledno">Nein</label>
+        </div>
+        <div class="form-group form-group--radio">
+          <div>Speicher Inbetriebgenommen</div>
+          <input type="radio" name="operating" id="operatingyes" required value="Ja">
+          <label for="operatingyes">Ja</label>
+          <input type="radio" name="operating" id="operatingno" value="Nein">
+          <label for="operatingno">Nein</label>
+        </div>
+        <div class="form-group form-group--radio">
+          <div>Photovoltaikanlagen Test durchgefürt</div>
+          <input type="radio" name="tested" id="testedyes" required value="Ja">
+          <label for="testedyes">Ja</label>
+          <input type="radio" name="tested" id="testedno" value="Nein">
+          <label for="testedno">Nein</label>
+        </div>
+        <div class="form-group form-group--radio">
+          <div>Zählerschrank Umbau</div>
+          <input type="radio" name="modified" id="modifiedyes" required value="Ja">
+          <label for="modifiedyes">Ja</label>
+          <input type="radio" name="modified" id="modifiedno" value="Nein">
+          <label for="modifiedno">Nein</label>
+        </div>
+        <div class="form-group form-group--radio">
+          <div>Baustelle sauber hinterlassen</div>
+          <input type="radio" name="accleanedup" id="accleanedupyes" required value="Ja" >
+          <label for="accleanedupyes">Ja</label>
+          <input type="radio" name="accleanedup" id="accleanedupno" value="Nein">
+          <label for="accleanedupno">Nein</label>
+        </div>
+        <div class="form-group form-group--radio">
+          <div>Fotos erstellt</div>
+          <input type="radio" name="photos" id="photosyes" required value="Ja">
+          <label for="photosyes">Ja</label>
+          <input type="radio" name="photos" id="photosno" value="Nein">
+          <label for="photosno">Nein</label>
+        </div>
+        <div class="form-group text">
+          <label for="accomments">Sonstige Informationen</label>
+          <textarea name="accomments" id="accomments" cols="30" rows="5" class="form-control"></textarea>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="mx-2 mx-sm-4 highlight--gray">
+    <div class="container">
+      <div class="pt-4">
+        <h1>Bilder</h1>
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <label class="photos mb-4" for="photo1">
+              <input type="file" class="file-selector" id="photo1" name="photo1" accept="image/*" multiple required>
+              <input type="hidden" class="base64" name="base64Photo1" value="" required>
+              <img>
+            </label>
+          </div>
+          <div class="col-6 col-md-3 photo">
+            <label class="photos mb-4" for="photo2">
+              <input type="file" class="file-selector" id="photo2" name="photo2" accept="image/*" multiple>
+              <input type="hidden" class="base64" name="base64Photo2" value="">
+              <img>
+            </label>
+          </div>
+          <div class="col-6 col-md-3 photo">
+            <label class="photos mb-4" for="photo3">
+              <input type="file" class="file-selector" id="photo3" name="photo3" accept="image/*" multiple>
+              <input type="hidden" class="base64" name="base64Photo3" value="">
+              <img>
+            </label>
+          </div>
+          <div class="col-6 col-md-3 photo">
+            <label class="photos mb-4" for="photo4">
+              <input type="file" class="file-selector" id="photo4" name="photo4" accept="image/*" multiple>
+              <input type="hidden" class="base64" name="base64Photo4" value="">
+              <img>
+            </label>
+          </div>
+          <div class="col-6 photo">
+            <label class="photos mb-4" for="photo5">
+              <input type="file" class="file-selector" id="photo5" name="photo5" accept="image/*" multiple>
+              <input type="hidden" class="base64" name="base64Photo5" value="">
+              <img>
+            </label>
+          </div>
+          <div class="col-6 photo">
+            <label class="photos mb-4" for="photo6">
+              <input type="file" class="file-selector" id="photo6" name="photo6" accept="image/*" multiple>
+              <input type="hidden" class="base64" name="base64Photo6" value="">
+              <img>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1">
+        <h1>Unterschrift</h1>
+        <p class="ac">Hiermit bestätigt der Kunde, dass die Elektroarbeiten seiner Photovoltaikanlage zu seiner Zufriedenheit
+          durchgefürt worden sind, fertig gestellt sind und keine Mängel bestehen. Die Anlage ist hiermit abgenommen. Es
+          erfolgte eine Einweisung in die Funktion und Bedienung der Anlage. Anlagenbetreiber sind für die funktionierende
+          Internetverbindung selbst verantwortlich. Sämtliche AC Montage- und Installationsarbeiten wurden zur vollsten
+          Zufriedenheit ausgeführt. Es erfolgte eine Belehrung zum Hinweis (EEG-Verstoß).</p>
+        <p class="dc">Hiermit bestätigt der Kunde, dass die Dacharbeiten seiner Photovoltaikanlage zu seiner Zufriedenheit durchgefürt worden sind, fertig gestellt sind und keine Mängel bestehen. Die Anlage ist hiermit abgenommen.</p>
+        <div class="form-group text form-group--canvas">
+          <label for="signature">Unterschrift</label>
+          <div class="canvas">
+            <canvas class="signature" id="signature"></canvas>
+            <input type="text" class="field--hidden" name="signature" id="base64Signature" value="" required>
+            <a class="remove" id="clear">Löschen</a>
+          </div>
+        </div>
+        <div class="mt-1">
+          <button class="button button--primary col-12 ld-ext-left"><span>Abschicken</span>
+            <div class="ld ld-ball ld-flip-v"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<p class="text-center pb-2" style="font-size:10px;">Version 1.32</p>
+<script>
+
+  function updateOpenJobs() {
+    if (localStorage.length > 0) {
+      $('.logo').attr('data-openjobs', localStorage.length);
+    } else {
+      $('.logo').removeAttr('data-openjobs');
+    }
+  }
+
+  function workOffLocalStorage() {
+
+    updateOpenJobs();
+
+    for (var i = localStorage.length -1; i >= 0 ; i--) {
+      (function (e) {
+        const formLocalStorage = localStorage.getItem(localStorage.key(e));
+        const formJson = JSON.parse(formLocalStorage);
+
+        var url = '';
+        if (localStorage.key(i).startsWith('pdf1_')) {
+          url = 'pdf.php';
+        } else {
+          url = 'pdf2.php';
+        }
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: formJson,
+          success: function (data) {
+            if(data === 'SUCCESS') {
+              $('.statusbar').addClass('send');
+              setTimeout(function () {
+                $('.statusbar').removeClass('send');
+              }, 3000);
+              $('.button--primary').removeAttr('disabled').removeClass('running');
+              localStorage.removeItem(localStorage.key(e));
+              updateOpenJobs();
+              console.log('success' +' '+ url);
+            }
+          },
+          error: function () {
+            console.log('error' +' '+ url);
+          },
+          complete: function () {
+            console.log('completed' +' '+ url);
+          }
+        });
+      })();
+    }
+  }
+
+  workOffLocalStorage();
+
+  $(window).bind("online offline", function (e) {
+    $('.statusbar').attr('class', 'statusbar ' + e.type);
+    $('.flag').attr('class', 'flag ' + 'flag--' + e.type);
+
+    setTimeout(function () {
+      $('.statusbar').removeClass(e.type);
+    }, 3000);
+
+    if (e.type === 'online') {
+      workOffLocalStorage();
+    }
+  });
+
+  function resetForm() {
+    $('form').trigger("reset");
+    $('.base64').val('');
+    $('.photo--set').removeClass('photo--set');
+  }
+/*
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('sw.js');
+  }
+*/
+  if (typeof navigator.serviceWorker === "undefined") {
+    navigator.serviceWorker.ready.then(function (swRegistration) {
+      return swRegistration.sync.register('myFirstSync');
+    });
+  }
+
+  $(document).ready(function () {
+    var signatureCanvas = document.getElementById('signature');
+
+    var signaturePad = new SignaturePad(signatureCanvas, {
+      penColor: 'rgb(0, 0, 0)',
+      onEnd: function () {
+        const padData = signaturePad.toDataURL('image/png');
+        document.getElementById('base64Signature').value = padData;
+      }
+    });
+
+    function resizeCanvas() {
+      var ratio = Math.max(window.devicePixelRatio || 1, 1);
+      signatureCanvas.width = signatureCanvas.offsetWidth * ratio;
+      signatureCanvas.height = signatureCanvas.offsetHeight * ratio;
+      signatureCanvas.getContext("2d").scale(ratio, ratio);
+      signaturePad.clear();
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    const clearButton = document.getElementById('clear');
+    clearButton.addEventListener('click', function () {
+      signaturePad.clear();
+    });
+
+    $('.button--primary').click(function () {
+      var errors = false;
+      $('input, select').filter('[required]:visible').each(function() {
+        if(!$(this).val()){
+          errors = true;
+        }
+      });
+
+      if(errors) {
+        alert('Bitte fülle alle notwendigen Felder aus');
+      }
+    });
+
+    $('form').submit(function (e) {
+      e.preventDefault();
+
+      $('.button--primary').prop('disabled',true).addClass('running');
+      const serializedForm = $(this).serialize();
+      const serializedObjectForm = $(this).serializeObject();
+      const random = Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('pdf1_' + random, JSON.stringify(serializedObjectForm));
+      localStorage.setItem('pdf2_' + random, JSON.stringify(serializedObjectForm));
+
+      if (window.navigator.onLine) {
+        workOffLocalStorage();
+      } else {
+        $('.logo').attr('data-openjobs', localStorage.length);
+        $('.statusbar').addClass('not-send');
+        setTimeout(function () {
+          $('.statusbar').removeClass('not-send');
+        }, 3000);
+      }
+
+      resetForm();
+      signaturePad.clear();
+    });
+
+
+    $('.switcher a').click(function () {
+      const bodyClass = $(this).data('type');
+      $('body').attr('class', bodyClass);
+      $('#switcher').attr('value', bodyClass);
+      $('fieldset:not(.' + bodyClass + '):not(.damages-collection)').attr('disabled', 'disabled');
+      $('fieldset.' + bodyClass).removeAttr('disabled');
+    });
+
+    $('.damages').click(function () {
+      if ($(this).is(':checked')) {
+        $(this).next().next().removeAttr('disabled');
+      } else {
+        $(this).next().next().attr('disabled', true);
+      }
+    });
+
+  });
+
+  const fileInputs = document.getElementsByClassName('file-selector');
+  if (window.FileList && window.File && window.FileReader) {
+    Array.prototype.forEach.call(fileInputs, function (element) {
+      element.addEventListener('change', event => {
+        const input = element.nextElementSibling;
+        const parent = element.parentElement.parentElement;
+        const output = input.nextElementSibling;
+        output.src = '';
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.addEventListener('load', event => {
+          output.src = event.target.result;
+          parent.className += ' photo--set';
+          setTimeout(function () {
+            ResizeImage(file, input);
+          }, 100);
+        });
+        reader.readAsDataURL(file);
+      });
+    });
+  }
+
+  function ResizeImage(chosenFile, input) {
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      if (chosenFile) {
+        var reader = new FileReader();
+        // Set the image once loaded into file reader
+        reader.onload = function (e) {
+
+          var img = document.createElement("img");
+          img.src = e.target.result;
+
+          var canvas = document.createElement("canvas");
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+
+          var MAX_WIDTH = 1000;
+          var MAX_HEIGHT = 1000;
+          var width = img.width;
+          var height = img.height;
+
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+          canvas.width = width;
+          canvas.height = height;
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, width, height);
+
+          dataurl = canvas.toDataURL(chosenFile.type);
+          input.value = dataurl;
+        }
+        reader.readAsDataURL(chosenFile);
+      }
+    } else {
+      alert('The File APIs are not fully supported in this browser.');
+    }
+  }
+</script>
+
+</body>
+</html>

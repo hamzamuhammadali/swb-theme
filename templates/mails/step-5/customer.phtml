@@ -1,0 +1,54 @@
+<?php
+$acAppointment = get_post_meta( $order->ID, 'ac_appointment', true );
+$dateFormat    = get_option( 'date_format' );
+$salutation    = get_post_meta( $order->ID, 'salutation', true );
+$greating      = ( $salutation === 'Herr' ? 'geehrter' : 'geehrte' );
+$name          = implode( ' ', [
+	$salutation,
+	get_post_meta( $order->ID, 'firstName', true ),
+	get_post_meta( $order->ID, 'lastName', true ),
+] );
+
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+$companyColor =  get_option( 'color' );
+?>
+
+<style>h1, h2, h3 {
+        color: <?php echo $companyColor;?>;
+    }
+
+    div b {
+        display: block
+    }
+</style>
+<table style="max-width: 600px; margin: 50px auto;">
+    <tr>
+        <td>
+	        <img src="<?php echo wp_get_attachment_url(get_option('logo'));?>" alt="" width="250">
+            <br>
+            <br>
+            <br>
+            <h1>Ihre Termine</h1>
+            <h2>Sehr <?php echo $greating; ?> <?php echo $name; ?>,</h2>
+            <p>anbei erhalten Sie die vereinbarten Termine.</p>
+
+            <div>
+                <b>Elektriker Montagetermin</b>
+            </div>
+			<?php echo date_i18n( $dateFormat, strtotime( $acAppointment ) ); ?>
+            <br>
+            <p>
+                Bei Fragen stehen wir Ihnen gerne zur Verfügung.
+            </p>
+
+            <p>
+                PS: Das im Anhang befindende Dokument für das Marktstammdatenregister dient nur als Anleitung und muss
+                erst
+                nach der Elektroinstallation durchgeführt werden.
+            </p>
+            <br>
+            Mit freundlichen Grüßen<br>
+	        <h2>Ihr Projektmanagement von <?php echo $companyWithoutForm; ?></h2>
+        </td>
+    </tr>
+</table>

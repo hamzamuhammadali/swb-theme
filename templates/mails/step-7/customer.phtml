@@ -1,0 +1,52 @@
+<?php
+$acAppointment = get_post_meta( $order->ID, 'ac_appointment', true );
+$dateFormat    = get_option( 'date_format' );
+$salutation    = get_post_meta( $order->ID, 'salutation', true );
+$greating      = ( $salutation === 'Herr' ? 'geehrter' : 'geehrte' );
+$name          = implode( ' ', [
+	$salutation,
+	get_post_meta( $order->ID, 'firstName', true ),
+	get_post_meta( $order->ID, 'lastName', true ),
+] );
+
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+$companyColor =  get_option( 'color' );
+?>
+
+<style>h1, h2, h3 {
+        color: <?php echo $companyColor;?>;
+    }
+
+    div b {
+        display: block
+    }
+</style>
+<table style="max-width: 600px; margin: 50px auto;">
+	<tr>
+		<td>
+			<img src="<?php echo wp_get_attachment_url(get_option('logo'));?>" alt="" width="250">
+			<br>
+			<br>
+			<br>
+			<h1>Fertigmeldung</h1>
+			<h2>Sehr <?php echo $greating; ?> <?php echo $name; ?>,</h2>
+			wir freuen uns, Ihnen mitteilen zu können, dass Ihre Solaranlage von unserer Seite aus fertiggestellt wurde.
+			<br>
+			<br>
+			Die Anlage wurde bei Ihrem Netzbetreiber fertig gemeldet. Dieser wird als letzten Schritt noch einen Termin für den Zählertausch mit Ihnen vereinbaren.
+			<br>
+			<br>
+			Wir hoffen, dass Sie mit dem Ergebnis zufrieden sind und sich über die vielen Vorteile freuen, die Ihnen Ihre neue Solaranlage bietet. Mit dieser Investition helfen Sie nicht nur der Umwelt, sondern sparen auch langfristig Geld.
+			<br>
+			<br>
+			Wir stehen Ihnen jederzeit zur Verfügung, falls Sie Fragen oder Anliegen haben sollten. Bitte zögern Sie nicht, uns zu kontaktieren.
+			<br>
+			<br>
+			Nochmals vielen Dank für Ihr Vertrauen und Ihre Zusammenarbeit.
+			<br>
+			<br>
+			Mit freundlichen Grüßen<br>
+			<h2>Ihr Projektmanagement von <?php echo $companyWithoutForm; ?></h2>
+		</td>
+	</tr>
+</table>

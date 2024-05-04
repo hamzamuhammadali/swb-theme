@@ -1,0 +1,340 @@
+@import "/wp-content/themes/swb/style.css";
+
+:root {
+    --black: #222;
+    --white: #fff;
+    --orange: #00aaff;
+    --text-color: #222;
+    --body-bg: #fff;
+    --selection-bg: #04A4CC;
+    --highlight: #DEDEDE;
+    --yellow: #FFB900;
+    --green: #7be07e;
+}
+
+input[type="file"],
+.field--hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+label.photos {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: url(camera.svg) var(--white) no-repeat center center;
+    -webkit-backface-visibility: hidden;
+    background-size: 50px;
+    height: 150px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+label.photos img {
+    max-width: 100%;
+}
+
+input[type="file"] {
+
+}
+
+.logo {
+    position: fixed;
+    z-index: -1;
+    top: 10px;
+}
+.logo[data-openjobs]:after {
+    content:attr(data-openjobs);
+    display: block;
+    background: var(--yellow);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+    position: absolute;
+    right: -23px;
+    margin-top: -32px;
+}
+
+.photo {
+    display: none;
+}
+
+.photo--set, .photo--set + .photo {
+    display: block;
+}
+
+.base64[value=""] + img {
+    display: none;
+}
+
+.statusbar {
+    border-radius: 30px;
+    width: 90%;
+    margin-left: 5%;
+    z-index: 1;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    padding: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all ease 0.3s;
+    transform: translateY(-100%);
+}
+form {
+    overflow: hidden;
+}
+.statusbar:before {
+    content: ' ';
+}
+
+.statusbar.online,
+.statusbar.send {
+    transition-delay: 0.3s;
+    background: var(--green);
+    transform: translateY(0);
+    transition: all ease 0.3s;
+}
+
+.statusbar.online:before {
+    content: 'Die App ist online.';
+}
+
+.statusbar.offline,
+.statusbar.not-send {
+    transition-delay: 0.3s;
+    background: var(--yellow);
+    transform: translateY(0);
+    transition: all ease 0.3s;
+}
+
+.statusbar.offline:before {
+    content: 'Die App ist offline.';
+}
+
+.statusbar.not-send:before {
+    content: 'Die App ist offline - PDFs werden später versendet.';
+}
+
+.statusbar.send:before {
+    content: 'PDFs wurde versendet.';
+}
+
+.flag {
+    transition: background-color ease 0.3s;
+    position: fixed;
+    top: 20px;
+    left: -10px;
+    z-index: 1;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.flag--online {
+    background: var(--green);
+}
+.flag--offline {
+    background: var(--yellow);
+}
+
+body {
+    background: #e9e9e9;
+}
+
+.highlight--white {
+    background: #fff;
+    border-radius: 30px;
+    margin-top: 120px;
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.1)*/;
+}
+
+.signature {
+    border: 1px solid var(--highlight);
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+}
+
+.canvas canvas {
+    background: #fff;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group--canvas label {
+    z-index: 1;
+}
+
+.remove {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 13px;
+    padding: 15px;
+}
+
+.highlight--gray {
+    background: #e9e9e9;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.switcher {
+    cursor: pointer;
+    position: relative;
+}
+
+.switcher:before {
+    content: '';
+    width: 50%;
+    background: var(--orange);
+    position: absolute;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform ease 0.3s;
+    border-radius: 30px;
+    border: 5px solid #fff;
+}
+
+.ac .switcher:before {
+    transform: translateX(100%);
+}
+
+.dc .switcher:before {
+    transform: translateX(0);
+}
+
+.switcher a {
+    padding: 20px;
+    text-decoration: none !important;
+    border-radius: 30px;
+}
+
+.dc fieldset.ac {
+    display: none;
+}
+
+.dc a.dc {
+    color: white;
+}
+
+.ac a.ac {
+    color: white;
+}
+
+.ac fieldset.dc {
+    display: none;
+}
+
+body.dc p.ac,
+body.ac p.dc {
+    display: none;
+}
+
+input, textarea,select {
+    border-color: #eaeaea !important;
+}
+
+strong {
+    font-weight: 500
+}
+select {
+    -webkit-appearance:none!important;
+}
+.form-group--radio {
+    border: 1px solid #eaeaea;
+    padding: 1.25rem;
+    border-radius: 10px;
+}
+
+.form-group--radio input:checked + label,
+.damages:checked + label {
+    background: #222;
+    vertical-align: middle;
+    color: #fff;
+    padding: 2px 12px 2px 20px;
+    margin-left: -19px;
+    border-radius: 0 20px 20px 0;
+}
+
+.form-group--radio > div {
+    /*font-weight: 500;*/
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.form-group--radio label + input {
+    margin-left: 20px;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    border: 0;
+    position: relative;
+    padding-left: 0;
+    width: 40px;
+    height: 40px;
+}
+
+input[type="radio"]:before,
+input[type="checkbox"]:before {
+    background: #fff;
+    content: '';
+    border: 1px solid #eaeaea;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked:after,
+input[type="checkbox"]:checked:after {
+    content: '';
+    background: #222;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.damages {
+    margin-bottom: 25px;
+}
+
+.damages ~ fieldset {
+    display: none
+}
+
+.damages:checked ~ fieldset {
+    display: block;
+}
+
+select.form-control {
+    padding-top: 2.375rem;
+    padding-left: 1.1rem;
+}

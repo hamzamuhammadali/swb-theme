@@ -1,0 +1,33 @@
+<?php
+
+$errors             = [];
+$requiredFieldError = get_request_parameter( 'field-required-error' );
+$attachmentError    = get_request_parameter( 'attachment-error' );
+
+
+if ( ! empty( $requiredFieldError ) ) {
+	$errorText = is_array( $requiredFieldError ) ? implode( ', ', $requiredFieldError ) : $requiredFieldError;
+	$errors[]  = 'Bitte fülle alle Pflichtfelder aus!';
+}
+if ( ! empty( $attachmentError ) && $attachmentError === 'type not allowed' ) {
+	$errorText = implode( ', ', str_replace( '/', '.', allowedAttachmentTyps() ) );
+	$errors[]  = 'Bitte nur erlaubte Dateienformate hochladen:' . $errorText;
+}
+
+
+?>
+
+<?php if ( ! empty( $errors ) ): ?>
+
+    <div class="project__errors">
+		<?php foreach ( $errors as $error ): ?>
+            <div class="project__error">
+                <h1>
+					<?php echo $error; ?>
+                </h1>
+            </div>
+		<?php endforeach; ?>
+
+    </div>
+
+<?php endif; ?>

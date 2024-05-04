@@ -1,0 +1,58 @@
+<div class="order-card card">
+    <div class="card-body">
+        <div class="card-title">
+            Photovoltaikanlage
+        </div>
+        <div><b>
+            Speicher:
+	        </b>
+	        <?php echo get_post_meta( get_post_meta( $order->ID, 'storage', true ), 'name', true ); ?>
+        </div>
+        <div>
+            <b>Modul:</b> <?php echo get_post_meta( get_post_meta( $order->ID, 'module', true ), 'pvmoduleid', true ); ?>
+        </div>
+        <div>
+	        <b>
+            Anzahl Module:</b>
+	        <?php echo get_post_meta( $order->ID, 'moduleqty', true ); ?>
+        </div>
+        <div>
+	        <b>
+            Wechselrichter:</b>
+	        <?php echo get_post_meta( get_post_meta( $order->ID, 'inverter', true ), 'name', true ); ?>
+        </div>
+		<?php if ( ! empty( get_post_meta( $order->ID, 'additionals', true ) ) ) : ?>
+            <div>
+	            <b>Zusatzvereinbarungen alt:</b><br> <?php echo get_post_meta( $order->ID, 'additionals', true ); ?>
+            </div>
+		<?php endif; ?>
+		<?php
+		$orderAgreements = get_post_meta( $order->ID, 'agreements', true );
+		if ( ! is_array( $orderAgreements ) ) {
+			$orderAgreements = [];
+		}
+		?>
+        <div>
+	        <b>
+            Zusatzvereinbarungen:
+	        </b>
+			<?php
+			for ( $i = 0, $iMax = count( $orderAgreements ); $i < $iMax; $i ++ ) :?>
+                <div>
+	                <?php if ( get_post_meta( $orderAgreements[ $i ], 'qty', true ) && $qtyFieldValue = get_post_meta( $order->ID,
+		                'qty-' . $orderAgreements[ $i ], true ) ) {
+							echo $qtyFieldValue . 'x ' . get_post( $orderAgreements[ $i ] )->post_title;
+		                } else {
+		                    echo get_post( $orderAgreements[ $i ] )->post_title;
+		                }
+	                 ?>
+                </div>
+			<?php endfor; ?>
+        </div>
+        <div>
+	        <b>
+            Preis Netto: </b><?php echo number_format( (int) get_post_meta( $order->ID, 'totalExcl', true ), 2, ',',
+					'.' ) . ' €'; ?>
+        </div>
+    </div>
+</div>

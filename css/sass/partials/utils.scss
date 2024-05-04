@@ -1,0 +1,822 @@
+/**
+ * partials/utils
+ * ---
+ * Utils classes
+ */
+
+
+// clearfix: http://nicolasgallagher.com/micro-clearfix-hack/
+.clear {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.reset-box {
+  @include reset-box;
+}
+
+.offset-65 {
+  @include media-breakpoint-up(lg) {
+    margin: 0 65px;
+  }
+}
+
+.content {
+  margin-bottom: $space50;
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $space200;
+  }
+  @include media-breakpoint-down(md) {
+
+  }
+
+  &--basic {
+    margin-top: $space25;
+    @include media-breakpoint-up(lg) {
+      margin-top: $space50;
+    }
+  }
+}
+
+.teaser {
+  border-radius: 0 0 200px 0;
+  overflow: hidden;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+
+  &--big {
+    @include media-breakpoint-down(md) {
+      margin-right: $space10;
+      height: 50vh;
+    }
+    @include media-breakpoint-up(lg) {
+      min-height: 650px;
+    }
+  }
+
+  &--map {
+    height: 70vh;
+    border-radius: 0;
+    @include media-breakpoint-up(lg) {
+      min-height: 600px;
+      height: 75vh;
+      //border: solid rgba($orange, 0.5);
+      border-width: 0 5px 5px 0;
+      border-bottom-right-radius: 100px;
+      box-shadow: 0 0 53px #d9d9d9;
+
+
+      &--focus {
+        border-color: $orange;
+      }
+    }
+  }
+
+  &--basic {
+    border-top-right-radius: $border-radius;
+
+    @include media-breakpoint-down(md) {
+      height: 50vh;
+      margin-right: $space15;
+    }
+  }
+
+  &--reverse {
+    @include media-breakpoint-down(md) {
+      height: 50vh;
+      margin-right: $space15;
+    }
+  }
+
+  &__tile {
+    padding: $space50;
+    background: $orange;
+    border-radius: $border-radius;
+    color: $white;
+    @include media-breakpoint-only(md) {
+      margin-top: -#{$space50};
+    }
+    @include media-breakpoint-down(sm) {
+      margin: -#{$space80} 0 0 $space30;
+    }
+    @include media-breakpoint-only(lg) {
+      margin: $space80 $space15 0 -#{$space50};
+    }
+    @include media-breakpoint-up(xl) {
+      margin: $space80 120px 0 -#{$space50};
+    }
+    @include media-breakpoint-down(sm) {
+      padding: $space30;
+    }
+
+    &--basic {
+      .teaser__pre:before {
+        background: $black;
+      }
+
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom: $space30;
+      background: none;
+      color: $black;
+      margin: 0;
+      @include media-breakpoint-only(md) {
+        padding: 0 $space30 0 0;
+      }
+      @include media-breakpoint-down(md) {
+        padding: 0 $space30;
+      }
+      @include media-breakpoint-only(xl) {
+        margin-right: 200px;
+      }
+      @include media-breakpoint-only(lg) {
+        margin-right: $space30;
+      }
+    }
+
+    &--nogap {
+      .teaser__pre:before {
+        background: $black;
+      }
+
+      padding: 0;
+      background: none;
+      color: $black;
+      margin: 0;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: $space15;
+      }
+      @include media-breakpoint-only(xl) {
+        margin-right: 200px;
+      }
+      @include media-breakpoint-only(lg) {
+        margin-right: $space30;
+      }
+    }
+
+    &--full {
+      .teaser__pre:before {
+        background: $black;
+      }
+
+      padding: 0;
+      background: none;
+      color: $black;
+      margin: 0;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: $space15;
+        margin-right: $space15;
+      }
+      @include media-breakpoint-only(xl) {
+        margin-right: 0;
+      }
+      @include media-breakpoint-only(lg) {
+        margin-right: $space30;
+      }
+    }
+
+    &--reverse {
+      @include media-breakpoint-up(xl) {
+        padding: 0 $space50 0 0;
+        margin: 0 0 $space30 120px;
+      }
+    }
+  }
+
+  &__pre {
+    position: relative;
+    padding-left: $space10;
+    margin-bottom: $space10;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: $space25;
+    }
+
+    &:before {
+      content: '';
+      left: 0;
+      position: absolute;
+      width: 3px;
+      height: 140%;
+      top: -20%;
+      border-radius: 3px;
+      background: $white;
+      display: inline-block;
+    }
+
+    ~ h1, .h1 {
+      margin-top: $space30;
+    }
+  }
+
+  &__list {
+    .check {
+      @include media-breakpoint-down(lg) {
+        margin-right: $space30;
+        margin-left: 0;
+      }
+      margin: $space30 170px 0 0;
+
+      li {
+        display: flex;
+        list-style: none;
+        margin-bottom: $space30;
+
+        &:before {
+          margin-right: $space25;
+          content: '';
+          display: inline-block;
+          min-width: 46px;
+          width: 46px;
+          height: 46px;
+          background: $white;
+          border-radius: 50%;
+          background: url("/wp-content/themes/swb/img/icons/check.svg") no-repeat center center;
+          background-size: 23px;
+          box-shadow: $box-shadow;
+        }
+      }
+
+      &--basic {
+        @include media-breakpoint-down(sm) {
+          padding-left: 30px;
+        }
+        @include media-breakpoint-up(sm) {
+          margin-left: $space10;
+        }
+        @include media-breakpoint-up(xl) {
+          margin-right: $space200;
+        }
+      }
+    }
+
+    &--reverse {
+      @include media-breakpoint-only(lg) {
+        margin-left: $space50;
+      }
+      @include media-breakpoint-up(xl) {
+        margin: $space30 0 0 120px;
+      }
+      padding-left: 0;
+
+      .check {
+        padding: 0;
+        margin-left: 0;
+      }
+    }
+
+    &--basic .check {
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &--reverse {
+    @include media-breakpoint-up(lg) {
+      border-radius: $border-radius 0 0 $space200;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-right: $space15;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  background: $white;
+  border: none;
+  display: inline-block;
+  border-radius: $border-radius / 2;
+  margin-top: $space30;
+  padding: $space25 $space50;
+  box-shadow: $box-shadow;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: none;
+
+    &:before {
+      height: 100%;
+    }
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    transition: all ease 0.3s;
+    //background: rgba($orange, 0.3);
+    background: lighten($orange, 40);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--primary {
+    background: $orange;
+    color: $white;
+
+    &:before {
+      background: darken($orange, 10);
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+
+  &-down-md {
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      .teaser__pre {
+        padding-left: 0;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+
+.container-fluid {
+  max-width: 1800px;
+
+  &--nopadding {
+    padding: 0;
+    @include media-breakpoint-down(md) {
+      &-md {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.highlight {
+  background: $highlight;
+
+  &-dark {
+    background: $orange;
+    color: $white;
+  }
+}
+
+.rating {
+  overflow: hidden;
+  position: relative;
+  padding: $space75 0;
+
+  &__slider {
+    position: relative;
+  }
+
+  &__pre {
+    text-transform: uppercase;
+    margin-bottom: $space10;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: $space25;
+    }
+  }
+
+  &__pre,
+  &__title,
+  &__description {
+    text-align: center;
+  }
+
+  &__description {
+    margin-bottom: $space50;
+  }
+
+  &__tile {
+    margin-right: $space10;
+    background: $white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    padding: $space30 $space25;
+  }
+
+  &__stars {
+    margin-bottom: $space10;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .star-icon {
+      font-size: 21px;
+      color: $yellow;
+    }
+  }
+
+  &__author {
+    font-size: $font-size-author;
+    font-weight: 500;
+    margin-bottom: $space10;
+  }
+
+  &__google-batch {
+    position: absolute;
+    top: $space30;
+    left: $space30;
+
+    @include media-breakpoint-down(sm) {
+      top: 0;
+      left: 10px;
+      svg {
+        width: 100px;
+      }
+    }
+  }
+
+  &__fadeout {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    bottom: 0;
+    height: 100%;
+  }
+
+  &__timing {
+    font-size: $font-size-small;
+    margin-left: $space10;
+    color: $black;
+    white-space: nowrap;
+  }
+}
+
+.counter {
+  overflow: hidden;
+
+  .highlight-dark {
+    @include media-breakpoint-up(xl) {
+      padding: $space30 0;
+    }
+    @include media-breakpoint-down(lg) {
+      padding: $space30 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      &:first-child {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &:last-child {
+        padding-bottom: $space80;
+      }
+      &:first-child {
+        padding-top: $space80;
+      }
+    }
+  }
+
+  &__info {
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @include media-breakpoint-down(lg) {
+      margin-top: $space10;
+    }
+    font-size: $font-size-big;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__icon {
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.service {
+  &__icon {
+    margin-top: $space50;
+  }
+
+  &__text {
+    margin: $space10;
+  }
+}
+
+.tool {
+  path {
+    transition: all ease 0.3s;
+    transform-origin: center;
+  }
+
+  &:hover path#Pfad_130 {
+    transform: rotate(45deg);
+  }
+}
+
+.steps {
+  @include media-breakpoint-up(lg) {
+    padding: $space50;
+  }
+  @include media-breakpoint-up(md) {
+    background: url("/wp-content/themes/swb/img/icons/steps.svg") center center no-repeat;
+  }
+
+  &--nobg {
+    background: none;
+
+    .step {
+      @include media-breakpoint-up(xl) {
+        margin: 0 $space25 $space75;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-bottom: $space30;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-bottom: $space75;
+      }
+      @include media-breakpoint-down(md) {
+        margin-top: $space30;
+      }
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.step {
+  background: $white;
+  overflow: hidden;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 100px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin: 0 $space75 $space75;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-top: $space50;
+  }
+
+  &__bottom {
+    padding: $space50 $space25;
+  }
+
+  &__title {
+    font-size: $font-size-author;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 20px 0 $space15;
+  }
+
+  &__counter {
+    position: relative;
+    width: $space80;
+    height: $space80;
+    box-shadow: 0px -6px 6px #00000029;
+    border-radius: 50%;
+    background: $orange;
+    font-size: 40px;
+    color: $white;
+    text-align: center;
+    line-height: 80px;
+    margin: -#{$space80} 0 $space10;
+    border-bottom: 2px solid $highlight;
+
+    &--nomargin {
+      margin: 0;
+      box-shadow: $box-shadow;
+      float: left;
+      margin-right: $space25;
+
+      &:after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background: url("img/icons/sun.svg");
+        border-radius: 50%;
+        top: -10px;
+        z-index: -1;
+        left: 46px;
+      }
+    }
+  }
+}
+
+.alert-success {
+  background: $green;
+  padding: $space25;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
+.contactform {
+  margin-top: $space10;
+}
+
+label {
+  a {
+    text-decoration: underline;
+  }
+
+  span {
+    padding-left: $space15;
+    display: inline-block;
+
+  }
+}
+
+.faq {
+  &__question {
+    margin-bottom: $space10;
+  }
+
+  margin: $space50 $space30 $space50 0;
+
+  @include media-breakpoint-down(sm) {
+    margin: 0 $space15 $space50;
+  }
+}
+
+.path-black svg path {
+  fill: $black;
+}
+
+.wp-block-gallery {
+  @include media-breakpoint-down(sm) {
+    margin: $space50 -#{$space30} 0;
+    figure {
+      margin: 0 !important;
+      gap: 0!important;
+    }
+  }
+}
+
+figure.wp-block-gallery {
+  gap: 0!important;
+}
+
+#map-canvas {
+  height: 100%;
+}
+
+.map-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $orange;
+  padding: $space30 $space30 20px !important;
+  color: $white;
+  border-bottom-right-radius: $border-radius;
+  display: none;
+  z-index: 1;
+  transition: all ease 0.3s;
+  transform: translateY(-$space15);
+  opacity: 0;
+
+  @include media-breakpoint-down(md) {
+    margin: 0 $space15;
+    width: calc(100% - #{$space30});
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &.fadeInDown {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__title {
+    font-size: $font-size-big;
+    margin-bottom: $space25;
+    font-weight: 500;
+    line-height: 1;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 33px;
+    }
+  }
+
+  &__description {
+    img {
+      div & {
+        min-width: 43px;
+      }
+
+      margin-right: 20px;
+    }
+
+    div:last-child {
+      line-height: 1;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: $space25;
+    top: $space25;
+  }
+
+  strong {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+
+  .d-flex {
+    margin: 0 $space50 $space15 0;
+  }
+
+  &--visible {
+    display: block;
+  }
+}
+
+.static-down-md {
+  @include media-breakpoint-down(md) {
+    position: static;
+  }
+}
+
+.relative-down-md {
+  @include media-breakpoint-down(md) {
+    position: relative;
+  }
+}
+
+.splide__track {
+  overflow: visible;
+}
+
+.splide__slide {
+  margin-right: 30px;
+}
+
+.splide__pagination {
+  margin-bottom: -50px !important;
+}
+
+.splide__arrows {
+  button {
+    opacity: 1;
+    background: $white;
+    box-shadow: $box-shadow;
+  }
+
+  path {
+    fill: $black;
+  }
+}
+
+.partner {
+  background: #aa1024;
+  color:$white;
+  border-radius: $border-radius;
+  padding: $space50 0;
+  box-shadow: $box-shadow;
+  h2 {
+    line-height: 1;
+  }
+
+  svg {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: $space50 $space30;
+    text-align: center;
+    svg {
+      margin-bottom: $space30;
+    }
+  }
+}

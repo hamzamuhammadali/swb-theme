@@ -1,0 +1,27 @@
+<?php
+$seller      = getSellerName( $order );
+$salutation  = get_post_meta( $order->ID, 'salutation', true );
+$firstName   = get_post_meta( $order->ID, 'firstName', true );
+$lastName    = get_post_meta( $order->ID, 'lastName', true );
+$orderNumber = getOrderNumber( $order );
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center project__name">
+			<?php if ( ! empty( $orderNumber ) ): ?>
+                <h1>
+                    Auftrag: #<?php echo get_the_ID(); ?>
+                </h1>
+			<?php endif; ?>
+			<?php if ( ! empty( $salutation ) && ! empty( $firstName ) && ! empty( $lastName ) ): ?>
+                <div>
+                    Kunde: <?php echo "$salutation $firstName $lastName"; ?>
+                </div>
+			<?php endif; ?>
+            <div>
+                Verkäufer: <?php echo $seller; ?>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<?php $qaCall = get_post_meta($order->ID, 'qacall', true);?>
+<?php if ((int)$qaCall <= 2 && (int)$qaCall > 0 || $qaCall === '') : ?>
+	<div class="defects text-center mb-5">
+		<h2>Qualitäts-Call abgeschlossen?</h2>
+		<input type="radio" value="true" name="qacall" class="mr-1" id="no"><label for="no" class="mr-3">Mangel eintragen</label>
+		<input type="radio" value="1" name="qacall" <?php echo checkRoles('dc_technician') ? 'required': '';?> class="mr-1" id="happy" <?php echo ($qaCall == 1 ? 'checked': '');?>><label for="happy" class="mr-3">😊 Kunde zufrieden</label>
+		<input type="radio" value="2" name="qacall" class="mr-1" id="unhappy" <?php echo ($qaCall == 2 ? 'checked': '');?>><label for="unhappy">😒 Kunde unzufrieden</label>
+		<input type="hidden" value="qa" name="noteType" id="note-type-qa" disabled>
+		<div class="form-group text">
+			<label for="notes">Weitere Informationen zum Mangel</label>
+			<textarea id="notes3" class="form-control"></textarea>
+		</div>
+	</div>
+	<script>
+      $(document).ready(function () {
+        var notesNameAttr;
+        if($('#notes').attr('name')) {
+          notesNameAttr = $('#notes').attr('name');
+        } else {
+          notesNameAttr = 'notes'
+        }
+
+        $('input[name="qacall"]').on('change', function () {
+          $('[name="notes"]').removeAttr('name required');
+          if ($(this).is(':checked') && $(this).attr('value') === 'true') {
+            $('#notes3').attr({
+              'required': 'required',
+              'name': notesNameAttr
+            });
+            $('#note-type-qa').removeAttr('disabled');
+          } else {
+            $('#notes2').removeAttr('required name');
+            $('#note-type-qa').attr('disabled', 'disabled');
+          }
+        });
+      });
+	</script>
+<?php else : ?>
+	<div class="text-center">
+		<h2>Qualitäts-Call Mängel</h2>
+		<div class="mb-4 order-card card defects__box">
+			<?php echo $qaCall; ?>
+			<?php if(checkRoles(['administrator', 'director', 'qa_manager'])):?>
+				<div class="mt-3">
+					<button class="button-secondary" formaction="post.php?qaCallFixed=on">Qualitäts-Call Mängel behoben</button>
+				</div>
+			<?php endif;?>
+		</div>
+	</div>
+<?php endif;?>

@@ -1,0 +1,17 @@
+<?php
+
+$privilegedUser = checkRoles( [ 'administrator', 'director' ] );
+
+$showEditAction = get_request_parameter( 'edit' ) === 'on';
+$showRegistrationAction = checkRoles( [
+		'registration',
+		'administrator',
+		'director',
+	] ) && empty( get_post_meta( $order->ID, 'registration', true ) );
+?>
+
+<div class="actions">
+	<div class="col-12">
+		<button class="button-secondary" formaction="post.php?saveupload=on"><span>Speichern / Hochladen</span></button>
+	</div>
+</div>

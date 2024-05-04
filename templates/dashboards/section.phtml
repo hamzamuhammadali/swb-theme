@@ -1,0 +1,82 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+$forcePVScoutView = (bool) ( $options['forcePVScoutView'] ?? false );
+?>
+
+<div class="row">
+    <div class="col-12 default_list">
+        <div class="dashboard__header">
+			<?php if ( ! empty( $step ) ) : ?>
+                <div class="step__counter step__counter--<?php echo $step;?>"><?php echo $step; ?></div>
+			<?php elseif (str_contains($options['cssClass'], 'bh')) :?>
+				<div class="step__counter step__counter--<?php echo $options['cssClass'];?>">BH</div>
+			<?php elseif (str_contains($options['cssClass'], 'defect')) :?>
+				<div class="step__counter step__counter--<?php echo $options['cssClass'];?>">MÄ</div>
+			<?php endif; ?>
+            <h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($orders);?>)</small></h1>
+        </div>
+		<?php
+		if(get_current_user_id()===196 && $options['cssClass']==='defect') :?>
+		<div id="defects" class="d-flex">
+		<?php
+			foreach ( $orders as $order ) {
+				include template( 'dashboards/card' );
+			}
+		?>
+		</div>
+		<script>
+          jQuery(document).ready(function () {
+            var containersByDate = {};
+
+            jQuery('#defects [data-date]').each(function () {
+              var datetime = jQuery(this).data("date");
+              var date = datetime.split(' ')[0]; // Datum extrahieren
+              var time = datetime.split(' ')[1]; // Uhrzeit extrahieren
+
+              if (!containersByDate[date]) {
+                containersByDate[date] = [];
+              }
+
+              containersByDate[date].push({ container: jQuery(this).parent(), time: time });
+            });
+
+            for (var date in containersByDate) {
+              var sortedContainers = containersByDate[date].sort(function(a, b) {
+                return a.time.localeCompare(b.time); // Sortiere nach Uhrzeit
+              });
+
+              var formattedDate = formatDate(date); // Funktion zur Formatierung des Datums
+
+              if (sortedContainers.length > 1) {
+                var sameDateContainer = jQuery('<div class="same-date"></div>');
+                sameDateContainer.attr('data-date', formattedDate);
+
+                for (var i = 0; i < sortedContainers.length; i++) {
+                  sameDateContainer.append(sortedContainers[i].container);
+                }
+
+                jQuery('#defects').append(sameDateContainer);
+              } else {
+                jQuery('#defects').append(sortedContainers[0].container);
+              }
+            }
+          });
+
+          function formatDate(date) {
+            var dateParts = date.split('-');
+            return dateParts[2] + '.' + dateParts[1] + '.' + dateParts[0]; // Format: "01.01.2020"
+          }
+
+
+		</script>
+
+	    <?php else :?>
+		    <?php
+			foreach ( $orders as $order ) {
+				include template( 'dashboards/card' );
+			}
+			?>
+	    <?php endif;?>
+    </div>
+</div>

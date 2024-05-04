@@ -1,0 +1,44 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+
+?>
+
+<?php
+if (isset($_POST['start_sevdesk_check'])) {
+	checkSevdeskPayments();
+}
+?>
+
+<?php
+if (checkRoles('administrator') && isset($_POST['send_sevdesk_reminders'])) {
+	sendSevdeskReminders();
+}
+?>
+
+<?php
+
+if (checkRoles('administrator') && isset($_POST['sevdesk_update_script'])) {
+	sevdeskUpdateScript();
+}
+
+?>
+
+<div class="dashboard__header pt-0">
+	<h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count( $orders ); ?>)</small>
+	</h1>
+	<form method="post" style="float: right">
+		<button type="submit" name="start_sevdesk_check" class="button button-primary" value="">Aktualisieren</button>
+		<?php if(checkRoles('administrator')): ?>
+			<button type="submit" name="send_sevdesk_reminders" class="button button-primary" value="">Mahnungen abschicken</button>
+			<button type="submit" name="sevdesk_update_script" class="button button-primary areUSure" value="">Sevdesk Update Script</button>
+		<?php endif;?>
+	</form>
+</div>
+<div class="invoice-list">
+	<?php
+	foreach ( $orders as $order ) {
+		include template( 'sevdesk-orders-dashboard/row' );
+	}
+	?>
+</div>

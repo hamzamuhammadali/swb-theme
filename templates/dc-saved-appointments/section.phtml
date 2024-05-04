@@ -1,0 +1,38 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+
+?>
+
+<div class="row">
+	<div class="dashboard__header pl-3">
+		<h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($orders);?>)</small></h1>
+	</div>
+    <div class="col-12 default_list default_list--overflow-x">
+	    <table>
+		    <thead>
+		    <tr>
+			    <th>Auftrag</th>
+			    <th>Name</th>
+			    <th>Vorname</th>
+			    <th>Anschrift</th>
+			    <th>Telefon</th>
+			    <th>Mobil</th>
+			    <th>E-Mail</th>
+			    <th>Speicher</th>
+			    <th>Modul</th>
+			    <th>Modulanzahl</th>
+			    <th>Lieferdatum</th>
+			    <th>Preis</th>
+			    <th class="sticky"><span>Bestellt</span>Module</th>
+			    <th class="sticky"><span>Bestellt</span>Speicher</th>
+		    </tr>
+		    </thead>
+		<?php
+			foreach ( $orders as $order ) {
+				include template( 'dc-saved-appointments/row' );
+			}
+			?>
+	    </table>
+    </div>
+</div>

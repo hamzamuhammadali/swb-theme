@@ -1,0 +1,44 @@
+<?php
+
+$privilegedUser = checkRoles( [ 'administrator', 'director' ] );
+
+$showEditAction = get_request_parameter( 'edit' ) === 'on';
+$showRegistrationAction = checkRoles( [
+		'registration',
+		'administrator',
+		'director',
+	] ) && empty( get_post_meta( $order->ID, 'registration', true ) );
+?>
+
+<div class="actions">
+    <div class="col-12">
+	    <button class="button-secondary" formaction="post.php?saveupload=on"><span>Speichern / Hochladen</span></button>
+	    <?php if ( $privilegedUser === true ): ?>
+            <a class="button-secondary" href="<?php echo get_edit_post_link( $order->ID ); ?>&controlling-view">
+                <span>Buchhaltung</span>
+            </a>
+		<?php endif; ?>
+        <button type="submit" class="button-secondary" formaction="post.php?step_back=on">
+            <span>Neuen Termin vereinbaren</span>
+        </button>
+		<?php if ( checkRoles( 'ac_technician' ) ): ?>
+            <button class="button-primary right"><span>Installation abschließen</span></button>
+		<?php else: ?>
+            <button class="button-primary right"><span>Speichern</span></button>
+		<?php endif; ?>
+	    <?php if ( $showRegistrationAction === true && !$showEditAction ): ?>
+		    <a class="button-secondary" href="<?php echo addOrUpdateUrlParam( [ 'registration' => 'on' ] ); ?>"><span>Anmeldung</span></a>
+	    <?php endif; ?>
+		<?php if ( checkRoles( [ 'administrator', 'director' ] ) ): ?>
+            <button class="button-secondary right" formaction="post.php?step_forward=on">
+                <span>Installation abschließen</span>
+            </button>
+		<?php endif; ?>
+	    <?php if ( $privilegedUser): ?>
+		    <div class="secondary-actions">
+			    <a href="<?php echo addOrUpdateUrlParam( [ 'reset_order' => 'on' ] ); ?>">Auftrag stornieren</a>
+			    <a href="<?php echo addOrUpdateUrlParam( [ 'softreset' => 'on' ] ); ?>">Auftrag zurücksetzen</a>
+		    </div>
+	    <?php endif;?>
+    </div>
+</div>

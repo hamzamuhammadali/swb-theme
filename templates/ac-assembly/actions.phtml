@@ -1,0 +1,14 @@
+<?php if ( $step === 6 ): ?>
+
+    <div class="actions">
+        <div class="col-12">
+	        <button class="button-secondary" formaction="post.php?saveupload=on"><span>Speichern / Hochladen</span></button>
+            <?php if(checkRoles(['administrator', 'director']) || get_current_user_id() === (int) get_post_meta($order->ID, 'ac_technician', true)):?>
+		        <button class="button-primary right" formaction="post.php?ac_technician=on">
+	                <span>Installation abschließen</span>
+	            </button>
+			<?php endif;?>
+        </div>
+    </div>
+
+<?php endif; ?>

@@ -1,0 +1,32 @@
+<div class="my-1 mt-2"><label>Persönliche Informationen</label></div>
+<?php foreach ( personalDataFields() as $fieldName => $fieldDefinitions ): ?>
+	<?php
+	$required      = '';
+	$labelRequired = '';
+	if ( $fieldDefinitions['required'] === true ) {
+		$required      = ' required';
+		$labelRequired = ' *';
+	}
+	$input      = $fieldDefinitions['input'] ?? 'text';
+	$fieldValue = get_post_meta( $order->ID, $fieldName, true );
+	?>
+    <div class="form-group text">
+        <label for="<?php echo $fieldName; ?>"><?php echo $fieldDefinitions['label'] . $labelRequired; ?></label>
+		<?php if ( $input === 'text' ): ?>
+            <input id="<?php echo $fieldName; ?>" class="form-control" type="text"
+                   name="<?php echo $fieldName; ?>"
+                   value="<?php echo $fieldValue; ?>"<?php echo $required; ?>>
+
+		<?php elseif ( $input === 'select' ): ?>
+            <select id="status" name="status" class="form-control">
+				<?php foreach ( $fieldDefinitions['options'] as $key => $value ): ?>
+                    <option<?php echo( $fieldValue === $key ? ' selected' : '' ); ?>
+                            value="<?php echo $key; ?>">
+						<?php echo $value; ?>
+                    </option>
+				<?php endforeach; ?>
+            </select>
+		<?php endif; ?>
+    </div>
+<?php endforeach; ?>
+

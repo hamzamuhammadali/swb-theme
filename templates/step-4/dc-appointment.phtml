@@ -1,0 +1,22 @@
+<?php
+$dcDelivery    = get_post_meta( $order->ID, 'dc_delivery', true );
+$dcAppointment = get_post_meta( $order->ID, 'dc_appointment', true );
+$dateFormat    = get_option( 'date_format' );
+?>
+<?php if ( (int) $step > 3 ): ?>
+    <div class="order-card card<?php if ( (int) $step > 4 ): ?> card-finished-appointment<?php endif; ?>">
+        <div class="card-body">
+            <div class="card-title">
+                DC Monteur Termin
+            </div>
+            <div>
+                Monteur: <?php echo get_user_by( 'ID',
+					get_post_meta( $order->ID, 'dc_technician', true ) )->display_name; ?>
+                <br/>
+                Liefertermin: <?php echo date_i18n( $dateFormat, strtotime( $dcDelivery ) ); ?>
+                <br/>
+                Montagetermin: <?php echo date_i18n( $dateFormat, strtotime( $dcAppointment ) ); ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

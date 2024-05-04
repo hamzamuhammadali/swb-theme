@@ -1,0 +1,75 @@
+<?php
+
+$filledDashboard = false;
+
+?>
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/css/sass/steps.css">
+<script src="https://cdn.jsdelivr.net/gh/vdw/HideSeek@master/jquery.hideseek.min.js"></script>
+<script>
+  jQuery(document).ready(function ($) {
+    $('#search').hideseek( {
+      headers: 'thead'
+    });
+
+    $('.ordered-checkbox').on('change', function() {
+      var post_id = $(this).attr( 'data-id' );
+      var post_meta = $(this).attr( 'data-meta' );
+      var checkbox_value = 0;
+
+      if ($(this).is(":checked")) {
+        checkbox_value = 1;
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: ajaxurl,
+        data: {
+          action: 'custom_update_post',
+          post_id: post_id,
+          checkbox_value: checkbox_value,
+          post_meta: post_meta
+        }
+      });
+    });
+
+  });
+</script>
+
+<div class="postbox" style="margin: 2rem 20px 0 0; padding: 1rem 2rem">
+	<div class="dashboard__search d-flex align-items-center">
+		<svg xmlns="http://www.w3.org/2000/svg" width="34.585" height="33.853" viewBox="0 0 34.585 33.853">
+			<g id="Gruppe_1" data-name="Gruppe 1" transform="translate(0.301 -0.359)">
+				<g id="Ellipse_1" data-name="Ellipse 1" transform="translate(-0.301 0.359)" fill="none" stroke="#4ca7f8" stroke-linecap="round" stroke-width="3">
+					<ellipse cx="14.5" cy="14" rx="14.5" ry="14" stroke="none"/>
+					<ellipse cx="14.5" cy="14" rx="12.5" ry="12" fill="none"/>
+				</g>
+				<path id="Pfad_1" data-name="Pfad 1" d="M1273.274,177.184l-7.993-7.993" transform="translate(-1241.819 -145.801)" fill="none" stroke="#4ca7f8" stroke-linecap="round" stroke-width="3"/>
+			</g>
+		</svg>
+		<input id="search" name="search" placeholder="Suche nach Verkäufer, Kunde, Ort etc." type="text" data-list="tbody" autocomplete="off">
+	</div>
+	<?php
+	$filledDashboard = false;
+	?>
+	<div class="container dashboards">
+		<?php dcSchedulingDashboard('Gelegte Montagen', 'dc-saved-appointments/section', true); ?>
+	</div>
+</div>
+
+<style>
+    input[type="checkbox"],
+    input[type=checkbox]:checked::before {
+        width: 2rem;
+        height: 2rem;
+    }
+    input[type=checkbox]:checked::before  {
+        margin: -0.0875rem 0 0 -0.15rem;
+    }
+    table th span {
+        display: block;
+        font-size: 12px;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+</style>

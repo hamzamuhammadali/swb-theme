@@ -1,0 +1,16 @@
+<?php
+
+//require_once($path_to_library . "/zapcallib.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/swb/vendor/icalendar-master/zapcallib.php');
+
+$icalobj = new ZCiCal();
+
+$eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
+
+// add start date
+$eventobj->addNode(new ZCiCalDataNode("DTSTART:" . ZCiCal::fromSqlDateTime("2023-01-01 12:00:00")));
+
+// add end date
+$eventobj->addNode(new ZCiCalDataNode("DTEND:" . ZCiCal::fromSqlDateTime("2023-01-01 13:00:00")));
+
+echo $icalobj->export();

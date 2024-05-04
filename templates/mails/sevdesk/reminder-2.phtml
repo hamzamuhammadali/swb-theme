@@ -1,0 +1,45 @@
+<?php
+$salutation = get_post_meta( $orderID, 'salutation', true );
+$greating   = ( $salutation === 'Herr' ? 'geehrter' : 'geehrte' );
+$name       = implode( ' ', [
+	$salutation,
+	get_post_meta( $orderID, 'firstName', true ),
+	get_post_meta( $orderID, 'lastName', true ),
+] );
+
+$company = utf8_decode(get_option('company'));
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+$companyPhone = get_option('telefon');
+$companyColor =  get_option( 'color' );
+
+$invoiceNumber = get_post_meta($orderID, 'sevdesk_invoice_number', true);
+$invoiceDate = get_post_meta($orderID, 'sevdesk_invoice_date', true);
+
+$totalIncl = get_post_meta($orderID, 'totalIncl', true);
+$duePaymentPercentage = getDuePercentage($orderID);
+$duePayment            = number_format($totalIncl * $duePaymentPercentage / 100, 2, ',', '.');
+
+$reminderDate = date( 'd.m.Y', strtotime(get_post_meta( $orderID, 'sevdesk_reminder_date', true )));
+?>
+
+<table style="max-width: 600px; margin: 50px auto;">
+	<tr>
+		<td>
+			<img src="<?php echo wp_get_attachment_url(get_option('logo'));?>" alt="" width="250">
+			<br>
+			<br>
+			<br>
+			<h1 style="color: <?php echo $companyColor;?>">2. Mahnung <?php echo $invoiceNumber ?></h1>
+			<h2 style="color: <?php echo $companyColor;?>">Sehr <?php echo $greating; ?> <?php echo $name; ?>,</h2>
+			<p>
+				auf unsere Zahlungserinnerung vom <strong><?php echo $reminderDate;?></strong> haben Sie leider bis jetzt nicht reagiert. Ebenso konnten wir keinen Zahlungseingang für die Rechnung <strong><?php echo $invoiceNumber;?></strong> mit dem Betrag <strong><?php echo $duePayment;?> €</strong> feststellen.<br>
+				<br>
+				Wir sind auf pünktliche Zahlungseingänge angewiesen und bitten Sie den fälligen Betrag in den nächsten sieben Tagen auf unser Bankkonto zu überweisen.<br>
+				<br>
+				Sollten Sie die Zahlung bereits veranlasst haben, dann bitten wir Sie diesem Schreiben keine weitere Beachtung zu schenken.
+			</p>
+			Mit freundlichen Grüßen,<br>
+			<h2 style="color: <?php echo $companyColor;?>"><?php echo $companyWithoutForm; ?></h2>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,48 @@
+# ModelVoucherResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** | The voucher id | [optional] 
+**object_name** | **string** | The voucher object name | [optional] 
+**map_all** | **bool** |  | [optional] 
+**create** | [**\DateTime**](\DateTime.md) | Date of voucher creation | [optional] 
+**update** | [**\DateTime**](\DateTime.md) | Date of last voucher update | [optional] 
+**sev_client** | [**\Swagger\Client\Model\ModelVoucherResponseSevClient**](ModelVoucherResponseSevClient.md) |  | [optional] 
+**create_user** | [**\Swagger\Client\Model\ModelVoucherResponseCreateUser**](ModelVoucherResponseCreateUser.md) |  | [optional] 
+**voucher_date** | [**\DateTime**](\DateTime.md) | Needs to be provided as timestamp or dd.mm.yyyy | [optional] 
+**supplier** | [**\Swagger\Client\Model\ModelVoucherResponseSupplier**](ModelVoucherResponseSupplier.md) |  | [optional] 
+**supplier_name** | **string** | The supplier name.&lt;br&gt;       The value you provide here will determine what supplier name is shown for the voucher in case you did not provide a supplier. | [optional] 
+**description** | **string** | The description of the voucher. Essentially the voucher number. | [optional] 
+**document** | [**\Swagger\Client\Model\ModelVoucherResponseDocument**](ModelVoucherResponseDocument.md) |  | [optional] 
+**pay_date** | [**\DateTime**](\DateTime.md) | Needs to be timestamp or dd.mm.yyyy | [optional] 
+**status** | **string** | Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean | [optional] 
+**sum_net** | **string** | Net sum of the voucher | [optional] 
+**sum_tax** | **string** | Tax sum of the voucher | [optional] 
+**sum_gross** | **string** | Gross sum of the voucher | [optional] 
+**sum_net_accounting** | **string** | Net accounting sum of the voucher. Is usually the same as sumNet | [optional] 
+**sum_tax_accounting** | **string** | Tax accounting sum of the voucher. Is usually the same as sumTax | [optional] 
+**sum_gross_accounting** | **string** | Gross accounting sum of the voucher. Is usually the same as sumGross | [optional] 
+**sum_discounts** | **string** | Sum of all discounts in the voucher | [optional] 
+**sum_discounts_foreign_currency** | **string** | Discounts sum of the voucher in the foreign currency | [optional] 
+**paid_amount** | **float** | Amount which has already been paid for this voucher by the customer | [optional] 
+**tax_type** | **string** | Tax type of the voucher. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG Tax rates are heavily connected to the tax type used. | [optional] 
+**credit_debit** | **string** | Defines if your voucher is a credit (C) or debit (D) | [optional] 
+**cost_centre** | [**\Swagger\Client\Model\ModelVoucherResponseCostCentre**](ModelVoucherResponseCostCentre.md) |  | [optional] 
+**voucher_type** | **string** | Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt; | [optional] 
+**currency** | **string** | specifies which currency the voucher should have. Attention: If the currency differs from the default currency stored in the account, then either the \&quot;propertyForeignCurrencyDeadline\&quot; or \&quot;propertyExchangeRate\&quot; parameter must be specified. If both parameters are specified, then the \&quot;propertyForeignCurrencyDeadline\&quot; parameter is preferred | [optional] 
+**property_foreign_currency_deadline** | [**\DateTime**](\DateTime.md) | Defines the exchange rate day and and then the exchange rate is set from sevDesk. Needs to be provided as timestamp or dd.mm.yyyy | [optional] 
+**property_exchange_rate** | **string** | Defines the exchange rate | [optional] 
+**recurring_interval** | **string** | The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all recurring vouchers. | [optional] 
+**recurring_start_date** | [**\DateTime**](\DateTime.md) | The date when the recurring vouchers start being generated.&lt;br&gt;       Necessary attribute for all recurring vouchers. | [optional] 
+**recurring_next_voucher** | [**\DateTime**](\DateTime.md) | The date when the next voucher should be generated.&lt;br&gt;       Necessary attribute for all recurring vouchers. | [optional] 
+**recurring_last_voucher** | [**\DateTime**](\DateTime.md) | The date when the last voucher was generated. | [optional] 
+**recurring_end_date** | [**\DateTime**](\DateTime.md) | The date when the recurring vouchers end being generated.&lt;br&gt;      Necessary attribute for all recurring vouchers. | [optional] 
+**enshrined** | [**\DateTime**](\DateTime.md) | Defines if and when voucher was enshrined. Enshrined vouchers can not be manipulated. | [optional] 
+**tax_set** | [**\Swagger\Client\Model\ModelVoucherResponseTaxSet**](ModelVoucherResponseTaxSet.md) |  | [optional] 
+**payment_deadline** | [**\DateTime**](\DateTime.md) | Payment deadline of the voucher. | [optional] 
+**delivery_date** | [**\DateTime**](\DateTime.md) | Needs to be provided as timestamp or dd.mm.yyyy | [optional] 
+**delivery_date_until** | [**\DateTime**](\DateTime.md) | Needs to be provided as timestamp or dd.mm.yyyy | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

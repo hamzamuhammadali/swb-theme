@@ -1,0 +1,39 @@
+<?php $notes = getCustomerNotes( $order->ID );
+if ((!empty($notes) || getOrderStep($order->ID) < 8) && !checkRoles('seller')):
+?>
+
+<div class="order-card card">
+    <div class="card-body">
+        <div class="card-title">
+            Kundenmitteilungen <span style="color:red; font-weight: 100">Mitteilungen sind für den Kunden auf der Auftragsstatus-Seite sichtbar!</span>
+        </div>
+        <div>
+			<?php foreach ( $notes as $note ): ?>
+				<?php
+				if ( isset( $note['internal'] ) && $note['internal'] === true && $internalUser === false ) {
+					continue;
+				}
+				?>
+                <div class="note">
+                    <span class="note__author"><?php echo $note['author'] ?>:</span>
+                    <span class="note__text"><?php echo $note['message']; ?></span>
+                    <span class="note__date"><small><?php echo $note['date'] ?></small></span>
+                </div>
+			<?php endforeach; ?>
+        </div>
+		<?php if ( $allowedToEdit === true && getOrderStep($order->ID) < 8): ?>
+            <div class="form-group text">
+                <label for="notes">Anmerkungen</label>
+                <textarea id="notes" name="customer_notes" class="form-control"></textarea>
+            </div>
+			<?php /* if ( $internalUser === true ): ?>
+                <div class="form-group">
+                    <input type="checkbox" name="internal_note" id="internal_note" value="on"
+                           aria-label="Interne Anmerkung">
+                    <label for="internal_note">Interne Anmerkung</label>
+                </div>
+			<?php endif; */?>
+		<?php endif; ?>
+    </div>
+</div>
+<?php endif;?>

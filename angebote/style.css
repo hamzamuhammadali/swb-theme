@@ -1,0 +1,162 @@
+@import "style-app.css";
+
+.form-group--no-border {
+    border: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.form-group--hidden {
+    display: none;
+}
+
+.logo {
+    top: 20px;
+}
+
+.employee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--orange);
+    font-weight: 500;
+    padding: 5px 0 3px;
+    color: var(--white);
+}
+
+body {
+    background: #eee;
+}
+
+.highlight--white {
+    border-radius: 20px;
+    margin-top: 0;
+}
+
+.highlight--white + .highlight--white {
+    margin-top: 30px;
+}
+
+h3 {
+    margin: 10px 0 30px;
+}
+
+.form {
+    background: #eeeeee;
+    margin-top: 120px;
+    padding-bottom: 50px;
+}
+
+.status--alt {
+    padding: 20px;
+    background: red;
+    color: white;
+}
+
+.statusbar {
+    z-index: 30;
+}
+
+.statusbar.send:before {
+    content: 'Ihr Angebot wurde erfolgreich versendet';
+}
+
+#inverter:disabled {
+    display: none !important;
+}
+
+.multiselect select {
+    padding-top: 35px !important;
+}
+
+.multiselect label {
+    padding-right: 10px;
+    background: white;
+    z-index: 9;
+}
+
+.multiselect select option {
+    font-weight: 100;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.multiselect select option:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #eaeaea;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.multiselect select option:checked,
+.multiselect select option:focus {
+    background: transparent;
+}
+
+.multiselect select option:checked:after {
+    content: '';
+    background: #222;
+    border-radius: 50%;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.lead {
+    bottom: 0;
+    width: calc(100% - 60px);
+    z-index: 99;
+    max-height: 30vh;
+    overflow: scroll;
+    position: fixed;
+    margin: 0 30px;
+    border-radius: 10px 10px 0 0;
+}
+
+.lead ~ form {
+    padding-bottom: 120px!important;
+}
+
+.lead__header--active {
+    position: fixed;
+}
+
+.lead__header {
+    cursor: pointer;
+    background: #b0e8a2;
+    border:2px solid green;
+    border-bottom: 0;
+    padding: 20px 30px;
+    width: calc(100% - 60px);
+    border-radius: 10px 10px 0 0;
+}
+
+.lead__header--active + .lead__info {
+    display: block;
+}
+
+.lead__info {
+    margin-top: 10px;
+    border-radius: 10px 10px 0 0;
+    display: none;
+    padding: 80px 30px 30px 30px;
+    background: #fff;
+    border:2px solid green;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+option:disabled {
+    display: none;
+    color: #afafaf;
+}
+
+/*# sourceMappingURL=style.css.map */

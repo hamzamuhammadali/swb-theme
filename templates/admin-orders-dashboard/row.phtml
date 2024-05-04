@@ -1,0 +1,42 @@
+<?php
+$billedDC = false;
+$billedStorage = false;
+$billedAC = false;
+
+if(get_post_meta($order->ID, 'billed_dc', true) > 0) {
+	$billedDC = true;
+}
+
+if(get_post_meta($order->ID, 'billed_storage', true) > 0) {
+	$billedStorage = true;
+}
+
+if(get_post_meta($order->ID, 'billed_ac', true) > 0) {
+	$billedAC = true;
+}
+?>
+
+<tr class="d-flex-light" style="width: 100%">
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>,
+		<?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+	</td>
+	<td>
+		<?php echo date("d.m.Y", strtotime(get_post_meta($order->ID, 'dc_appointment', true)));?>
+	</td>
+	<td>
+		<input type="checkbox" class="billed-checkbox" data-id="<?php echo $order->ID;?>" data-meta="billed_dc" <?php echo $billedDC ? 'checked' : ''; ?>>
+	</td>
+	<td>
+		<input type="checkbox" class="billed-checkbox" data-id="<?php echo $order->ID;?>" data-meta="billed_storage" <?php echo $billedStorage ? 'checked' : ''; ?>>
+	</td>
+	<td>
+		<input type="checkbox" class="billed-checkbox" data-id="<?php echo $order->ID;?>" data-meta="billed_ac" <?php echo $billedAC ? 'checked' : ''; ?>>
+	</td>
+</tr>

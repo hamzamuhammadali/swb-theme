@@ -1,0 +1,175 @@
+<?php
+
+$firstBilling  = get_post_meta( $order->ID, 'first-billing', true );
+$secondBilling = get_post_meta( $order->ID, 'second-billing', true );
+
+$allowActions = ( (int) $step > 4 && empty( $firstBilling ) ) || ( (int) $step > 6 && empty( $secondBilling ) );
+
+$privilegedUser       = checkRoles( [ 'administrator', 'director' ] );
+$showActionsContainer = $allowActions || $privilegedUser;
+
+$showEditAction = get_request_parameter( 'edit' ) === 'on';
+
+$sevDeskOrderSend      = metadata_exists( 'post', $order->ID, 'sevdesk_invoice_pdf' );
+$sevDeskOrderExists    = metadata_exists( 'post', $order->ID, 'sevdesk_invoice_id' ) && metadata_exists( 'post', $order->ID, 'sevdesk_invoice_render' );
+$sevDeskReminderExists = metadata_exists( 'post', $order->ID, 'sevdesk_reminder_id' ) && metadata_exists( 'post', $order->ID, 'sevdesk_reminder_render' );
+$sevDeskReminderSend   = metadata_exists( 'post', $order->ID, 'sevdesk_reminder_pdf' );
+// REMINDER STUFF
+
+if ( $sevDeskOrderExists ) {
+	$overdue         = getOverDue( $order->ID );
+}
+$dueAmountPaid   = metadata_exists( 'post', $order->ID, 'sevdesk_paid_due_amount' );
+$reminderQty     = get_option( 'reminder_qty' );
+$reminderCounter = (int) get_post_meta( $order->ID, 'sevdesk_reminder_counter', true );
+
+?>
+
+<?php if ( $showActionsContainer ): ?>
+	<div class="actions">
+		<div class="col-12<?php if ( ! $privilegedUser ): ?> d-flex justify-content-end<?php endif; ?>">
+			<?php if (! $sevDeskOrderSend ): ?>
+				<?php if ( ! $showEditAction ): ?>
+					<a class="button-secondary" href="<?php echo addOrUpdateUrlParam( [ 'edit' => 'on' ] ); ?>">Rechnungsinformationen
+						bearbeiten</a>
+				<?php else : ?>
+					<button class="button-secondary" formaction="post.php?saveupload=on"><span>Speichern</span></button>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<?php if ( $privilegedUser && ! $showEditAction ): ?>
+				<a class="button-secondary" href="<?php echo get_edit_post_link( $order->ID ); ?>">
+					<span>Alle Informationen</span>
+				</a>
+			<?php endif; ?>
+			<?php  //if ( checkRoles( 'administrator' ) ):// todo remove admin check ?>
+				<?php if ( ! $sevDeskOrderExists  && empty($firstBilling)): ?>
+					<button class="button-primary right button-sevdesk" formaction="post.php?controlling=on&invoiceStatus=100">
+						<span>Rechnungsentwurf erstellen</span>
+					</button>
+				<?php elseif ( empty( $firstBilling ) && ! $showEditAction ) : ?>
+					<button class="button-primary right button-sevdesk" formaction="post.php?controlling=on&invoiceStatus=200">
+						<span>Rechnung an Kunden senden</span>
+					</button>
+				<?php elseif ( $overdue && ! $dueAmountPaid ) : ?>
+					<?php if ( ! empty( $firstBilling ) && ! $sevDeskReminderExists ) : ?>
+						<button class="button-primary right button-sevdesk" formaction="post.php?controlling=on&invoiceStatus=400">
+							<span>Zahlungserinnerung Entwurf</span>
+						</button>
+					<?php elseif ( $sevDeskReminderExists && ! $sevDeskReminderSend ) : ?>
+						<button class="button-primary right button-sevdesk" formaction="post.php?controlling=on&invoiceStatus=500">
+							<span>Zahlungserinnerung an Kunden senden</span>
+						</button>
+					<?php elseif ( $sevDeskReminderSend && $reminderCounter <= $reminderQty ) : ?>
+						<button class="button-primary right button-sevdesk" formaction="post.php?controlling=on&invoiceStatus=500">
+							<span><?php echo $reminderCounter; ?>. Mahnung erstellen</span>
+						</button>
+					<?php endif; ?>
+				<?php endif; ?>
+				<?php if(empty($firstBilling) && empty($secondBilling)) :?>
+					<button class="button-primary right" formaction="post.php?controlling=on&invoiceStatus=300">
+						<span>Rechnung via Sevdesk versendet</span>
+					</button>
+				<?php elseif (empty($secondBilling)) :?>
+					<button class="button-primary right" formaction="post.php?controlling=on&invoiceStatus=300">
+						<span>Rechnungsbetrag vollständig erhalten</span>
+					</button>
+				<?php endif;?>
+			<?php  /* elseif  ( $allowActions && ! $showEditAction ): ?>
+				<button class="button-primary right" formaction="post.php?controlling=on">
+					<span>In Rechnung stellen</span>
+				</button>
+			<?php endif; */?>
+		</div>
+	</div>
+<?php endif; ?>
+<br>
+<?php
+
+if ( checkRoles( 'administrator' ) ) {
+	//var_dump(getSevdeskContact($order->ID));
+	//var_dump(get_post_meta( $order->ID, 'sevdesk_paid_due_amount', true ));
+	//echo getDuePercentage($order->ID);
+	//delete_post_meta( 24755, 'sevdesk_invoice_id');
+	//delete_post_meta( 24755, 'sevdesk_invoice_pdf');
+	//delete_post_meta( 24755, 'first-billing');
+	//echo get_post_meta( $order->ID, 'sevdesk_invoice_id', true );
+	//echo get_post_meta( $order->ID, 'sevdesk_payment_received', true );
+	//echo get_post_meta( $order->ID, 'sevdesk_paid_amount', true );
+	//echo get_post_meta( $order->ID, 'sevdesk_ready_to_remind', true );
+
+	//echo '<br>' . get_post_meta( $order->ID, 'sevdesk_reminder_id', true );
+	//var_dump( get_post_meta( $order->ID, 'sevdesk_invoice_pos', true ));
+
+
+	//delete_post_meta( 24755, 'storage_delivery' );
+
+	//delete_post_meta( 24755, 'registrationDone' );
+	//delete_post_meta( 24755, 'sevdesk_reminder_id' );
+	//delete_post_meta( 24755, 'sevdesk_reminder_pdf' );
+	//delete_post_meta( 24755, 'sevdesk_reminder_render' );
+	//delete_post_meta( 24755, 'sevdesk_reminder_counter' );
+
+	//update_post_meta(24755, 'sevdesk_invoice_date', '2023-01-01');
+	//update_post_meta(24755, 'sevdesk_reminder_date', '2023-10-25');
+
+	//get_post_meta($order->ID, 'storage_delivery', true);
+	//get_post_meta($order->ID, 'registrationDone', true);
+
+	//update_post_meta(24755, 'sevdesk_contact_id', '123456789123456');
+
+
+	/*
+		$orderToDeleta = 24755;
+		delete_post_meta( $orderToDeleta, 'first-billing' );
+		delete_post_meta( $orderToDeleta, 'storage_delivery' );
+
+		$prefix = 'sevdesk_';
+		$all_post_metas = get_post_meta($orderToDeleta);
+		foreach ($all_post_metas as $meta_key => $meta_value) {
+			if (strpos($meta_key, $prefix) === 0 && $meta_key != 'sevdesk_contact_id' && $meta_key != 'sevdesk_address_id' && $meta_key != 'sevdesk_communication_id') {
+				delete_post_meta($orderToDeleta, $meta_key);
+			}
+		}
+		/*
+
+					$prefix         = 'sevdesk_reminder_';
+					$all_post_metas = get_post_meta( 24755 );
+					foreach ( $all_post_metas as $meta_key => $meta_value ) {
+						if ( strpos( $meta_key, $prefix ) === 0 ) {
+							delete_post_meta( 24755, $meta_key );
+						}
+					}
+				*/
+	$prefix         = 'sevdesk_';
+	$all_post_metas = get_post_meta( $order->ID );
+	foreach ( $all_post_metas as $meta_key => $meta_value ) {
+		if ( strpos( $meta_key, $prefix ) === 0 ) {
+			echo $meta_key . ': ' . get_post_meta( $order->ID, $meta_key, true ) . '<br>';
+		}
+	}
+
+	echo get_post_meta($order->ID, 'order_start_date', true);
+
+	/*
+	$invoiceId = get_post_meta(25532, 'sevdesk_invoice_id', true );
+	$url = 'https://my.sevdesk.de/api/v1/Invoice/'.$invoiceId.'/sendBy';
+	$data = [
+		"sendType"=> "VM",
+		"sendDraft"=> true
+	];
+
+	$response  = initCurl($data, $url, 'PUT');
+	var_dump($response);
+/*
+	$myvals = get_post_meta($order->ID);
+
+	foreach($myvals as $key=>$val)
+	{
+		print_r( $key . ' : ' . $val[0] . '<br/>');
+	}
+*/
+}
+
+?>
+<br>

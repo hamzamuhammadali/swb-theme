@@ -1,0 +1,44 @@
+<?php $notes = getCustomerNotes( $order->ID );
+$dateFormat    = get_option( 'date_format' );
+$companyWithoutForm = get_option('companyWithoutForm');
+?>
+
+<div class="col-12 order-status">
+	<a title="1" class="order-status-step order-status-step__done">
+		1
+	</a>
+	<a title="2" class="order-status-step order-status-step__active">
+		2 </a>
+	<a title="3" class="order-status-step">
+		3 </a>
+	<a title="4" class="order-status-step">
+		4 </a>
+</div>
+
+<h2>📅 Ihre Liefer- und Montagetermine</h2>
+Die bestellten Komponenten werden direkt an Sie geliefert und verbaut. Wir bitten Sie bei der Montage anwesend zu sein, um den Handwerkern bei Fragen zur Verfügung zu stehen und ihnen Zugang zum Haus zu gewähren.
+Der erste Schritt ist die DC-Montage: Diese beinhaltet die komplette Montage des Solar-Befestigungssystems, der Photovoltaik-Module, die Verbindung der Module, die Verlegung der Solarkabel bis zum Wechselrichter o. Zählerfeld.
+</div>
+<div class="status-dates">
+<h3>Liefertermin: <?php echo date_i18n( $dateFormat, strtotime( $order->dc_delivery ) ); ?></h3>
+<h3>Montagetermin: <?php echo date_i18n( $dateFormat, strtotime( $order->dc_appointment ) ); ?></h3>
+</div>
+
+<div class="notes">
+	<?php if(!empty($notes)) :?>
+
+		<div class="further-info">Wichtige Mitteilungen von <?php echo $companyWithoutForm;?></div>
+		<?php foreach ( array_reverse($notes) as $note ): ?>
+			<?php
+			if ( isset( $note['internal'] ) && $note['internal'] === true && $internalUser === false ) {
+				continue;
+			}
+			?>
+			<div class="note">
+				<span class="note__author"><?php echo $note['author'] ?>: </span>
+				<span class="note__text"><?php echo $note['message']; ?></span>
+				<div><small>Mitteilung vom <?php echo $note['date'] ?></small></div>
+			</div>
+		<?php endforeach; ?>
+	<?php endif;?>
+</div>

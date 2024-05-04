@@ -1,0 +1,80 @@
+<?php
+$inputLabel    = 'Mängelbeseitigung Termin';
+$inputName     = 'op_defect_appointment';
+$randomId      = md5( microtime() );
+$datePickerId  = "${inputName}_${randomId}";
+$acTechnicians = acTechnicians();
+$wpNonce       = wp_create_nonce( 'wp_rest' );
+$user          = get_user_by( 'ID', get_post_meta( $order->ID, 'op_defect_technician', true ) );
+$defectAppointment = get_post_meta( $order->ID, 'op_defect_appointment', true );
+$time = true;
+?>
+
+<?php if ( $defectAppointment ): ?>
+	<div class="preselected">
+		<div>Termin zur Mängelbeseitigung: <strong><?php echo date( "d.m.Y, H:i", strtotime( $defectAppointment ) ); ?> Uhr</strong></div>
+		<div>Mängel Techniker: <strong><?php echo $user->display_name; ?></strong></div>
+	</div>
+<?php endif; ?>
+<div class="appointment-form">
+	<div><label>AC Monteur und Termin auswählen *</label></div>
+	<div class="form-group text">
+		<label for="op_defect_technician">AC Monteur</label>
+		<select id="ac_technician" name="op_defect_technician" class="form-control">
+			<option></option>
+			<?php $selectedAcTechnician = get_post_meta( $order->ID, 'op_defect_technician', true ); ?>
+			<?php foreach ( $acTechnicians as $acTechnician ): ?>
+				<option<?php echo( $acTechnician->ID === $selectedAcTechnician ? ' selected' : '' ); ?>
+					value="<?php echo $acTechnician->ID; ?>">
+					<?php echo esc_html( $acTechnician->display_name ); ?>
+				</option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+
+	<?php include template( 'global/datepicker' ); ?>
+</div>
+
+<script>
+  jQuery('#ac_technician').change(function (event) {
+    let userId = event.currentTarget.value;
+    if (userId === undefined || userId === '' || userId === null || userId === 0) {
+      return;
+    }
+
+    jQuery.get(`/wp-json/orders/v1/ac-user-events/${userId}?_wpnonce=<?php echo $wpNonce; ?>`, function (response) {
+      let datePicker = datePickers.<?php echo $datePickerId; ?>;
+      datePicker.updateOptions({
+        restrictions: {
+          disabledDates: response
+        },
+      });
+    });
+
+    jQuery.get(`/wp-json/orders/v1/op-defect-events/${userId}?_wpnonce=<?php echo $wpNonce; ?>`, function (response) {
+      let datePicker = datePickers.<?php echo $datePickerId; ?>;
+      datePicker.updateOptions({
+        restrictions: {
+          disabledDates: response
+        },
+      });
+
+      datePicker.display.paint = (unit, date, classes) => {
+        response.forEach(res => {
+          if (unit === tempusDominus.Unit.date) {
+            if (date.isSame(res, unit)) {
+              classes.push('special-day');
+            }
+          }
+        })
+      }
+
+      datePicker.show();
+    });
+  });
+
+  jQuery('.defect-appointment--set').click(function () {
+    jQuery(this).removeClass('defect-appointment--set');
+  });
+
+</script>

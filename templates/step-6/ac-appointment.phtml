@@ -1,0 +1,20 @@
+<?php
+$acAppointment = get_post_meta( $order->ID, 'ac_appointment', true );
+$dateFormat    = get_option( 'date_format' );
+?>
+
+<?php if ( (int) $step > 5 ): ?>
+    <div class="order-card card<?php if ( $step > 6 ): ?> card-finished-appointment<?php endif; ?>">
+        <div class="card-body">
+            <div class="card-title">
+                AC Montage Termin
+            </div>
+            <div>
+                Elektriker: <?php echo get_user_by( 'ID',
+					get_post_meta( $order->ID, 'ac_technician', true ) )->display_name; ?>
+                <br/>
+                Termin: <?php echo date_i18n( $dateFormat, strtotime( $acAppointment ) ); ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

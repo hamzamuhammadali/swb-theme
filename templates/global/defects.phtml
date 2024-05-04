@@ -1,0 +1,37 @@
+<?php
+$hasDefects = get_post_meta($orderID, $filter, true);
+$step = (int) get_post_meta( $orderID, 'step', true );
+?>
+
+<?php if ( ! $hasDefects ) : ?>
+	<div class="defects text-center mb-5">
+		<h2><?php echo $title;?></h2>
+		<input type="radio" value="true" name="<?php echo $filter;?>" <?php echo checkRoles('dc_technician') ? 'required': '';?> class="mr-1" id="yes"><label for="yes" class="mr-3">Ja</label>
+		<input type="radio" value="false" name="<?php echo $filter;?>" class="mr-1" id="no"><label for="no">Nein</label>
+		<input id="note-type" type="hidden" value="<?php echo $filter;?>" name="noteType" disabled>
+		<div class="form-group text">
+			<label for="notes">Weitere Informationen zu den Mängeln</label>
+
+			<textarea id="notes2" class="form-control" <?php // echo $step !== 8 ?: 'name="notes" ';?>></textarea>
+		</div>
+	</div>
+	<script>
+      $(document).ready(function () {
+
+        var notesNameAttr = $('#notes').attr('name');
+
+        $('input[name="<?php echo $filter;?>"]').on('change', function () {
+          if($(this).is(':checked') && $(this).attr('value') === 'true') {
+            $('#notes2').attr({
+              'required': 'required',
+              'name': notesNameAttr
+            });
+            $('#note-type').removeAttr('disabled');
+          } else {
+            $('#notes2').removeAttr('required name');
+            $('#note-type').attr('disabled', 'disabled');
+          }
+        });
+      })
+	</script>
+<?php endif;?>

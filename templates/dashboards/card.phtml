@@ -1,0 +1,93 @@
+<?php
+$meta_keys = [
+	'dc_delivery',
+	'dc_appointment',
+	'op_defect_appointment',
+	'operator-defects',
+	'ac-defects',
+	'defect_appointment',
+	'delayed_appointment',
+	'ac_appointment',
+	'status',
+	'salutation',
+	'firstName',
+	'lastName',
+	'zip',
+	'city',
+	'order_start_date',
+	'module',
+	'moduleqty',
+	'dc_technician',
+	'ac_technician',
+];
+
+$meta_values = [];
+foreach ($meta_keys as $key) {
+	$meta_values[$key] = get_post_meta($order->ID, $key, true);
+}
+
+$dateFormat = get_option('date_format');
+$timeFormat = 'H:i';
+$dateFormatSortable = 'Y-m-d H:i';
+?>
+
+<a href="<?php echo get_edit_post_link($order->ID) . ($forceControllingView === true ? '&controlling-view' : '') . ($forcePVScoutView === true ? '&pvscout-view' : ''); ?>" class="card-body <?php echo (($step === 3 && !empty($meta_values['dc_appointment'])) || (!get_post_meta($order->ID, 'registration', true) && $meta_values['dc_appointment'] && $step != 4) || ($step > 5)) ? ' order-2' : 'order-1'; ?>">
+	<div class="order-card card dashboard-card step-<?php echo $step; ?><?php echo isset($options['cssClass']) ? ' card--' . $options['cssClass'] : ''; ?><?php echo $meta_values['operator-defects'] && $options['cssClass'] === 'defect' ? ' card--op-defect' : ''; ?><?php echo $meta_values['ac-defects'] && $options['cssClass'] === 'defect' ? ' card--defect' : ''; ?><?php echo $meta_values['status'] === 'funding' ? ' card--funding' : ''; ?>">
+		<div class="card-title">
+			#<?php echo $order->ID; ?>
+			<small class="card__kwp">
+				(<?php
+				$moduleID = $meta_values['module'];
+				$moduleQty = (int)$meta_values['moduleqty'];
+				$modulePower = (int)get_post_meta($moduleID, 'typ', true);
+				$pvPower = $moduleQty * $modulePower / 1000;
+				echo number_format($pvPower, 2, ',', '.');
+				?>
+				kwp)
+			</small>
+		</div>
+		<div class="card__description">
+			<?php echo $meta_values['salutation']; ?> <?php echo $meta_values['firstName']; ?> <?php echo $meta_values['lastName']; ?>
+			<br/>
+			<?php echo $meta_values['zip']; ?> <?php echo $meta_values['city']; ?>
+			<br/>
+			<br/>
+
+			Vom <?php echo date("d.m.Y", strtotime($meta_values['order_start_date'])); ?><br>
+			V: <?php echo getSellerName($order); ?>
+		</div>
+		<?php echo ($step === 3 && !empty($meta_values['dc_appointment'])) ? '<div class="pre-appointment' . (!$meta_values['delayed_appointment'] ?: ' pre-appointment--middle') . '">Ausgew. T.: ' . date_i18n($dateFormat, strtotime($meta_values['dc_appointment'])) . '</div>' : ''; ?>
+		<?php echo ($step === 3 && !empty($meta_values['delayed_appointment'])) ? '<div class="delayed-appointment">Später vorgesehen: ' . date_i18n($dateFormat, strtotime($meta_values['delayed_appointment'])) . '</div>' : ''; ?>
+		<?php if ($step > 4) {
+			echo '<div class="dc-done">Montiert ' . date_i18n('d.m.Y', strtotime($meta_values['dc_appointment'])) . '</div>';
+			echo '<div class="hidden">Montiert ' . date_i18n('m/Y', strtotime($meta_values['dc_appointment'])) . '</div>';
+		} ?>
+		<?php if ($step > 0 && $step < 3 && !get_post_meta($order->ID, 'registration', true) && $meta_values['dc_appointment']) {
+			echo '<div class="dc-done">DC Montage ' . date_i18n($dateFormat, strtotime($meta_values['dc_appointment'])) . '</div>';
+		} ?>
+
+	</div>
+	<?php if ($step === 4 || $options['cssClass'] === 'dcdone') : ?>
+		<div class="card__appointment">
+			Monteur: <?php echo get_user_by('ID', $meta_values['dc_technician'])->display_name; ?><br>
+			Liefertermin: <?php echo date_i18n($dateFormat, strtotime($meta_values['dc_delivery'])); ?>
+			<br/>
+			Montagetermin: <?php echo date_i18n($dateFormat, strtotime($meta_values['dc_appointment'])); ?>
+		</div>
+	<?php endif; ?>
+	<?php if ($step === 6) : ?>
+		<div class="card__appointment">
+			Elektriker: <?php echo get_user_by('ID', $meta_values['ac_technician'])->display_name; ?><br>
+			AC Montagetermin: <?php echo date_i18n($dateFormat, strtotime($meta_values['ac_appointment'])); ?>
+		</div>
+	<?php endif; ?>
+	<?php if (!empty($meta_values['op_defect_appointment']) && !empty($meta_values['operator-defects']) && str_contains($options['cssClass'], 'defect')) : ?>
+		<div class="card__appointment" data-date="<?php echo date_i18n($dateFormatSortable, strtotime($meta_values['op_defect_appointment'])); ?>">
+			<span class="date"><?php echo date_i18n($dateFormat, strtotime($meta_values['op_defect_appointment'])); ?>,</span> <?php echo date_i18n($timeFormat, strtotime($meta_values['op_defect_appointment'])); ?> Uhr
+		</div>
+	<?php elseif (!empty($meta_values['defect_appointment']) && !empty($meta_values['ac-defects']) && str_contains($options['cssClass'], 'defect')) : ?>
+		<div class="card__appointment" data-date="<?php echo date_i18n($dateFormatSortable, strtotime($meta_values['defect_appointment'])); ?>">
+			<span class="date"><?php echo date_i18n($dateFormat, strtotime($meta_values['defect_appointment'])); ?></span>, <?php echo date_i18n($timeFormat, strtotime($meta_values['defect_appointment'])); ?> Uhr
+		</div>
+	<?php endif; ?>
+</a>

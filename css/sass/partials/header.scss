@@ -1,0 +1,192 @@
+/**
+ * partials/header
+ * ---
+ */
+
+
+// Header container
+.container-fluid--header {
+  max-width: 1550px;
+}
+
+.header {
+  background: #fff;
+  box-shadow: 0 3px 26px #00000012;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: $space30 0;
+  @include media-breakpoint-down(md) {
+    padding: $space15 0;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      @include media-breakpoint-down(md) {
+        text-align: right;
+        &:last-child {
+          padding-bottom: $space15;
+        }
+      }
+
+      &:not(:last-child) {
+        @include media-breakpoint-up(lg) {
+          padding-right: $space25;
+        }
+        @include media-breakpoint-up(xl) {
+          padding-right: $space50;
+        }
+      }
+
+      a.nav-link {
+        @include media-breakpoint-down(md) {
+          padding: $space25 0 0 40px;
+          display: inline-block;
+          position: relative;
+        }
+        @include media-breakpoint-only(lg) {
+          padding: 0 $space10 0 0 !important;
+        }
+        @include media-breakpoint-up(xl) {
+          padding: 0 $space25 0 0 !important;
+        }
+        font-weight: 400;
+      }
+
+      &:after {
+        content: '';
+        width: 1px;
+        transition: all ease 0.3s;
+        height: 3px;
+        display: block;
+      }
+
+      &:hover, &.active {
+        @include media-breakpoint-up(lg) {
+          &:after {
+            content: '';
+            width: 100%;
+            background: $orange;
+            height: 3px;
+            border-radius: 4px;
+            display: block;
+          }
+        }
+        @include media-breakpoint-down(md) {
+          a:after {
+            content: '';
+            width: 100%;
+            height: 3px;
+            background: $orange;
+            border-radius: 4px;
+            display: block;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.logo {
+  @include media-breakpoint-down(md) {
+    width: 190px;
+  }
+}
+
+.navbar-toggler {
+  margin-right: $space10;
+  width: 45px;
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+}
+
+.navbar-toggler {
+  rect, path {
+    transition: all ease 0.3s;
+    transform: none;
+  }
+
+  path {
+    transform: translateY(-3px) translateX(-3px);
+  }
+
+  #Rechteck_42-2 {
+    transform: translateY(24px);
+  }
+
+  #Rechteck_42 {
+    transform: translateY(10px);
+  }
+
+  &[aria-expanded="true"] {
+    rect#Rechteck_42-2 {
+      transform: rotate(45deg) translate3d(1px, 10px, 5px);
+      transform-origin: center;
+    }
+
+    rect#Rechteck_42 {
+      transform: rotate(-45deg) translate3d(1px, 12px, 0);
+      transform-origin: center;
+    }
+
+    #Pfad_136 {
+      transform: translateX(50px);
+    }
+  }
+}
+
+.form-group--no-border {
+  border: 0;
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.logo {
+  top: 20px
+}
+
+.employee {
+  position: relative;
+  width: 100%;
+  background:$orange;
+  font-weight: 500;
+  padding: 5px 0 3px;
+  color: $white;
+  z-index: 20;
+  a {
+    color: $white;
+  }
+}
+
+.angebote {
+  background: #eee;
+
+  .highlight--white {
+    border-radius: 20px;
+    margin-top: 0;
+
+    + .highlight--white {
+      margin-top: 30px;
+    }
+  }
+
+  h3 {
+    margin: 10px 0 30px;
+  }
+
+  .form {
+    background: #eeeeee;
+    margin-top: 120px;
+    padding-bottom: 50px;
+  }
+
+}
+

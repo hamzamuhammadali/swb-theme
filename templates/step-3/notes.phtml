@@ -1,0 +1,14 @@
+<div class="order-card card">
+  <div class="card-body">
+      <div class="card-title">
+          Anmerkungen
+      </div>
+      <div>
+          <?php echo get_post_meta( $order->ID, 'notes', true ); ?>
+      </div>
+	  <div class="form-group text">
+		  <label for="notes">Anmerkungen</label>
+	      <textarea id="notes" name="notes" class="form-control"></textarea>
+	  </div>
+  </div>
+</div>

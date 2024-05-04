@@ -1,0 +1,174 @@
+<div class="text-center">
+    <h2>Photovoltaikanlage</h2>
+</div>
+
+<?php foreach ( pvFields() as $fieldName => $fieldDefinitions ): ?>
+	<?php
+
+	if ( ( $fieldDefinitions['input'] ?? 'text' ) !== 'text' ) {
+		continue;
+	}
+	$required      = '';
+	$labelRequired = '';
+	if ( $fieldDefinitions['required'] === true ) {
+		$required      = ' required';
+		$labelRequired = ' *';
+	}
+	$input      = $fieldDefinitions['input'] ?? 'text';
+	$fieldValue = get_post_meta( $order->ID, $fieldName, true );
+	?>
+    <div class="form-group text">
+        <label for="<?php echo $fieldName; ?>"><?php echo $fieldDefinitions['label'] . $labelRequired; ?></label>
+		<?php if ( $input === 'text' ): ?>
+            <input id="<?php echo $fieldName; ?>" class="form-control" type="text"
+                   name="<?php echo $fieldName; ?>"
+                   value="<?php echo $fieldValue; ?>"<?php echo $required; ?>>
+
+		<?php elseif ( $input === 'select' ): ?>
+            <select id="status" name="status" class="form-control">
+				<?php foreach ( $fieldDefinitions['options'] as $key => $value ): ?>
+                    <option<?php echo( $fieldValue === $key ? ' selected' : '' ); ?>
+                            value="<?php echo $key; ?>">
+						<?php echo $value; ?>
+                    </option>
+				<?php endforeach; ?>
+            </select>
+		<?php endif; ?>
+    </div>
+<?php endforeach; ?>
+
+<div class="form-group text"><label for="storage">Speicher</label>
+    <select class="form-control" id="storage" name="storage">
+        <option value="">Ohne Speicher</option>
+		<?php
+		$args     = [ 'post_type' => 'storage', 'posts_per_page' => - 1, 'post_status' => 'any' ];
+		$storages = get_posts( $args );
+		if ( count( $storages ) > 0 ) :
+			foreach ( $storages as $storage ) :
+				$selected = (int) get_post_meta( $order->ID, 'storage', true ) === $storage->ID ? ' selected' : '';
+				?>
+                <option value="<?php echo $storage->ID; ?>"<?php echo $selected; ?>>
+					<?php echo get_post_meta( $storage->ID, 'name', true ); ?>
+                </option>
+			<?php
+			endforeach;
+		endif;
+		?>
+    </select>
+</div>
+
+
+<div class="form-group text select">
+    <label for="module">Modul</label>
+    <select class="form-control" id="module" name="module">
+		<?php
+		$args    = array( 'post_type' => 'module', 'posts_per_page' => - 1, 'post_status' => 'any' );
+		$modules = get_posts( $args );
+		if ( count( $modules ) > 0 ) :
+			foreach ( $modules as $module ) :
+				$selected = (int) get_post_meta( $order->ID, 'module', true ) === $module->ID ? ' selected' : '';
+				?>
+                <option value="<?php echo $module->ID; ?>"<?php echo $selected; ?>>
+					<?php echo get_post_meta( $module->ID, 'pvmoduleid', true ); ?>
+                </option>
+			<?php
+			endforeach;
+		endif;
+		?>
+    </select>
+</div>
+
+<div class="form-group text">
+    <label for="inverter">Wechselrichter</label>
+    <select class="form-control" id="inverter" name="inverter">
+		<?php
+		$args      = array( 'post_type' => 'inverter', 'posts_per_page' => - 1, 'post_status' => 'any' );
+		$inverters = get_posts( $args );
+		if ( count( $inverters ) > 0 ) :
+			foreach ( $inverters as $inverter ) :
+				$selected = (int) get_post_meta( $order->ID, 'inverter', true ) === $inverter->ID ||  (empty(get_post_meta( $order->ID, 'inverter', true )) && $inverter->ID === (int) get_option('defaultinverter') ) ? ' selected' : '';
+
+				?>
+                <option value="<?php echo $inverter->ID; ?>"<?php echo $selected; ?>>
+					<?php echo get_post_meta( $inverter->ID, 'name', true ); ?>
+                </option>
+			<?php
+			endforeach;
+		endif;
+		?>
+    </select>
+</div>
+
+
+<?php $orderAgreements = get_post_meta( $order->ID, 'agreements', true ); ?>
+
+<div class="form-group text multiselect">
+    <label for="inverter">Zusatzvereinbarungen</label>
+    <select class="form-control" id="inverter" name="agreements[]" multiple="multiple">
+		<?php
+		$qtyFields  = [];
+		$args       = array( 'post_type' => 'agreement', 'posts_per_page' => - 1, 'post_status' => 'any' );
+		$agreements = get_posts( $args );
+
+		if ( count( $agreements ) > 0 ):
+			foreach ( $agreements as $agreement ):
+				$selected = ! empty( $orderAgreements ) && in_array( (string) $agreement->ID, $orderAgreements,
+					true ) ? ' selected' : '';
+
+				?>
+                <option<?php echo( get_post_meta( $agreement->ID, 'qty', true ) ? ' data-qty="true"' : '' ); ?>
+                        value="<?php echo $agreement->ID; ?>" <?php echo $selected; ?>>
+					<?php echo get_post_meta( $agreement->ID, 'beschreibung', true ); ?>
+                </option>
+			<?php endforeach;
+		endif;
+		?>
+    </select>
+</div>
+<?php
+if ( count( $agreements ) > 0 ):
+	foreach ( $agreements as $agreement ):
+		if ( ! get_post_meta( $agreement->ID, 'qty', true ) ) {
+			continue;
+		}
+		$hiddenClass         = '';
+		$agreementIsSelected = ! empty( $orderAgreements ) && in_array( (string) $agreement->ID, $orderAgreements,
+				true );
+		if ( ! empty( $orderAgreements ) ) {
+			if ( ! $agreementIsSelected ) {
+				$hiddenClass = ' form-group--hidden';
+			}
+		} else {
+			$hiddenClass = ' form-group--hidden';
+		}
+		$disabled = '';
+		if ( ! $agreementIsSelected && ! empty( $orderAgreements ) ) {
+			$disabled = ' disabled';
+		}
+		?>
+        <div class="form-group text<?php echo $hiddenClass; ?>" id="<?php echo $agreement->ID; ?>">
+            <label for="qty-<?php echo $agreement->ID; ?>">Stück <?php echo get_post_meta( $agreement->ID,
+					'beschreibung', true ); ?></label>
+            <input type="text" id="qty-<?php echo $agreement->ID; ?>" class="form-control"
+                   value="<?php echo get_post_meta( $order->ID, 'qty-' . $agreement->ID, true ); ?>"
+                   name="qty-<?php echo $agreement->ID; ?>"<?php echo $disabled; ?>>
+        </div>
+
+		<?php
+		$qtyFields[] = $agreement->ID;
+	endforeach;
+endif;
+
+?>
+
+<?php add_option( 'qty_fields', $qtyFields ); ?>
+
+
+<?php if ( ! empty( get_post_meta( $order->ID, 'additionals', true ) ) ) : ?>
+    <div class="form-group text">
+        <label for="additionals">Zusatzvereinbarungen alt</label>
+        <input id="additionals" type="text" name="additionals" class="form-control"
+               value="<?php echo get_post_meta( $order->ID, 'additionals', true ); ?>">
+    </div>
+<?php endif; ?>
+

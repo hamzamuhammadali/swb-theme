@@ -1,0 +1,30 @@
+<?php
+$zip = $_POST[ 'zip' ];
+
+if ( empty( $zip ) ) {
+	include template( 'front-pages/order-status-form' );
+
+	return;
+}
+
+if ( $zip !== $order->zip ) {
+	include template( 'front-pages/order-status-error' );
+
+	return;
+}
+
+$step = orderStep( $order );
+
+if ( $step <= 2 ) {
+	include template( 'front-pages/order-status-1-2' );
+
+	return;
+}
+
+if ( $step <= 7 ) {
+	include template( 'front-pages/order-status-' . $step );
+
+	return;
+}
+
+include template( 'front-pages/order-status-done' ); ?>

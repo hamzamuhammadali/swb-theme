@@ -1,0 +1,17 @@
+<?php
+
+$filledDashboard = false;
+
+?>
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/css/sass/steps.css">
+<script src="https://cdn.jsdelivr.net/gh/vdw/HideSeek@master/jquery.hideseek.min.js"></script>
+<div class="postbox" style="margin: 2rem 20px 0 0; padding: 1rem 2rem">
+	<?php
+	$filledDashboard = false;
+	?>
+	<div class="container dashboards">
+		<?php dcAssemblyDashboard('DC Montagen', 'dc-dashboard/section'); ?>
+		<?php acAssemblyDashboard('AC Montagen', 'dc-dashboard/section'); ?>
+	</div>
+</div>

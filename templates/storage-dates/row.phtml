@@ -1,0 +1,25 @@
+<?php
+$technician  = '';
+$dateFormat  = get_option( 'date_format' );
+
+$appointment = get_post_meta( $order->ID, 'storage_delivery', true );
+
+?>
+
+<tr>
+	<td>
+		<a href="<?php echo get_edit_post_link( $order->ID ); ?>">
+			#<?php echo $order->ID;?>
+		</a>
+	</td>
+	<td>
+		<?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID,
+			'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>
+	</td>
+	<td>
+		<?php echo get_post_meta( get_post_meta( $order->ID, 'storage', true ), 'name', true );?>
+	</td>
+	<td>
+		<?php echo date_i18n( $dateFormat, strtotime($appointment));?>
+	</td>
+</tr>

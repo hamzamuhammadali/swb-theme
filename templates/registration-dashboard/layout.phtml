@@ -1,0 +1,98 @@
+<?php
+
+$filledDashboard = false;
+
+?>
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/css/sass/steps.css">
+<script src="https://cdn.jsdelivr.net/gh/vdw/HideSeek@master/jquery.hideseek.min.js"></script>
+<script>
+  jQuery(document).ready(function ($) {
+    $('#search').hideseek( {
+      headers: 'thead'
+    });
+
+    $('#date-switch').on('change', function () {
+      let dateValue = $('option:selected').val();
+
+      $.ajax({
+        type: 'POST',
+        url: ajaxurl,
+        data: {
+          action: 'registrationCounter',
+          date: dateValue
+        },
+        success: function (response) {
+          $('#registration').html(response.slice(0,-1));
+        }
+      });
+
+      $.ajax({
+        type: 'POST',
+        url: ajaxurl,
+        data: {
+          action: 'registrationDoneCounter',
+          date: dateValue
+        },
+        success: function (response) {
+			$('#registration-done').html(response.slice(0,-1));
+        }
+      });
+    });
+  });
+</script>
+<div class="postbox" style="margin: 2rem 20px 0 0; padding: 1rem 2rem">
+	<div class="text-center mt-3 mb-4">
+		<h1 class="mb-1">An- und Fertigmeldungen aktueller Monat</h1>
+		Monat auswählen
+		<select id="date-switch">
+			<?php
+			$last_13_months = array();
+
+			// Aktuelles Jahr und Monat erhalten
+			$current_year = date('Y');
+			$current_month = date('m');
+
+			// Durchlaufen Sie die letzten 13 Monate
+			for ($i = 0; $i < 13; $i++) {
+				// Fügen Sie das aktuelle Jahr und Monat dem Array hinzu
+				$last_13_months[] = date('Y-m', strtotime("-$i months", strtotime("$current_year-$current_month-01")));
+			}
+
+			// Das Array $last_13_months enthält jetzt die letzten 13 Monate im Format 'YYYY-MM'
+			foreach ($last_13_months as $month) :?>
+				<option value="<?php echo $month;?>"><?php echo date('m/Y', strtotime($month));?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+	<div class="registration-counter d-flex mb-5">
+		<?php if(isset($_GET['date'])) {
+			$date = $_GET['date'];
+		} else {
+			$date = date('Y-m');
+		}
+		?>
+		<?php echo registrationCounter($date); ?>
+		<?php echo registrationDoneCounter($date); ?>
+	</div>
+	<div class="dashboard__search d-flex align-items-center">
+		<svg xmlns="http://www.w3.org/2000/svg" width="34.585" height="33.853" viewBox="0 0 34.585 33.853">
+			<g id="Gruppe_1" data-name="Gruppe 1" transform="translate(0.301 -0.359)">
+				<g id="Ellipse_1" data-name="Ellipse 1" transform="translate(-0.301 0.359)" fill="none" stroke="#4ca7f8" stroke-linecap="round" stroke-width="3">
+					<ellipse cx="14.5" cy="14" rx="14.5" ry="14" stroke="none"/>
+					<ellipse cx="14.5" cy="14" rx="12.5" ry="12" fill="none"/>
+				</g>
+				<path id="Pfad_1" data-name="Pfad 1" d="M1273.274,177.184l-7.993-7.993" transform="translate(-1241.819 -145.801)" fill="none" stroke="#4ca7f8" stroke-linecap="round" stroke-width="3"/>
+			</g>
+		</svg>
+		<input id="search" name="search" placeholder="Suche nach Verkäufer, Kunde, Ort etc." type="text" data-list="tbody" autocomplete="off">
+	</div>
+
+	<?php
+	$filledDashboard = false;
+	?>
+	<div class="container dashboards">
+		<?php registeredDashboard('Anmeldung abgeschlossen', 'registration-dashboard/section', -1, true); ?>
+		<?php registrationDoneDashboard('Fertigmeldung abgeschlossen', 'registration-dashboard/section', -1, 8, 'registrationDone'); ?>
+	</div>
+</div>

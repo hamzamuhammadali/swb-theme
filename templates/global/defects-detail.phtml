@@ -1,0 +1,99 @@
+<?php
+
+$defectAppointment = get_post_meta( $order->ID, 'defect_appointment', true );
+$opDefectAppointment = get_post_meta( $order->ID, 'op_defect_appointment', true );
+if($step > 1 && (get_post_meta($order->ID, 'defects', true) || get_post_meta( $order->ID, 'ac-defects', true ) || get_post_meta( $order->ID, 'operator-defects', true ))) :
+
+	?>
+
+	<div class="text-center">
+		<h2>Mängel & Nacharbeiten</h2>
+	</div>
+
+	<div class="d-flex align-items-start">
+		<?php if ( $defect = get_post_meta( $order->ID, 'defects', true ) ) : ?>
+			<div class="mb-4 order-card card defects__box defects__box--dc">
+				<div class="defects__flag">
+					DC Mängel
+				</div>
+				<div>
+					<?php echo $defect; ?>
+					<?php if ( checkRoles( [ 'administrator', 'director', 'ac_project_manager', 'dc_project_manager' ] ) ): ?>
+						<div class="mt-2">
+							<button class="button-secondary" formaction="post.php?defectsFixed=on&defectType=dc">Mängel
+								behoben
+							</button>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php endif;?>
+		<?php if ( $ACDefects = get_post_meta( $order->ID, 'ac-defects', true ) ) : ?>
+			<div class="mb-4 order-card card defects__box defects__box--ac">
+				<div class="defects__flag">
+					AC Nacharbeiten
+				</div>
+				<div>
+					<?php echo $ACDefects; ?>
+
+					<?php if ( checkRoles( [
+						'administrator',
+						'director',
+						'ac_project_manager',
+						'dc_project_manager'
+					] ) ): ?>
+						<div class="mt-2">
+							<button class="button-secondary" formaction="post.php?defectsFixed=on&defectType=ac">Mängel
+								behoben
+							</button>
+						</div>
+					<?php endif; ?>
+				</div>
+				<?php if ( checkRoles( [
+					'administrator',
+					'director',
+					'ac_project_manager',
+					'dc_project_manager'
+				] ) ): ?>
+			<div class="defect-appointment <?php echo !$defectAppointment ?:'defect-appointment--set';?>">
+				<?php include template( 'global/ac-appointment-defect' ); ?>
+			</div>
+			<?php endif;?>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $operatorDefect = get_post_meta( $order->ID, 'operator-defects', true ) ) : ?>
+			<div class="mb-4 order-card card defects__box defects__box--operator">
+				<div class="defects__flag">
+					Netzbetreiber Mängel
+				</div>
+				<div>
+					<?php echo $operatorDefect; ?>
+					<?php if ( checkRoles( [
+						'administrator',
+						'director',
+						'ac_project_manager',
+						'dc_project_manager'
+					] ) ): ?>
+						<div class="mt-2">
+							<button class="button-secondary" formaction="post.php?defectsFixed=on&defectType=operator">
+								Mängel behoben
+							</button>
+						</div>
+					<?php endif; ?>
+				</div>
+				<?php if ( checkRoles( [
+					'administrator',
+					'director',
+					'ac_project_manager',
+					'dc_project_manager'
+				] ) ): ?>
+					<div class="defect-appointment <?php echo !$opDefectAppointment ?:'defect-appointment--set';?>">
+						<?php include template( 'global/operator-appointment-defect' ); ?>
+					</div>
+				<?php endif;?>
+			</div>
+		<?php endif; ?>
+	</div>
+
+<?php endif;?>

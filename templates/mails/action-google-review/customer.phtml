@@ -1,0 +1,68 @@
+<?php
+$dcDelivery    = get_post_meta( $order->ID, 'storage_delivery', true );
+$dateFormat    = get_option( 'date_format' );
+$salutation    = get_post_meta( $order->ID, 'salutation', true );
+$greeting      = ( $salutation === 'Herr' ? 'geehrter' : 'geehrte' );
+$name          = implode( ' ', [
+	$salutation,
+	get_post_meta( $order->ID, 'firstName', true ),
+	get_post_meta( $order->ID, 'lastName', true ),
+] );
+
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+$companyColor =  get_option( 'color' );
+?>
+
+<style>h1, h2, h3 {
+        color: <?php echo $companyColor;?>;
+    }
+
+    div b {
+        display: block
+    }
+
+    .button {
+        padding: 10px 30px;
+        color: white;
+        border-radius: 10px;
+        background: <?php echo $companyColor;?>;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
+<table style="max-width: 600px; margin: 50px auto;">
+	<tr>
+		<td>
+			<img src="<?php echo wp_get_attachment_url(get_option('logo'));?>" alt="" width="250">
+			<br>
+			<br>
+			<br>
+			<h1>50€ Amazon Gutschein + 250€ Vermittlungs-Prämie</h1>
+			<h2>Sehr <?php echo $greeting; ?> <?php echo $name; ?>,</h2>
+			<p>vielen Dank für das sehr angenehme Telefonat.
+			<br>
+			<br>
+				Wir bedanken uns recht herzlich für Ihre Zeit und die positive Bewertung unserer Firma / Mitarbeiter / unseres Ablaufs. Unser Ziel ist es Ihre Wünsche und Erwartungen auch weiterhin zu Ihrer vollsten Zufriedenheit zu erfüllen.
+			<br>
+			<br>
+				Bisher haben wir uns ausschließlich auf die Beratung vor Ort, fachmännische Kompetenz sowie auf optimale Preis-Leistungs-Verhältnisse konzentriert. Allerdings ist es jetzt an der Zeit auch digital Fuß zu fassen. Um auch in diesen Bereichen leistungsfähiger zu werden, benötigen wir nun Ihre Unterstützung.
+			<br>
+			<br>
+				Wir freuen uns sehr, wenn Sie Ihre positive Erfahrung mit unserem Unternehmen über eine Rezension bei Google teilen und uns über den folgenden Link bewerten:
+			<br>
+			<br>
+				<a class="button" href="https://g.co/kgs/evbHaK">Google Rezension schreiben</a>
+			<br>
+			<br>
+				<strong>Das beste kommt zum Schluss: Wir bedanken uns für Ihre 5 Sterne Bewertung auf Google und Ihr Engagement</strong>
+			</p>
+			<ul>
+				<li>Erhalten Sie für Ihre <strong>5 Sterne</strong> Google Bewertung über uns einen <strong>50 Euro AMAZON-GUTSCHEIN</strong>.</li>
+				<li>Bei Zustandekommen des Kaufes durch die vermittelte Beratung erhalten Sie noch zusätzlich eine <strong>Prämie in Höhe von 250 Euro</strong>.</li>
+				</ul>
+			<br>
+			Mit freundlichen Grüßen<br>
+			<h2>Ihr Qualitätsmanagement von <?php echo $companyWithoutForm; ?></h2>
+		</td>
+	</tr>
+</table>

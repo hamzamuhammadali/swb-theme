@@ -1,0 +1,24 @@
+<?php
+$step                 = ( $options['step'] ?? null );
+?>
+
+<div class="row">
+    <div class="col-12 px-3">
+        <div class="dashboard__header mt-0">
+			<?php if ( ! empty( $step ) ) : ?>
+                <div class="step__counter step__counter--<?php echo $step;?>"><?php echo $step; ?></div>
+			<?php elseif (str_contains($options['cssClass'], 'bh')) :?>
+				<div class="step__counter step__counter--<?php echo $options['cssClass'];?>">BH</div>
+			<?php endif; ?>
+            <h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($leads);?>)</small></h1>
+        </div>
+	    <div class="leads d-flex flex-wrap">
+			<?php
+			foreach ( $leads as $lead ) {
+				include template( 'dashboards/lead-row' );
+			}
+			?>
+	    </div>
+    </div>
+</div>
+

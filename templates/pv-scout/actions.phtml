@@ -1,0 +1,24 @@
+<?php
+
+$allowActions = empty(get_post_meta($order->ID, 'pvscout_flag', true));
+
+$privilegedUser       = checkRoles( [ 'administrator', 'director', 'pv_scout' ] );
+$showActionsContainer = $privilegedUser;
+
+?>
+<?php if ( $showActionsContainer ): ?>
+    <div class="actions">
+        <div class="col-12<?php if ( ! $privilegedUser ): ?> d-flex justify-content-end<?php endif; ?>">
+			<?php if ( $privilegedUser ): ?>
+                <button class="button-secondary" formaction="post.php?saveupload=on">
+                    <span>Speichern / Hochladen</span>
+                </button>
+			<?php endif; ?>
+			<?php if ( $allowActions ): ?>
+                <button class="button-primary right" formaction="post.php?savePVScoutFlag=on">
+                    <span>Fertig projektieren</span>
+                </button>
+			<?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>

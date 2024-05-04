@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 order-status">
+			<?php for ( $i = 1; $i <= 7; $i ++ ): ?>
+				<?php
+				$stepIsDone  = $i < (int) $step;
+				$activeClass = $i === (int) $step ? ' order-status-step__active' : '';
+				$doneClass   = $stepIsDone ? ' order-status-step__done' : '';
+				?>
+                <a title="<?php echo $i; ?>" class="order-status-step<?php
+				echo $activeClass;
+				echo $doneClass;
+				?>">
+					<?php if ( $stepIsDone === true ): ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50.372" height="35.286"
+                             viewBox="0 0 50.372 35.286">
+                            <path id="Path_1" data-name="Path 1" d="M2494.034,128.452l15.066,14.73,28.235-28.235"
+                                  transform="translate(-2490.498 -111.411)" fill="none" stroke="#fff"
+                                  stroke-linecap="round"
+                                  stroke-width="5"/>
+                        </svg>
+					<?php else: ?>
+						<?php echo (string) $i; ?>
+					<?php endif; ?>
+                </a>
+			<?php endfor ?>
+        </div>
+    </div>
+</div>

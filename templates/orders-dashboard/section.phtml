@@ -1,0 +1,93 @@
+<?php
+$step                 = (int) ( $options['step'] ?? null );
+$forceControllingView = (bool) ( $options['forceControllingView'] ?? false );
+
+?>
+
+<div class="row">
+    <div class="col-12 default_list">
+	    <div class="dashboard__header">
+		    <h1><?php echo $title; ?> <small style="font-weight: 100; font-size: 16px">(<?php echo count($orders);?>)</small></h1>
+	    </div>
+	    <table>
+		    <thead class="d-flex align-content-stretch">
+		    <tr>
+			    <th>Auftrag</th>
+			    <th>Verkäufer</th>
+			    <th>Kunde</th>
+			    <th>Montage Termin</th>
+			    <th>UVP</th>
+			    <th>Abgerechnet</th>
+		    </tr>
+		    </thead>
+		    <tbody class="d-flex flex-wrap">
+			<?php
+			foreach ( $orders as $order ) {
+				include template( 'orders-dashboard/row' );
+			}
+			?>
+		    </tbody>
+	    </table>
+    </div>
+</div>
+
+<script>
+  jQuery(document).ready( function($) {
+    $('.billed-checkbox').on('change', function() {
+      var post_id = $(this).attr( 'data-id' );
+      var checkbox_value = 0;
+
+      if ($(this).is(":checked")) {
+        checkbox_value = 1;
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: ajaxurl,
+        data: {
+          action: 'custom_update_post',
+          post_id: post_id,
+          checkbox_value: checkbox_value
+        }
+      });
+    });
+  });
+
+</script>
+
+
+<style>
+	thead tr {
+		width: 100%;
+	}
+	table th:nth-child(1), table td:nth-child(1) {
+		width: 10%
+	}
+	table th:nth-child(2),table td:nth-child(2) {
+		width: 20%
+	}
+	table th:nth-child(3),table td:nth-child(3) {
+		width: 50%
+	}
+	.d-flex-light {
+		display: flex;
+	}
+    table td:not(:last-child) {
+        min-width: 100px;
+    }
+
+    table td:last-child {
+	    margin-left: auto;
+    }
+    .order-last {
+        background: #efefef;
+    }
+    input[type="checkbox"],
+    input[type=checkbox]:checked::before {
+        width: 2rem;
+        height: 2rem;
+    }
+    input[type=checkbox]:checked::before  {
+        margin: -0.0875rem 0 0 -0.15rem;
+    }
+</style>

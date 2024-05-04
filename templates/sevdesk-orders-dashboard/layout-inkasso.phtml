@@ -1,0 +1,17 @@
+
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/css/sass/steps.css">
+
+<div class="postbox" style="margin: 2rem 20px 0 0; padding: 1rem 2rem">
+	<div class="container dashboards pb-3">
+		<?php sevdeskInkassoDashboard('Inkasso', 'sevdesk-orders-dashboard/section'); ?>
+	</div>
+	<?php if ( $updates = get_option( 'reminders_latest_update' ) ): ?>
+		<div class="text-center">
+			<sup>
+				Letztes Update <?php echo date('d.m.Y', strtotime($updates[0]) ) . ' um '. date(' H:i:s', strtotime($updates[0]) );?> Uhr<br>
+				Verarbeitete Aufträge: <?php echo $updates[1];?>
+			</sup>
+		</div>
+		<br>
+	<?php endif;?>
+</div>

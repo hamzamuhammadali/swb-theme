@@ -1,0 +1,6 @@
+<?php
+
+if ( $step > 6 && get_current_user_id() != (int) get_post_meta( $order->ID, 'op_defect_technician', true ) ):
+	include template( "done/main" );
+endif;
+include template( "step-6/main" );

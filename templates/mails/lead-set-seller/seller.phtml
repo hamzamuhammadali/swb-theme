@@ -1,0 +1,50 @@
+<?php
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+$companyColor =  get_option( 'color' );
+?>
+
+<style>h1, h2, h3 {
+        color: <?php echo $companyColor;?>;
+    }
+    div b {
+        display: block
+    }
+    p {line-height: 1.4; font-size: 16px;}
+</style>
+
+<body style="min-width: 100%;">
+
+	<table style="max-width: 600px; width: 100%; padding-right: 30px; margin: 30px auto;">
+	    <tr>
+	        <td>
+		        <img src="<?php echo wp_get_attachment_url(get_option('logo'));?>" alt="" width="250">
+	            <br>
+	            <br>
+	            <br>
+		        <div style="text-align: center">
+		            <img width="400" src="https://www.swb.solar/wp-content/themes/swb/img/leads-teaser.png?123">
+		        </div>
+		        <h1>Hey Verkäufer,</h1>
+		        <p>
+			        du hast neuen Leads generiert! Nutze die Gelegenheit und zeige den Kunden, warum du der beste Partner für sie bist. Sei mutig und überzeuge sie von unseren Produkten.
+			        Jeder Kontakt ist eine Chance zum Wachsen und Vorankommen als Verkäufer.
+					<br>
+					<br>
+			        Viel Erfolg bei deinen Verkaufsgesprächen! Bei Fragen bin ich gerne für dich da.
+					<br>
+					<br>
+			        <a style="padding: 10px 30px;
+				        color: white;
+				        border-radius: 10px;
+				        background: <?php echo $companyColor;?>;
+				        text-decoration: none;
+				        display: inline-block;" href="https://www.swb.solar/wp-admin/admin.php?page=lead-dashboard">Zum Leads Dashboard</a>
+					<br>
+					<br>
+			        Beste Grüße,<br>
+					<h2><?php echo $companyWithoutForm;?></h2>
+		        </p>
+	        </td>
+	    </tr>
+	</table>
+</body>

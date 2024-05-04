@@ -1,0 +1,12 @@
+<?php
+$name    = $order->projectManager->display_name;
+$siteUrl = get_option( 'siteurl' );
+?>
+
+Hallo <?php echo $name; ?>,
+
+Für dich liegt eine neue Rechnung zur Bearbeitung vor.
+
+<h1>
+    <a href="<?php echo $siteUrl; ?>/wp-admin/edit.php?post_type=customer&page=dashboard">Zum Dashboard</a>
+</h1>

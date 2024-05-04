@@ -1,0 +1,132 @@
+<?php
+/**
+ * simpleevent.php
+ *
+ * @package    ZapCalLib
+ * @author    Dan Cogliano <http://zcontent.net>
+ * @copyright   Copyright (C) 2006 - 2017 by Dan Cogliano
+ * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link    http://icalendar.org/php-library.html
+ */
+
+/**
+ * Simple Event Example
+ *
+ * Create a simple iCalendar event
+ * No time zone specified, so this event will be in UTC time zone
+ *
+ */
+
+//require_once( "../zapcallib.php" );
+
+
+
+?>
+
+
+
+<?php
+
+$i = 0;
+
+// create the ical object
+
+
+$icalobj = new ZCiCal();
+
+// create the event within the ical object
+$eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
+$ACDC = '';
+$technician  = '';
+$appointment = '';
+
+$output = '';
+$output .= 'BEGIN:VCALENDAR' . "\r\n";
+$output .= 'VERSION:2.0' . "\r\n";
+$output .= 'PRODID:-//ZContent.net//Zap Calendar 1.0//EN' . "\r\n";
+$output .= 'CALSCALE:GREGORIAN' . "\r\n";
+$output .= 'METHOD:PUBLISH' . "\r\n";
+$output .= 'X-APPLE-LANGUAGE:de' . "\r\n";
+$output .= 'X-APPLE-REGION:DE' . "\r\n";
+
+foreach ( $orders as $order ) {
+
+	if ( ! empty( get_post_meta( $order->ID, 'ac_technician', true ) ) ) {
+		$technician = get_post_meta( $order->ID, 'ac_technician', true );
+		$ACDC = 'AC';
+	} else {
+		$technician = get_post_meta( $order->ID, 'dc_technician', true );
+		$ACDC = 'DC';
+	}
+
+	if($i === 0) {
+		$output .= 'X-WR-CALNAME:' . get_option('companyWithoutForm').  ' ' .$ACDC.' Montagen' . "\r\n";
+	}
+
+	$output .= "BEGIN:VEVENT" . "\r\n";
+
+	if ( ! empty( get_post_meta( $order->ID, 'ac_appointment', true ) ) ) {
+		$appointment = get_post_meta( $order->ID, 'ac_appointment', true );
+	} else {
+		$appointment = get_post_meta( $order->ID, 'dc_appointment', true );
+	}
+
+
+	$title = get_post_meta( $order->ID, 'salutation', true ) .' '. get_post_meta( $order->ID,
+			'firstName', true ) . ' ' . get_post_meta( $order->ID, 'lastName', true ) . ' #' . $order->ID;
+// date/time is in SQL datetime format
+	$event_start = str_replace('-', '', $appointment );
+	$event_end = str_replace('-', '', $appointment );
+
+
+// add title
+	//$eventobj->addNode(new ZCiCalDataNode("SUMMARY:" . $title));
+	$output .= "SUMMARY:" . $title . "\r\n";
+
+// add start date
+	//$eventobj->addNode(new ZCiCalDataNode("DTSTART:" . ZCiCal::fromSqlDateTime($event_start)));
+	$output .= "DTSTART:" . $event_start . "\r\n";
+
+// add end date
+	//$eventobj->addNode(new ZCiCalDataNode("DTEND:" . ZCiCal::fromSqlDateTime($event_end)));
+	$output .= "DTEND:" . $event_end . "\r\n";
+
+// UID is a required item in VEVENT, create unique string for this event
+// Adding your domain to the end is a good way of creating uniqueness
+	$uid = date('Y-m-d-H-i-s') . $i;
+	$output .= "UID:" . $uid . "\r\n";
+
+// DTSTAMP is a required item in VEVENT
+	$output .= "DTSTAMP:" . ZCiCal::fromSqlDateTime(). "\r\n";
+
+	$moduleID = get_post_meta($order->ID,'module', true);
+	$moduleQty = (int) get_post_meta($order->ID, 'moduleqty', true );
+	$modulePower = (int) get_post_meta($moduleID, 'typ', true);
+	$pvPower = $moduleQty * $modulePower / 1000;
+
+	$storage = get_post_meta($order->ID,'storage', true);
+// Add description
+	$output .= "DESCRIPTION:Auftragsnummer: #" . $order->ID . '\n' . 'Monteur: ' . get_user_by( 'ID', $technician )->display_name . '\n' . get_post_meta( $order->ID, 'zip', true ) . ' ' . get_post_meta( $order->ID, 'city', true ) . '\n' .
+	number_format($pvPower, 2, ',','.') . ' kwp' . '\n' . 'Module: ' . get_post_meta($moduleID, 'pvmoduleid', true) . (!empty($storage) ? '\n' . 'Speicher: ' . get_post_meta($storage, 'name', true) : '') . '\n\n' . get_edit_post_link($order->ID) .  "\r\n";
+
+// Add description
+	$output .= "END:VEVENT". "\r\n";
+
+// write iCalendar feed to stdout
+	//$output .= $icalobj->export();
+	$i++;
+
+}
+
+// Add description
+//$eventobj->addNode(new ZCiCalDataNode("END:" . ZCiCal::formatContent('VCALENDAR')));
+	$output .= "END:VCALENDAR". "\r\n";
+
+//header('Content-type: text/calendar; charset=utf-8');
+//header('Content-Disposition: inline; filename=SWB Montage.ics');
+
+update_option('cal_'.strtolower($ACDC), $output);
+
+echo get_option('cal_'.strtolower($ACDC));
+
+?>

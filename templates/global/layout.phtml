@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/angebote/style.css">
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/swb/css/sass/steps.css">
+<script type="text/javascript" src="/wp-content/themes/swb/angebote/js/scripts_backend.js"></script>
+
+<div class="project">
+	<?php
+	$allowedToEdit = in_array( true, getOrderPermissions( $order, $step ), true );
+	if (!checkRoles('pv_scout')) {
+		include template( 'global/error' );
+	}
+	$currentView = getCurrentOrderView();
+
+	$internalUser = false;
+	if ( $currentView === 'normal' && in_array( true, [
+			$superUser,
+			$projectManager,
+			$dcProjectManager,
+			$acProjectManager,
+			$seller,
+			$registrationManager,
+			$qaManager,
+		], true ) ) {
+
+		$internalUser = true;
+		include template( 'global/order-status' );
+		include template( 'global/header' );
+		if ( $allowedToEdit !== true ) {
+			include template( "done/main" );
+		}
+		$section = "step-$step";
+	} elseif ( ( $superUser === true && $currentView === 'controlling' ) || $controlling === true ) {
+		$internalUser = true;
+		$section      = "controlling";
+		$currentView  = "controlling";
+	} elseif ( ( $superUser === true && $currentView === 'dc-assembly' ) || $dcAssembly === true ) {
+		$section     = "dc-assembly";
+		$currentView = "dc-assembly";
+	} elseif ( ( $superUser === true && $currentView === 'ac-assembly' ) || $acAssembly === true ) {
+		$section     = "ac-assembly";
+		$currentView = "ac-assembly";
+	} elseif ( ( $superUser === true && $currentView === 'pvscout' ) || $pvScout === true ) {
+		$section     = "pv-scout";
+		$currentView = "pv-scout";
+	}
+	include template( "$section/main" );
+	?>
+
+	<?php include template( "global/defects-detail" );?>
+
+</div>
+
+<?php
+if ( $allowedToEdit === true ) {
+	include template( "$section/actions" );
+}
+
+if ( get_current_user_id() === (int) get_post_meta( $order->ID, 'op_defect_technician', true ) || get_current_user_id() === (int) get_post_meta( $order->ID, 'defect_technician', true ) ) {
+	include template( "global/defect-actions" );
+} ?>

@@ -1,0 +1,14 @@
+<div class="actions">
+    <div class="col-12">
+        <button class="button-secondary"><span>Speichern / Hochladen</span></button>
+        <a class="offer-pdf button-secondary" href="#" target="_blank"><span>Angebot als PDF</span></a>
+	    <input type="hidden" name="sendpdf" value=""/>
+        <input id="confirmation" type="hidden" name="confirmation">
+        <a class="offer-confirmation button-secondary" href="#"
+           target="_blank"><span>Auftragsbestätigung als PDF</span></a>
+		<?php if ( ! empty( $order->post_status ) && $order->post_status !== 'auto-draft' ): ?>
+            <button class="button-primary right" formaction="post.php?backend_step_1=on"><span>Auftrag abschicken</span>
+            </button>
+		<?php endif; ?>
+    </div>
+</div>

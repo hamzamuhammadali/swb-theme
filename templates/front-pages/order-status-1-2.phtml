@@ -1,0 +1,38 @@
+<?php $notes = getCustomerNotes( $order->ID );
+$companyWithoutForm = utf8_decode(get_option('companyWithoutForm'));
+?>
+
+	<div class="col-12 order-status">
+	<a title="1" class="order-status-step order-status-step__active">
+		1
+	</a>
+	<a title="2" class="order-status-step">
+		2 </a>
+	<a title="3" class="order-status-step">
+		3 </a>
+	<a title="4" class="order-status-step">
+		4 </a>
+</div>
+
+<h2>👋 Willkommen bei <?php echo $companyWithoutForm;?></h2>
+Ihre Bauvorhaben befindet sich aktuell in der technischen Prüfung.<br>
+Wir werden uns telefonisch bei Ihnen melden, um einen Termin für die Montage zu vereinbaren.
+</div>
+	<div class="notes">
+		<?php if(!empty($notes)) :?>
+
+			<div class="further-info">Wichtige Mitteilungen von <?php echo $companyWithoutForm;?></div>
+			<?php foreach ( array_reverse($notes) as $note ): ?>
+				<?php
+				if ( isset( $note['internal'] ) && $note['internal'] === true && $internalUser === false ) {
+					continue;
+				}
+				?>
+				<div class="note">
+					<span class="note__author"><?php echo $note['author'] ?>: </span>
+					<span class="note__text"><?php echo $note['message']; ?></span>
+					<div><small>Mitteilung vom <?php echo $note['date'] ?></small></div>
+				</div>
+			<?php endforeach; ?>
+		<?php endif;?>
+	</div>

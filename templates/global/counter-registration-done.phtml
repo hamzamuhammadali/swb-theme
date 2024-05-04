@@ -1,0 +1,49 @@
+<div class="d-flex align-items-start" id="<?php echo $cssID;?>">
+	<div class="counter">
+		<div class="counter__number">
+			<div class="counter__title">
+				Fertigmeldungen
+			</div>
+			<?php echo count( $registrations ); ?>
+		</div>
+
+		<div class="counter__number counter__number--small">
+			<div class="counter__title">
+				Offen
+			</div>
+			<?php echo openRegistrationDoneCounter(); ?>
+		</div>
+	</div>
+	<div class="counter__users">
+		<?php
+		$posts_per_user   = array();
+
+		foreach ( $registrations as $registration ) {
+			$user_id = get_post_meta( $registration->ID, 'registrationDoneUser', true );
+
+			if ( $user_id ) {
+				if ( ! isset( $posts_per_user[ $user_id ] ) ) {
+					$posts_per_user[ $user_id ] = 1;
+				} else {
+					$posts_per_user[ $user_id ] ++;
+				}
+			}
+		}
+
+		arsort( $posts_per_user );
+
+		foreach ( $posts_per_user as $user_id => $post_count ) :
+			// Holen Sie den Display-Namen des Benutzers
+			$user_info = get_userdata( $user_id );
+			$display_name = $user_info->display_name;
+			?>
+			<div class="d-flex align-items-center ml-3 mb-2">
+				<div class="counter__number counter__number--secondary mr-2">
+					<?php echo $post_count; ?>
+				</div>
+				<?php echo $display_name; ?>
+			</div>
+		<?php endforeach; ?>
+
+	</div>
+</div>

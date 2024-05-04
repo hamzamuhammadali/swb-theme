@@ -1,0 +1,75 @@
+<div class="order-card card">
+    <div class="card-body">
+        <div class="card-title">
+            Persönliche Informationen
+        </div>
+        <div>
+            Familie <?php echo get_post_meta( $order->ID, 'companyName', true ); ?>
+        </div>
+        <div>
+            <?php echo get_post_meta( $order->ID, 'salutation', true ); ?> <?php echo get_post_meta( $order->ID, 'firstName', true ) ?> <?php echo get_post_meta( $order->ID, 'lastName', true ) ?>
+        </div>
+        <div>
+            <?php echo get_post_meta( $order->ID, 'street', true ) . ' ' . get_post_meta($order->ID, 'houseNumber', true)  ?>
+        </div>
+        <div>
+            <?php echo get_post_meta( $order->ID, 'zip', true ) ?> <?php echo get_post_meta( $order->ID, 'city', true ) ?>
+        </div>
+        <div>
+            Telefon: <?php echo get_post_meta( $order->ID, 'phoneNumber', true ) ?>
+        </div>
+        <div>
+	        <?php if(get_post_meta( $order->ID, 'mobileNumber', true )):?>
+                Mobil: <?php echo get_post_meta( $order->ID, 'mobileNumber', true ) ?>
+            <?php endif;?>
+        </div>
+        <div>
+            E-Mail: <?php echo get_post_meta( $order->ID, 'emailAddress', true ) ?>
+        </div>
+    </div>
+<?php
+$showEditAction = get_request_parameter( 'edit' ) === 'on';
+$showRegistrationAction = checkRoles( [
+		'registration',
+		'administrator',
+		'director'
+	] ) && empty( get_post_meta( $order->ID, 'registration', true ) );
+?>
+
+	<?php if ( $showRegistrationAction === true && !$showEditAction ): ?>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2cjJAXR34mqCEOsLtJYlRq0H8yArfjR0" type="text/javascript"></script>
+		<div id="showmap" style="display: none">
+			<br>
+			<a target="_blank" id="showmap-button" class="button-secondary" href="">Flurkarte anzeigen</a>
+		</div>
+	<?php
+	$addressString = get_post_meta( $order->ID, 'street', true);
+	$addressString .= ' ' . get_post_meta( $order->ID, 'houseNumber', true);
+	$addressString .= ' ' . get_post_meta( $order->ID, 'zip', true);
+	$addressString .= ' ' . get_post_meta( $order->ID, 'city', true);
+	?>
+		<script>
+          geocoder = new google.maps.Geocoder();
+          var map;
+          var theAddress = '<?php echo $addressString;?>';
+
+          function codeAddress() {
+            geocoder.geocode({'address': theAddress}, function (results, status) {
+              var resultsAddress = JSON.stringify(results);
+              var parsedJson = JSON.parse(resultsAddress);
+              var lat = parsedJson[0]['geometry']['location']['lat'];
+              var long = parsedJson[0]['geometry']['location']['lng'];
+
+              if (resultsAddress.indexOf('Baden-Württemberg') > -1) {
+                document.getElementById("showmap-button").href = 'https://www.geoportal-bw.de/#/(sidenav:search-results/' + theAddress + ')';
+                document.getElementById("showmap").removeAttribute("style");
+              } else if (resultsAddress.indexOf('Bayern') > -1) {
+                document.getElementById("showmap-button").href = 'https://geoportal.bayern.de/bayernatlas/?lang=de&topic=ba&catalogNodes=11&bgLayer=atkis&E=' + long + '&N=' + lat + '&zoom=15';
+                document.getElementById("showmap").removeAttribute("style");
+              }
+            });
+          }
+          codeAddress();
+		</script>
+	<?php endif; ?>
+</div>
